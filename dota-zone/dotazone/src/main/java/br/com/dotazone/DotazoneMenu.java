@@ -82,7 +82,7 @@ public class DotazoneMenu implements Controllable {
                 TabActivity.isBuild = true;
                 break;
             case 7:
-
+                System.out.println();
                 mActivity.startActivity(new Intent(mActivity, AboutActivity.class));
                 break;
 

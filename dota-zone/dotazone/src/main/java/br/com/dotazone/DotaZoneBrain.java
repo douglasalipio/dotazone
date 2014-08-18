@@ -16,4 +16,5 @@ public class DotaZoneBrain {
     public static List<Hero> heroes = new ArrayList<Hero>();
     public static Hero hero;
     public static boolean isPremium;
+
 }

@@ -33,6 +33,7 @@ public class DotaZoneApplication extends Application {
                     : (trackerId == TrackerName.GLOBAL_TRACKER) ? analytics.newTracker(PROPERTY_ID) : analytics
                     .newTracker(R.xml.ecommerce_tracker);
             mTrackers.put(trackerId, t);
+            System.out.println();
 
         }
         return mTrackers.get(trackerId);
