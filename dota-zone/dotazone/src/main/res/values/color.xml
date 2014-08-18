@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_dialog_bio">#424346</color>
+    <color name="background_dialog_rating">#28292b</color>
+    <color name="background_dialog_rating_hover">#1c1d1f</color>
+    <color name="color_text_list">#8D8E96</color>
+    <color name="background_language">#313234</color>
+    <color name="button_payment_color_pressed">#9c371b</color>
+    <color name="button_payment_color">#bd4a2a</color>
+</resources>

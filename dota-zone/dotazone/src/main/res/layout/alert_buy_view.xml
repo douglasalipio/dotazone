@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="321dp"
+    android:layout_height="230dp"
+    android:background="#34373C"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#202123"
+        android:measureWithLargestChild="true"
+        android:paddingTop="1dip"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/buy_close"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_rating_selector"
+            android:text="@string/rating_button_out" />
+
+        <Button
+            android:id="@+id/buy_pro_version"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_rating_selector"
+            android:text="@string/alert_buy_buy_now" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:maxLines="4"
+        android:text="@string/alert_buy_description"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    s
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/buy_logo_pro" />
+
+</RelativeLayout>
