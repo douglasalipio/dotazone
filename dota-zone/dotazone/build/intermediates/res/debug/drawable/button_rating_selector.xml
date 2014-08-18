@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:drawable="@color/background_dialog_rating_hover" android:state_pressed="true" />
-    <item android:drawable="@color/background_dialog_rating" />
-
-</selector><!-- From: file:/C:/project_news/oficial_android_studio/dota-zone/dota-zone/dotazone/src/main/res/drawable/button_rating_selector.xml -->
