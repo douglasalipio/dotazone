@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp" />
+
+    <stroke android:color="@android:color/black" />
+
+    <solid android:color="#191A1C" />
+
+</shape><!-- From: file:/C:/project_news/oficial_android_studio/dota-zone/dota-zone/dotazone/src/main/res/drawable/rounded_corner_payment_code.xml -->

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="TypographyDashes">
+    <integer name="ga_sessionTimeout">300</integer>
+
+    <!-- the Local LogLevel for Analytics -->
+    <string name="ga_logLevel">verbose</string>
+
+    <!-- how often the dispatcher should fire -->
+    <integer name="ga_dispatchPeriod">30</integer>
+
+    <!-- Treat events as test events and don't send to google -->
+    <bool name="ga_dryRun">false</bool>
+
+    <!-- The screen names that will appear in reports -->
+    <string name="br.com.dotazone.view.activity.MainActivity">MainActivity</string>
+    <string name="br.com.dotazone.view.activity.TabActivity">TabActivity</string>
+    <screenName name="br.com.dotazone.view.activity.AboutActivity">AboutActivity</screenName>
+    <screenName name="br.com.dotazone.view.activity.LanguageActivity">LanguageActivity</screenName>
+    <screenName name="br.com.dotazone.view.activity.BuildHeroActivity">BuildHeroActivity</screenName>
+    <screenName name="br.com.dotazone.view.activity.HeroProfileActivity">HeroProfileActivity</screenName>
+    <screenName name="br.com.dotazone.view.activity.HeroBiographActivity">HeroBiographActivity</screenName>
+
+
+</resources><!-- From: file:/C:/project_news/oficial_android_studio/dota-zone/dota-zone/dotazone/src/main/res/xml/global_tracker.xml -->

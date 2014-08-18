@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/project_news/oficial_android_studio/dota-zone/dota-zone/dotazone/src/main/res/values-w820dp/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+
+</resources>

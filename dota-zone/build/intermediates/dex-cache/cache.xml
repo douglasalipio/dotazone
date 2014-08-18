@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\classes-7de1cff920ab395a41d648f4f72780c461c74483.jar"
+        jar="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\exploded-aar\dota-zone\sAXRSSReader\unspecified\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="ea2041ba9ac7dd83ac51a22ba335f3a3986f47bc"/>
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\classes-dcca17c4d58bab5dc1d7acef3bdb871f80b6d277.jar"
+        jar="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\exploded-aar\com.google.android.gms\play-services\5.0.89\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="d71573c9c5ea98a8db47ad6ff993a63d492b3bfa"/>
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\classes-16ad9bb2fcaa58e944973dafb72535ff84ee06b2.jar"
+        jar="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\exploded-aar\com.viewpagerindicator\library\2.4.1\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="88e8e18d365173ad04a543d76c157e0b644f0b3f"/>
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\picasso-2.3.3-424288f99dfb5a1f36869fe2e36e4721a7033b35.jar"
+        jar="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\libs\picasso-2.3.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="1262995965440e28ba5c4d480c9c9ab4ccce84cc"/>
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\support-v4-19.1.0-e311e493b238b75da4095bd5ee7b69d76d73dc42.jar"
+        jar="C:\Program Files (x86)\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\classes-fb868485cd8dfc3d661de77fd29bb24a86764f0b.jar"
+        jar="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\exploded-aar\dota-zone\trivialdrivesample\unspecified\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="70129cbe0366a278236f1c19d68bf574071e97a1"/>
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\gson-2.2.4-5dc21ff110081a800f7115fecddc15416395ba15.jar"
+        jar="C:\Users\d.alipio\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568"/>
+    <item
+        dex="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\build\intermediates\pre-dexed\debug\Parse-1.5.1-a2e1c38be9d34978cbc312064cecc14ec037df0f.jar"
+        jar="C:\project_news\oficial_android_studio\dota-zone\dota-zone\dotazone\libs\Parse-1.5.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3d645417e7780d44f32e29a3ec6b729b75aef26c"/>
+
+</pre-dex-items>

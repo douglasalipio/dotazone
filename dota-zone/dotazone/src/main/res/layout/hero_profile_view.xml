@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/hero_profile_view_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#222327">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/hero_linear_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp">
+
+                    <br.com.dotazone.view.components.RoundedImageView
+                        android:id="@+id/hero_icon_avatar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="45dp"
+                        android:src="@drawable/axe_avatar" />
+
+                    <TextView
+                        android:id="@+id/hero_text_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp" />
+
+                    <ImageView
+                        android:id="@+id/hero_icon_bio"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginLeft="240dp"
+                        android:layout_marginTop="50dp"
+                        android:background="@drawable/icon_bio" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:background="#101417">
+
+                    <TextView
+                        android:id="@+id/hero_text_roles"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:textColor="@color/color_text_list" />
+                </RelativeLayout>
+
+                <include layout="@layout/hero_attributes_view" />
+
+                <RelativeLayout
+                    android:id="@+id/hero_description_skill_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/hero_skill_admob"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-2913317885954925/3784690295" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/list_slidermenu"
+        layout="@layout/content_drawer_list"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start" />
+
+</android.support.v4.widget.DrawerLayout>

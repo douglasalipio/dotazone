@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="C:\project_news\oficial_android_studio\dota-zone\dota-zone\sAXRSSReader\src\main\res" />
+        <source path="C:\project_news\oficial_android_studio\dota-zone\dota-zone\sAXRSSReader\build\generated\res\rs\release" />
+        <source path="C:\project_news\oficial_android_studio\dota-zone\dota-zone\sAXRSSReader\build\generated\res\generated\release" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="C:\project_news\oficial_android_studio\dota-zone\dota-zone\sAXRSSReader\src\release\res" />
+    </dataSet>
+
+</merger>

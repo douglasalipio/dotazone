@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/C:/project_news/oficial_android_studio/dota-zone/dota-zone/dotazone/src/main/res/values-v11/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style>
+    <!-- From: file:/C:/project_news/oficial_android_studio/dota-zone/dota-zone/dotazone/build/intermediates/exploded-aar/dota-zone/trivialdrivesample/unspecified/res/values-v11/values.xml -->
+    <eat-comment />
+
+    <style name="AppTheme" parent="android:Theme.Holo.NoActionBar" />
+
+</resources>
