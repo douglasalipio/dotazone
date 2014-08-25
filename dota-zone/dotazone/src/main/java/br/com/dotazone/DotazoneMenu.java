@@ -19,6 +19,7 @@ import br.com.dotazone.view.activity.LanguageActivity;
 import br.com.dotazone.view.activity.MainActivity;
 import br.com.dotazone.view.activity.PaymentActivity;
 import br.com.dotazone.view.activity.TabActivity;
+import br.com.dotazone.view.activity.TabChannel;
 
 public class DotazoneMenu implements Controllable {
 
@@ -35,6 +36,7 @@ public class DotazoneMenu implements Controllable {
     private TextView mTextMenuInvite;
     private TextView mTextMenuLanguage;
     private TextView mTextMenuBuild;
+    private TextView mTextMenuChannel;
     private FragmentActivity mActivity;
     private TextView mtextMenuAbout;
     private Button mPaymentButton;
@@ -54,6 +56,7 @@ public class DotazoneMenu implements Controllable {
     private void displayView(int position) {
 
         Intent intent = new Intent(mActivity, TabActivity.class);
+
 
         switch (position) {
             case 0:
@@ -82,8 +85,10 @@ public class DotazoneMenu implements Controllable {
                 TabActivity.isBuild = true;
                 break;
             case 7:
-                System.out.println();
                 mActivity.startActivity(new Intent(mActivity, AboutActivity.class));
+                break;
+            case 8:
+                mActivity.startActivity(new Intent(mActivity, TabChannel.class));
                 break;
 
             default:
@@ -169,6 +174,17 @@ public class DotazoneMenu implements Controllable {
         mTextMenuLanguage.setTextColor(Color.WHITE);
         mTextMenuBuild.setTextColor(Color.WHITE);
         mtextMenuAbout.setTextColor(Color.RED);
+    }
+
+    public void checkChannelMenu() {
+
+        mTextMenuItems.setTextColor(Color.WHITE);
+        mTextMenuHero.setTextColor(Color.WHITE);
+        mTextMenuNews.setTextColor(Color.WHITE);
+        mTextMenuInvite.setTextColor(Color.WHITE);
+        mTextMenuLanguage.setTextColor(Color.WHITE);
+        mTextMenuBuild.setTextColor(Color.WHITE);
+        mtextMenuAbout.setTextColor(Color.WHITE);
     }
 
     public void defaultMenu() {
@@ -271,6 +287,16 @@ public class DotazoneMenu implements Controllable {
 
             }
         });
+        mTextMenuChannel = (TextView) mActivity.findViewById(R.id.textMenuChannel);
+        mTextMenuChannel.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                checkChannelMenu();
+                displayView(8);
+
+            }
+        });
 
         mtextMenuAbout.setTypeface(font);
         mTextMenuHero.setTypeface(font);
@@ -279,6 +305,7 @@ public class DotazoneMenu implements Controllable {
         mTextMenuInvite.setTypeface(font);
         mTextMenuLanguage.setTypeface(font);
         mTextMenuBuild.setTypeface(font);
+        mTextMenuChannel.setTypeface(font);
 
         mPaymentButton = (Button) mActivity.findViewById(R.id.content_drawer_buy_button);
         mPaymentButton.setOnClickListener(new OnClickListener() {

@@ -77,5 +77,10 @@
     <string name="payment_messenger_unlock">HeroBuild Pro Tool unlocks</string>
     <string name="payment_error_conection">Maybe you\'re not connected, try again later.</string>
     <string name="payment_error_key_used">The key has already been used</string>
+    <string name="channel">Channels</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="offline">OFFLINE</string>
+    <string name="online">ONLINE</string>
+    <string name="error_player">Houve um erro ao inicializar o YouTubePlayer (%1$s)</string>
 
 </resources>

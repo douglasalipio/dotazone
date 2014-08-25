@@ -75,4 +75,9 @@
     <string name="payment_messenger_unlock">Destrava a ferramenta HeroBuild Pro</string>
     <string name="payment_error_conection">Talvez você esteja sem conexão, tente novamente mais tarde.</string>
     <string name="payment_error_key_used">A chave já foi usada.</string>
+    <string name="channel">Canais</string>
+    <string name="offline">OFFLINE</string>
+    <string name="online">ONLINE</string>
+    <string name="error_player">Hubo un error al inicializar el YouTubePlayer (%1$s)</string>
+
 </resources>
