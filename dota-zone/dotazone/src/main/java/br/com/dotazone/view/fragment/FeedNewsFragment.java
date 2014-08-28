@@ -34,8 +34,8 @@ public class FeedNewsFragment extends ListFragment implements AdapterAction {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.feed_news, container, false);
 
+        mView = inflater.inflate(R.layout.feed_news, container, false);
         initialize();
 
         return mView;

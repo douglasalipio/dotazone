@@ -10,11 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
 
 import br.com.dotazone.R;
+import br.com.dotazone.model.entity.youtube.Example;
 import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
+import br.com.dotazone.model.service.RequestREST;
+import br.com.dotazone.model.util.UrlUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,7 +36,8 @@ import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
  * Use the {@link ChannelYoutubeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.OnInitializedListener {
+public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.OnInitializedListener, Response.Listener<JSONObject>,
+        Response.ErrorListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -77,6 +90,14 @@ public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.On
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         ft.add(view.findViewById(R.id.frame_test).getId(), new YouTubePlayerSupportCustomFragment()).commit();
 
+        String url = UrlUtils.getUrlNewVideoYoutube();
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        JsonObjectRequest jsObjRequest =
+                new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+
+        queue.add(jsObjRequest);
+
+
         return view;
     }
 
@@ -112,5 +133,18 @@ public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.On
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
         Toast.makeText(getActivity(), getResources().getString(R.string.error_player), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError volleyError) {
+
+    }
+
+    @Override
+    public void onResponse(JSONObject jsonObject) {
+
+        Gson gson = new Gson();
+        Example example = gson.fromJson(jsonObject.toString(), Example.class);
+        System.out.println();
     }
 }

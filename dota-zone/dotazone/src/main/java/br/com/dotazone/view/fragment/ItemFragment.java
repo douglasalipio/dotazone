@@ -24,7 +24,7 @@ import br.com.dotazone.model.entity.Item;
 import br.com.dotazone.model.listeners.BuildHeroAction;
 import br.com.dotazone.model.service.AdapterAction;
 import br.com.dotazone.model.service.ItemAsync;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.activity.BaseActivity;
 import br.com.dotazone.view.activity.BuildHeroActivity;
 import br.com.dotazone.view.adapter.ItemGridAdapter;
@@ -190,8 +190,8 @@ public class ItemFragment extends Fragment implements AdapterAction, OnItemClick
                     ImageView imageView = new ImageView(getActivity());
                     imageView.setImageResource(idImage);
                     linearLayout.addView(imageView);
-                    LinearLayout.LayoutParams param = (LinearLayout.LayoutParams) new LinearLayout.LayoutParams(Utils.convertDpToPixel(50,
-                            getResources()), Utils.convertDpToPixel(32, getResources()));
+                    LinearLayout.LayoutParams param = (LinearLayout.LayoutParams) new LinearLayout.LayoutParams(UrlUtils.convertDpToPixel(50,
+                            getResources()), UrlUtils.convertDpToPixel(32, getResources()));
                     imageView.setLayoutParams(param);
                 }
 

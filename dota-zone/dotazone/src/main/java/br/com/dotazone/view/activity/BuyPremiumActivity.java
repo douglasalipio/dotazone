@@ -17,7 +17,7 @@ import com.example.android.trivialdrivesample.util.Purchase;
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.R;
 import br.com.dotazone.model.billing.BillingUtils;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 
 public class BuyPremiumActivity extends BaseActivity implements OnClickListener, IabHelper.OnIabPurchaseFinishedListener, IabHelper.QueryInventoryFinishedListener {
 
@@ -37,7 +37,7 @@ public class BuyPremiumActivity extends BaseActivity implements OnClickListener,
     @Override
     public void onClick(View v) {
 
-        String base64EncodedPublicKey = Utils.PUBLIC_KEY;
+        String base64EncodedPublicKey = UrlUtils.PUBLIC_KEY;
         final int requestId = 12345;
         mHelper = new IabHelper(this, base64EncodedPublicKey);
         final String payload = "";

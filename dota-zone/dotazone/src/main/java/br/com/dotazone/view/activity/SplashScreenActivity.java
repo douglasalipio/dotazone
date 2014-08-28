@@ -32,7 +32,7 @@ import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.R;
 import br.com.dotazone.model.PaymentModel;
 import br.com.dotazone.model.billing.BillingUtils;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.fragment.DialogError;
 import br.com.dotazone.view.fragment.DialogError.TypeError;
 
@@ -59,7 +59,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
 
         if (DialogError.isOnline(this)) {
 
-            final SharedPreferences settings = getSharedPreferences(Utils.PREFS_NAME, 0);
+            final SharedPreferences settings = getSharedPreferences(UrlUtils.PREFS_NAME, 0);
             boolean isLanguageSelected = settings.getBoolean(LanguageActivity.IS_LANGUAGE_SELECTED, false);
 
             if (isLanguageSelected) {
@@ -108,7 +108,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
             Toast.makeText(this, getResources().getString(R.string.selected_fail), Toast.LENGTH_SHORT).show();
         } else {
 
-            SharedPreferences settings = getSharedPreferences(Utils.PREFS_NAME, 0);
+            SharedPreferences settings = getSharedPreferences(UrlUtils.PREFS_NAME, 0);
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean(LanguageActivity.IS_LANGUAGE_SELECTED, true);
             editor.putString(LanguageActivity.LANGUAGE_KEY, languageSelected);
@@ -163,7 +163,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
         } else {
 
             //Verify that the campaign period has expired
-            List<String> emails = Utils.getEmailUser(this);
+            List<String> emails = UrlUtils.getEmailUser(this);
 
             if (!emails.isEmpty()) {
 
@@ -187,7 +187,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
 
     private void verifyPremiunUser() {
         // chave publica do app
-        String base64EncodedPublicKey = Utils.PUBLIC_KEY;
+        String base64EncodedPublicKey = UrlUtils.PUBLIC_KEY;
         mProgressBar.setVisibility(View.VISIBLE);
         mProgressBar.getIndeterminateDrawable().setColorFilter(Color.rgb(213, 50, 43), Mode.SRC_IN);
         // cria o objeto auxiliar IabHelper
@@ -210,7 +210,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
 
     private void countDotaZoneBoot() {
 
-        final SharedPreferences settings = getSharedPreferences(Utils.PREFS_NAME, 0);
+        final SharedPreferences settings = getSharedPreferences(UrlUtils.PREFS_NAME, 0);
         int rating = settings.getInt(DotaZoneBrain.RATING_DOTA_ZONE, 0);
 
         SharedPreferences.Editor editor = settings.edit();

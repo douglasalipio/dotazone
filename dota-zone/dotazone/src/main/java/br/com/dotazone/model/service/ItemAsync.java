@@ -21,7 +21,7 @@ import br.com.dotazone.model.entity.Item;
 import br.com.dotazone.model.entity.Item.ItemElementy;
 import br.com.dotazone.model.entity.ItemAtrrib;
 import br.com.dotazone.model.entity.ItemAtrrib.ItemAttribElementy;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.activity.BaseActivity;
 import br.com.dotazone.view.fragment.DialogError;
 import br.com.dotazone.view.fragment.DialogError.TypeError;
@@ -53,8 +53,8 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
 
             AssetManager assetManager = mFragment.getActivity().getAssets();
             InputStream inputStreamItemAttrib = assetManager.open("attribs_item.txt");
-            resultAttrib = Utils.convertStreamToString(inputStreamItemAttrib);
-            result = mRequest.getHttpRequest(Utils.getUrlItem(mFragment.getActivity()));
+            resultAttrib = UrlUtils.convertStreamToString(inputStreamItemAttrib);
+            result = mRequest.getHttpRequest(UrlUtils.getUrlItem(mFragment.getActivity()));
             if (DotaZoneBrain.items.isEmpty()) {
                 createItemAttrib(resultAttrib);
                 createItem(result);

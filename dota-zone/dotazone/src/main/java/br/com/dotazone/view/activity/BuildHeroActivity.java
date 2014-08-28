@@ -32,8 +32,8 @@ import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
 import br.com.dotazone.model.entity.ItemAtrrib;
 import br.com.dotazone.model.listeners.BuildHeroAction;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.model.util.UtilActivity;
-import br.com.dotazone.model.util.Utils;
 import br.com.dotazone.view.adapter.ItemAdapter;
 import br.com.dotazone.view.components.RoundedImageView;
 
@@ -136,7 +136,7 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
     protected void onResume() {
         super.onResume();
 
-        final SharedPreferences settings = getSharedPreferences(Utils.PREFS_NAME, 0);
+        final SharedPreferences settings = getSharedPreferences(UrlUtils.PREFS_NAME, 0);
         boolean isHelp = settings.getBoolean("help_build_hero", true);
 
         if (isHelp) {
@@ -416,12 +416,12 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
 
         if (item != null) {
 
-            int valueInt = mTextIncInt.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncInt.getText().toString()));
-            int valueAgi = mTextIncAgi.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncAgi.getText().toString()));
-            int valueStr = mTextIncStr.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncStr.getText().toString()));
-            int valueAtk = mTextIncAtk.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncAtk.getText().toString()));
-            int valueMs = mTextIncMove.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncMove.getText().toString()));
-            int valueArmor = mTextIncArmor.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncArmor.getText().toString()));
+            int valueInt = mTextIncInt.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncInt.getText().toString()));
+            int valueAgi = mTextIncAgi.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncAgi.getText().toString()));
+            int valueStr = mTextIncStr.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncStr.getText().toString()));
+            int valueAtk = mTextIncAtk.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncAtk.getText().toString()));
+            int valueMs = mTextIncMove.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncMove.getText().toString()));
+            int valueArmor = mTextIncArmor.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncArmor.getText().toString()));
 
             int additionalInt = item.getInteligence();
             int additionalAgi = item.getAgility();
@@ -455,12 +455,12 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
 
         if (item != null && item.getItemAttrib() != null) {
 
-            int valueInt = mTextIncInt.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncInt.getText().toString()));
-            int valueAgi = mTextIncAgi.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncAgi.getText().toString()));
-            int valueStr = mTextIncStr.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncStr.getText().toString()));
-            int valueAtk = mTextIncAtk.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncAtk.getText().toString()));
-            int valueMs = mTextIncMove.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncMove.getText().toString()));
-            int valueArmor = mTextIncArmor.getText().equals("") ? 0 : Integer.valueOf(Utils.extractNumber(mTextIncArmor.getText().toString()));
+            int valueInt = mTextIncInt.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncInt.getText().toString()));
+            int valueAgi = mTextIncAgi.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncAgi.getText().toString()));
+            int valueStr = mTextIncStr.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncStr.getText().toString()));
+            int valueAtk = mTextIncAtk.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncAtk.getText().toString()));
+            int valueMs = mTextIncMove.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncMove.getText().toString()));
+            int valueArmor = mTextIncArmor.getText().equals("") ? 0 : Integer.valueOf(UrlUtils.extractNumber(mTextIncArmor.getText().toString()));
 
             int additionalInt = item.getItemAttrib().getInteligence();
             int additionalAgi = item.getItemAttrib().getAgility();
@@ -517,7 +517,7 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
             public void onClick(View v) {
 
                 dialog.dismiss();
-                String base64EncodedPublicKey = Utils.PUBLIC_KEY;
+                String base64EncodedPublicKey = UrlUtils.PUBLIC_KEY;
                 final int requestId = 12345;
                 mHelper = new IabHelper(BuildHeroActivity.this, base64EncodedPublicKey);
                 final String payload = "";

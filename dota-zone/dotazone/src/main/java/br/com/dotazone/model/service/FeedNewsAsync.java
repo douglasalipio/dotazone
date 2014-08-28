@@ -20,6 +20,7 @@ import java.util.List;
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.youtube.Example;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.activity.BaseActivity;
 import br.com.dotazone.view.adapter.FeedNewsListAdapter;
 import br.com.dotazone.view.fragment.DialogError;
@@ -60,10 +61,6 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
 
         URL url;
         try {
-
-            String a = new RequestREST().getHttpRequest("https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCfWCxZLHj0zo_DSMKLLUD7Q&maxResults=1&order=date&key=AIzaSyD2QkKGdpL8rq-4Q2d_GS7PJYVsIpcHC-I");
-            Gson gson = new Gson();
-            Example example = gson.fromJson(a,Example.class);
             url = new URL("http://blog.dota2.com/feed/");
             RssFeed feed = RssReader.read(url);
             feed.setLanguage("es");

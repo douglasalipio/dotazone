@@ -18,15 +18,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import br.com.dotazone.model.entity.youtube.Example;
 import br.com.dotazone.view.activity.LanguageActivity;
 
-public class Utils {
+public class UrlUtils {
 
     public static final String URL_IMAGE_ITEM = "http://media.steampowered.com/apps/dota2/images/items/";
     public static final String PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAipyhhqoCC87BNLfzMa86cOgNmFk4JXNXaTOILczLI0b0utTCqZ5Ih9ql9KwTDz6iGUkWReeeYbEDAzabTmp6GIWpcYQaHU/HoRpb8x9TMAFXk1N0vCCR2vUF7uBdlwxQAodmXAZXZoLlG1tNMOm3hEtgMSCB9aYfh9Sm+1SqU82UJrdT4gtSQnqOLJycRgo6KKhL5k1BDumNyVGNV2GiTn0Hdane5Q9rUrv/Lf7ZzA5ZXqvU7OT1C3T/RuCP4pW8p9FTq57525/ah9ADwBfwbOZH1itRIMPgvgwtYCLSoJmPonYoKT4xvn/v2EAINlXbmL7TIhpkoPIr2mRO7eVpTwIDAQAB";
     public static final String PREFS_NAME = "DotaZone";
     public static final String AMAZON_ACCESS_KEY_ID = "AKIAJCC6PG6NOWRLQOIQ";
     public static final String AMAZON_ACCESS_SECRET_KEY = "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";
+    public static final String DEVELOPER_KEY_YOUTUBE = "AIzaSyD2QkKGdpL8rq-4Q2d_GS7PJYVsIpcHC-I";
+    private static final String CHANNEL_ID = "UCfWCxZLHj0zo_DSMKLLUD7Q";
+
+    public static String getUrlNewVideoYoutube() {
+        return "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId="+CHANNEL_ID+"&maxResults=10&order=date&key="+DEVELOPER_KEY_YOUTUBE+"";
+    }
 
     public static String getUrlItem(Context context) {
 
@@ -94,7 +101,7 @@ public class Utils {
 
     private static String getLanguage(Context context) {
 
-        final SharedPreferences settings = context.getSharedPreferences(Utils.PREFS_NAME, 0);
+        final SharedPreferences settings = context.getSharedPreferences(UrlUtils.PREFS_NAME, 0);
         String isLanguageSelected = settings.getString(LanguageActivity.LANGUAGE_KEY, "english");
 
         return isLanguageSelected.toLowerCase();

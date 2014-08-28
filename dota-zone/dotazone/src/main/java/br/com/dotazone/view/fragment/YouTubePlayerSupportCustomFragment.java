@@ -13,7 +13,7 @@ public class YouTubePlayerSupportCustomFragment extends com.google.android.youtu
 
     public YouTubePlayerSupportCustomFragment() {
 
-        initialize(DeveloperKey.DEVELOPER_KEY, new YouTubePlayer.OnInitializedListener() {
+        initialize(DeveloperKey.DEVELOPER_KEY_YOUTUBE, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 youTubePlayer.cueVideo("aQTE3qG9W20");

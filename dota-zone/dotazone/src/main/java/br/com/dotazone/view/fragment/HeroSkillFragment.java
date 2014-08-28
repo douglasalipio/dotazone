@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.Skill;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.components.ImageGetter;
 
 public class HeroSkillFragment extends BaseFragment {
@@ -84,9 +84,9 @@ public class HeroSkillFragment extends BaseFragment {
             mLinearSkill.addView(textView);
             LinearLayout.LayoutParams paramSkill = (LinearLayout.LayoutParams) new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
-            paramSkill.topMargin = Utils.convertDpToPixel(10, getResources());
-            paramSkill.leftMargin = Utils.convertDpToPixel(10, getResources());
-            paramSkill.rightMargin = Utils.convertDpToPixel(10, getResources());
+            paramSkill.topMargin = UrlUtils.convertDpToPixel(10, getResources());
+            paramSkill.leftMargin = UrlUtils.convertDpToPixel(10, getResources());
+            paramSkill.rightMargin = UrlUtils.convertDpToPixel(10, getResources());
             // paramSkill.setMargins(Utils.convertDpToPixel(0, getResources()),
             // Utils.convertDpToPixel(-5, getResources()),
             // Utils.convertDpToPixel(0, getResources()),

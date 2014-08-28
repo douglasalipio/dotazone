@@ -17,7 +17,7 @@ import java.util.List;
 
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.R;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.activity.MainActivity;
 
 /**
@@ -49,7 +49,7 @@ public class PaymentModel {
 
                         if (e == null) {
                             comment.put("active", true);
-                            comment.put("email", Utils.getEmailUser(mContext));
+                            comment.put("email", UrlUtils.getEmailUser(mContext));
                             comment.saveInBackground(new SaveCallback() {
                                 @Override
                                 public void done(ParseException e) {
@@ -118,7 +118,7 @@ public class PaymentModel {
                         if (key.equals(keyParam) && (!active)) {
                             DotaZoneBrain.isPremium = true;
                             comment.put("active", true);
-                            comment.put("email", Utils.getEmailUser(mContext).get(0));
+                            comment.put("email", UrlUtils.getEmailUser(mContext).get(0));
                             comment.saveInBackground(new SaveCallback() {
                                 @Override
                                 public void done(ParseException e) {

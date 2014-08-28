@@ -23,7 +23,7 @@ import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Hero.HeroElementy;
 import br.com.dotazone.model.entity.Skill;
 import br.com.dotazone.model.entity.Skill.SkillElementy;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.activity.BaseActivity;
 import br.com.dotazone.view.fragment.DialogError;
 import br.com.dotazone.view.fragment.DialogError.TypeError;
@@ -59,9 +59,9 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
 
         try {
 
-            resultHero = mRequest.getHttpRequest(Utils.getUrlHero(mFragment.getActivity()));
-            resultSkill = mRequest.getHttpRequest(Utils.getUrlSkill(mFragment.getActivity()));
-            resultAbility = mRequest.getHttpRequest(Utils.getUrlAbility(mFragment.getActivity()));
+            resultHero = mRequest.getHttpRequest(UrlUtils.getUrlHero(mFragment.getActivity()));
+            resultSkill = mRequest.getHttpRequest(UrlUtils.getUrlSkill(mFragment.getActivity()));
+            resultAbility = mRequest.getHttpRequest(UrlUtils.getUrlAbility(mFragment.getActivity()));
 
             if (DotaZoneBrain.heroes.isEmpty()) {
                 createHero(resultHero);

@@ -29,7 +29,7 @@ import br.com.dotazone.R;
 import br.com.dotazone.model.entity.AdMobBanner;
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Skill;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.components.FrameLayoutSkillBoard;
 import br.com.dotazone.view.fragment.HeroSkillFragment;
 
@@ -161,8 +161,8 @@ public class HeroProfileActivity extends BaseActivity implements OnClickListener
         mainFrame.addView(frameBrightness);
         FrameLayout.LayoutParams paramBright = (FrameLayout.LayoutParams) new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
-        paramBright.height = Utils.convertDpToPixel(87, getResources());
-        paramBright.width = Utils.convertDpToPixel(87, getResources());
+        paramBright.height = UrlUtils.convertDpToPixel(87, getResources());
+        paramBright.width = UrlUtils.convertDpToPixel(87, getResources());
         frameBrightness.setLayoutParams(paramBright);
 
         return frameBrightness;
@@ -173,8 +173,8 @@ public class HeroProfileActivity extends BaseActivity implements OnClickListener
         FrameLayout mainFrame = new FrameLayout(this);
         FrameLayout.LayoutParams paramMainFrame = (FrameLayout.LayoutParams) new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
-        paramMainFrame.height = Utils.convertDpToPixel(87, getResources());
-        paramMainFrame.width = Utils.convertDpToPixel(87, getResources());
+        paramMainFrame.height = UrlUtils.convertDpToPixel(87, getResources());
+        paramMainFrame.width = UrlUtils.convertDpToPixel(87, getResources());
         paramMainFrame.gravity = Gravity.CENTER_HORIZONTAL;
         mainFrame.setLayoutParams(paramMainFrame);
 
@@ -187,10 +187,10 @@ public class HeroProfileActivity extends BaseActivity implements OnClickListener
         skillImage.setImageResource(idImage);
         mainFrame.addView(skillImage);
         FrameLayout.LayoutParams teste = (FrameLayout.LayoutParams) skillImage.getLayoutParams();
-        teste.height = Utils.convertDpToPixel(64, getResources());
-        teste.width = Utils.convertDpToPixel(64, getResources());
-        teste.leftMargin = Utils.convertDpToPixel(11, getResources());
-        teste.topMargin = Utils.convertDpToPixel(11, getResources());
+        teste.height = UrlUtils.convertDpToPixel(64, getResources());
+        teste.width = UrlUtils.convertDpToPixel(64, getResources());
+        teste.leftMargin = UrlUtils.convertDpToPixel(11, getResources());
+        teste.topMargin = UrlUtils.convertDpToPixel(11, getResources());
         skillImage.setLayoutParams(teste);
 
         return skillImage;

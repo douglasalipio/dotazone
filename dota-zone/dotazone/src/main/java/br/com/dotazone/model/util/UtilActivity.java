@@ -24,7 +24,7 @@ public class UtilActivity {
 
     public static void ratingDotaZoneDialog(final Context context) {
 
-        final SharedPreferences settings = context.getSharedPreferences(Utils.PREFS_NAME, 0);
+        final SharedPreferences settings = context.getSharedPreferences(UrlUtils.PREFS_NAME, 0);
         int rating = settings.getInt(DotaZoneBrain.RATING_DOTA_ZONE, 0);
 
         if (rating == 3) {
@@ -158,8 +158,8 @@ public class UtilActivity {
                     ImageView imageView = new ImageView(context);
                     imageView.setImageResource(idImage);
                     linearLayout.addView(imageView);
-                    LinearLayout.LayoutParams param = (LinearLayout.LayoutParams) new LinearLayout.LayoutParams(Utils.convertDpToPixel(50,
-                            context.getResources()), Utils.convertDpToPixel(32, context.getResources()));
+                    LinearLayout.LayoutParams param = (LinearLayout.LayoutParams) new LinearLayout.LayoutParams(UrlUtils.convertDpToPixel(50,
+                            context.getResources()), UrlUtils.convertDpToPixel(32, context.getResources()));
                     imageView.setLayoutParams(param);
                 }
 

@@ -20,7 +20,7 @@ import br.com.dotazone.DotazoneMenu;
 import br.com.dotazone.R;
 import br.com.dotazone.model.PaymentModel;
 import br.com.dotazone.model.billing.BillingUtils;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 
 /**
  * Created by Douglas on 12/08/2014.
@@ -120,7 +120,7 @@ public class PaymentActivity extends BaseActivity implements IabHelper.OnIabPurc
 
     private void paymentGooglePlay(final String sku) {
 
-        String base64EncodedPublicKey = Utils.PUBLIC_KEY;
+        String base64EncodedPublicKey = UrlUtils.PUBLIC_KEY;
         final int requestId = 12345;
         mHelper = new IabHelper(this, base64EncodedPublicKey);
         final String payload = "";

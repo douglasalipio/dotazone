@@ -24,7 +24,7 @@ import br.com.dotazone.DotazoneMenu;
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
-import br.com.dotazone.model.util.Utils;
+import br.com.dotazone.model.util.UrlUtils;
 import nl.matshofman.saxrssreader.RssItem;
 
 public class LanguageActivity extends BaseActivity implements OnClickListener {
@@ -113,7 +113,7 @@ public class LanguageActivity extends BaseActivity implements OnClickListener {
 
     private int getDefaultSelected() {
 
-        final SharedPreferences settings = getSharedPreferences(Utils.PREFS_NAME, 0);
+        final SharedPreferences settings = getSharedPreferences(UrlUtils.PREFS_NAME, 0);
         String defaultSelected = settings.getString(LANGUAGE_KEY, "english");
         String[] mLanguageArray = getResources().getStringArray(R.array.language_array);
 
@@ -129,7 +129,7 @@ public class LanguageActivity extends BaseActivity implements OnClickListener {
 
     private String getStringSelected() {
 
-        final SharedPreferences settings = getSharedPreferences(Utils.PREFS_NAME, 0);
+        final SharedPreferences settings = getSharedPreferences(UrlUtils.PREFS_NAME, 0);
         String defaultSelected = settings.getString(LANGUAGE_KEY, "english");
         String[] mLanguageArray = getResources().getStringArray(R.array.language_array);
 
@@ -190,7 +190,7 @@ public class LanguageActivity extends BaseActivity implements OnClickListener {
                     .setSingleChoiceItems(R.array.language_array, position, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int id) {
-                            SharedPreferences settings = getActivity().getSharedPreferences(Utils.PREFS_NAME, 0);
+                            SharedPreferences settings = getActivity().getSharedPreferences(UrlUtils.PREFS_NAME, 0);
                             SharedPreferences.Editor editor = settings.edit();
                             editor.putBoolean(IS_LANGUAGE_SELECTED, true);
                             editor.putString(LANGUAGE_KEY, languages.get(id));
