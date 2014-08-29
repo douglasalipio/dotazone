@@ -1,8 +1,11 @@
 package br.com.dotazone.view.fragment;
 
+import android.widget.Toast;
+
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 
+import br.com.dotazone.R;
 import br.com.dotazone.model.util.DeveloperKey;
 
 /**
@@ -16,11 +19,13 @@ public class YouTubePlayerSupportCustomFragment extends com.google.android.youtu
         initialize(DeveloperKey.DEVELOPER_KEY_YOUTUBE, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.cueVideo("aQTE3qG9W20");
+
+                youTubePlayer.cueVideo(getArguments().getString("VIDEO_ID"));
             }
 
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+                Toast.makeText(getActivity(), getResources().getString(R.string.error_player), Toast.LENGTH_LONG).show();
 
             }
         });

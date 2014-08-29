@@ -13,12 +13,12 @@ import br.com.dotazone.view.fragment.ChannelYoutubeFragment;
 /**
  * Created by Douglas on 24/08/2014.
  */
-public class ChannelAdapter extends FragmentPagerAdapter {
+public class ChannelFragmentAdapter extends FragmentPagerAdapter {
 
     private static String[] CONTENT;
     private Context mContext;
 
-    public ChannelAdapter(FragmentManager fm, Context context) {
+    public ChannelFragmentAdapter(FragmentManager fm, Context context) {
         super(fm);
 
         this.mContext = context;
@@ -28,7 +28,7 @@ public class ChannelAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        if (position == 1)
+        if (position == 0)
             return ChannelYoutubeFragment.newInstance("", "");
         else
             return ChannelOfflineFragment.newInstance("", "");

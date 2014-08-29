@@ -18,9 +18,7 @@ import br.com.dotazone.DotazoneMenu;
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.AdMobBanner;
 import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
-import br.com.dotazone.view.adapter.ChannelAdapter;
-import br.com.dotazone.view.adapter.HeroAdapter;
-import br.com.dotazone.view.adapter.ItemAdapter;
+import br.com.dotazone.view.adapter.ChannelFragmentAdapter;
 
 /**
  * Created by Douglas on 21/08/2014.
@@ -95,7 +93,7 @@ public class TabChannel extends BaseActivity implements ViewPager.OnPageChangeLi
 
     private void setAdapterPage(ViewPager pager) {
 
-        ChannelAdapter channelAdapter = new ChannelAdapter(getSupportFragmentManager(),this);
+        ChannelFragmentAdapter channelAdapter = new ChannelFragmentAdapter(getSupportFragmentManager(),this);
         pager.setAdapter(channelAdapter);
         mMenu.checkChannelMenu();
     }

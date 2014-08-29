@@ -63,7 +63,6 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
         try {
             url = new URL("http://blog.dota2.com/feed/");
             RssFeed feed = RssReader.read(url);
-            feed.setLanguage("es");
             mRssItems = feed.getRssItems();
 
         } catch (Exception e) {

@@ -6,13 +6,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.android.volley.toolbox.NetworkImageView;
 
+import java.text.ParseException;
 import java.util.List;
 
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.Channel;
+import br.com.dotazone.model.entity.youtube.Example;
+import br.com.dotazone.model.service.VolleySingleton;
+import br.com.dotazone.model.util.StringUtil;
 
 /**
  * Created by Douglas on 24/08/2014.
@@ -20,20 +25,26 @@ import br.com.dotazone.model.entity.Channel;
 public class ChannelItemAdapter extends BaseAdapter {
 
     static final int LAYOUT = R.layout.feed_video_item_virew;
+    private final Example mVideoList;
+
+    public ChannelItemAdapter(Example videoList) {
+
+        this.mVideoList = videoList;
+    }
 
     @Override
     public int getCount() {
-        return 0;
+        return mVideoList.items.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return mVideoList.items.get(i);
     }
 
     @Override
-    public long getItemId(int i) {
-        return 0;
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
@@ -44,8 +55,20 @@ public class ChannelItemAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(ctx).inflate(LAYOUT, null);
         }
         NetworkImageView img = (NetworkImageView) convertView.findViewById(R.id.banner_channel);
+        img.setImageUrl(mVideoList.items.get(position).snippet.thumbnails.high.url, VolleySingleton.getInstance(
+                ctx).getImageLoader());
 
-        //img.setImageUrl(carro.imageUrl,VolleySingleton.getInstance(getContext()).getImageLoader());
+        TextView title = (TextView) convertView.findViewById(R.id.title_video_on);
+        title.setText(mVideoList.items.get(position).snippet.title);
+        TextView subTitle = (TextView) convertView.findViewById(R.id.channel_name_on);
+        subTitle.setText(mVideoList.items.get(position).snippet.channelTitle);
+        TextView date = (TextView) convertView.findViewById(R.id.date_post_channel_on);
+
+        try {
+            date.setText(StringUtil.convertDate(mVideoList.items.get(position).snippet.publishedAt));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         return convertView;
     }

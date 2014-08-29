@@ -5,9 +5,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -24,9 +27,10 @@ import org.json.JSONObject;
 
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.youtube.Example;
+import br.com.dotazone.model.entity.youtube.Item;
 import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
-import br.com.dotazone.model.service.RequestREST;
 import br.com.dotazone.model.util.UrlUtils;
+import br.com.dotazone.view.adapter.ChannelItemAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,8 +40,8 @@ import br.com.dotazone.model.util.UrlUtils;
  * Use the {@link ChannelYoutubeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.OnInitializedListener, Response.Listener<JSONObject>,
-        Response.ErrorListener {
+public class ChannelYoutubeFragment extends Fragment implements Response.Listener<JSONObject>,
+        Response.ErrorListener, AdapterView.OnItemClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -48,6 +52,9 @@ public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.On
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private View mView;
+    private ViewPager mPager;
+    private ListView mListViewVideo;
 
     /**
      * Use this factory method to create a new instance of
@@ -86,9 +93,17 @@ public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.On
 
         System.out.println();
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.feed_video, container, false);
+        mView = inflater.inflate(R.layout.feed_video_on, container, false);
+        mPager = (ViewPager) mView.findViewById(R.id.tab_channel_pager);
+        mListViewVideo = (ListView) mView.findViewById(R.id.feed_video_on_list);
+        mListViewVideo.setOnItemClickListener(ChannelYoutubeFragment.this);
+
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        ft.add(view.findViewById(R.id.frame_test).getId(), new YouTubePlayerSupportCustomFragment()).commit();
+        YouTubePlayerSupportCustomFragment fragment = new YouTubePlayerSupportCustomFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("VIDEO_ID", "3jPas_s7BVA");
+        fragment.setArguments(bundle);
+        ft.add(mView.findViewById(R.id.frame_test).getId(), fragment).commit();
 
         String url = UrlUtils.getUrlNewVideoYoutube();
         RequestQueue queue = Volley.newRequestQueue(getActivity());
@@ -98,7 +113,7 @@ public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.On
         queue.add(jsObjRequest);
 
 
-        return view;
+        return mView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -126,25 +141,40 @@ public class ChannelYoutubeFragment extends Fragment implements YouTubePlayer.On
     }
 
     @Override
-    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-        youTubePlayer.cueVideo("aQTE3qG9W20");
+    public void onResume() {
+        super.onResume();
+
+
     }
 
-    @Override
-    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-        Toast.makeText(getActivity(), getResources().getString(R.string.error_player), Toast.LENGTH_LONG).show();
-    }
 
     @Override
     public void onErrorResponse(VolleyError volleyError) {
+
 
     }
 
     @Override
     public void onResponse(JSONObject jsonObject) {
 
-        Gson gson = new Gson();
-        Example example = gson.fromJson(jsonObject.toString(), Example.class);
-        System.out.println();
+        try {
+            mListViewVideo.setAdapter(new ChannelItemAdapter(new Gson().fromJson(jsonObject.toString(), Example.class)));
+        } catch (Exception e) {
+            Toast.makeText(getActivity(), "Erro ao tentar carregar a lista de videos", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+        YouTubePlayerSupportCustomFragment fragment = new YouTubePlayerSupportCustomFragment();
+        Item item = (Item) parent.getAdapter().getItem(position);
+        Bundle bundle = new Bundle();
+        bundle.putString("VIDEO_ID", item.id.videoId);
+        fragment.setArguments(bundle);
+        ft.replace(mView.findViewById(R.id.frame_test).getId(), fragment).commit();
     }
 }
