@@ -59,26 +59,38 @@
         <activity
             android:name=".view.activity.BuildHeroActivity"
             android:theme="@style/page_indicator"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.BuyPremiumActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.AboutActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.PaymentActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.TabChannel"
-            android:theme="@style/page_indicator"
-            android:screenOrientation="portrait"/>
+            android:theme="@style/page_indicator_channel"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".view.activity.LanguageActivity"
             android:screenOrientation="portrait"
             android:theme="@android:color/transparent" />
 
+        <activity
+            android:name=".view.activity.VideoSearch"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".view.activity.YoutubePlayVideo"
+            android:screenOrientation="nosensor"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+
+
     </application>
 
 </manifest>
+

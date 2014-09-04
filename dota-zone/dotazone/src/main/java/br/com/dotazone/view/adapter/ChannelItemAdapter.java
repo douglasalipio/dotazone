@@ -4,17 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.android.volley.toolbox.NetworkImageView;
-
 import java.text.ParseException;
-import java.util.List;
-
 import br.com.dotazone.R;
-import br.com.dotazone.model.entity.Channel;
 import br.com.dotazone.model.entity.youtube.Example;
 import br.com.dotazone.model.service.VolleySingleton;
 import br.com.dotazone.model.util.StringUtil;
@@ -57,12 +52,15 @@ public class ChannelItemAdapter extends BaseAdapter {
         NetworkImageView img = (NetworkImageView) convertView.findViewById(R.id.banner_channel);
         img.setImageUrl(mVideoList.items.get(position).snippet.thumbnails.high.url, VolleySingleton.getInstance(
                 ctx).getImageLoader());
+        img.setScaleType(ImageView.ScaleType.FIT_XY);
+
 
         TextView title = (TextView) convertView.findViewById(R.id.title_video_on);
         title.setText(mVideoList.items.get(position).snippet.title);
         TextView subTitle = (TextView) convertView.findViewById(R.id.channel_name_on);
         subTitle.setText(mVideoList.items.get(position).snippet.channelTitle);
         TextView date = (TextView) convertView.findViewById(R.id.date_post_channel_on);
+
 
         try {
             date.setText(StringUtil.convertDate(mVideoList.items.get(position).snippet.publishedAt));
@@ -72,4 +70,5 @@ public class ChannelItemAdapter extends BaseAdapter {
 
         return convertView;
     }
+
 }

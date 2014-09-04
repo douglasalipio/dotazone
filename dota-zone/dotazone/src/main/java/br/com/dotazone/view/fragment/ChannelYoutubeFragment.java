@@ -1,17 +1,19 @@
 package br.com.dotazone.view.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,17 +21,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.youtube.Example;
-import br.com.dotazone.model.entity.youtube.Item;
 import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
 import br.com.dotazone.model.util.UrlUtils;
+import br.com.dotazone.view.activity.YoutubePlayVideo;
 import br.com.dotazone.view.adapter.ChannelItemAdapter;
 
 /**
@@ -40,7 +40,7 @@ import br.com.dotazone.view.adapter.ChannelItemAdapter;
  * Use the {@link ChannelYoutubeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChannelYoutubeFragment extends Fragment implements Response.Listener<JSONObject>,
+public class ChannelYoutubeFragment extends BaseFragment implements Response.Listener<JSONObject>,
         Response.ErrorListener, AdapterView.OnItemClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,6 +55,11 @@ public class ChannelYoutubeFragment extends Fragment implements Response.Listene
     private View mView;
     private ViewPager mPager;
     private ListView mListViewVideo;
+    private ChannelItemAdapter adapter;
+    private Example mVideosList;
+    private String mJsonList;
+    private ProgressBar mProgressBar;
+
 
     /**
      * Use this factory method to create a new instance of
@@ -87,33 +92,34 @@ public class ChannelYoutubeFragment extends Fragment implements Response.Listene
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        System.out.println();
         // Inflate the layout for this fragment
         mView = inflater.inflate(R.layout.feed_video_on, container, false);
+        initComponents();
+
+        return mView;
+    }
+
+
+    @Override
+    public void initComponents() {
+
+
         mPager = (ViewPager) mView.findViewById(R.id.tab_channel_pager);
         mListViewVideo = (ListView) mView.findViewById(R.id.feed_video_on_list);
-        mListViewVideo.setOnItemClickListener(ChannelYoutubeFragment.this);
-
-        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        YouTubePlayerSupportCustomFragment fragment = new YouTubePlayerSupportCustomFragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("VIDEO_ID", "3jPas_s7BVA");
-        fragment.setArguments(bundle);
-        ft.add(mView.findViewById(R.id.frame_test).getId(), fragment).commit();
-
+        mListViewVideo.setOnItemClickListener(this);
+        mProgressBar = (ProgressBar) mView.findViewById(R.id.progress_video);
+        //mProgressBar.getIndeterminateDrawable().setColorFilter(Color.rgb(213, 50, 43), PorterDuff.Mode.SRC_IN);
         String url = UrlUtils.getUrlNewVideoYoutube();
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         JsonObjectRequest jsObjRequest =
                 new JsonObjectRequest(Request.Method.GET, url, null, this, this);
 
         queue.add(jsObjRequest);
-
-
-        return mView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -143,38 +149,37 @@ public class ChannelYoutubeFragment extends Fragment implements Response.Listene
     @Override
     public void onResume() {
         super.onResume();
-
-
     }
 
 
     @Override
     public void onErrorResponse(VolleyError volleyError) {
 
-
+        mProgressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void onResponse(JSONObject jsonObject) {
 
-        try {
-            mListViewVideo.setAdapter(new ChannelItemAdapter(new Gson().fromJson(jsonObject.toString(), Example.class)));
-        } catch (Exception e) {
-            Toast.makeText(getActivity(), "Erro ao tentar carregar a lista de videos", Toast.LENGTH_SHORT).show();
-        }
-
+        mJsonList = jsonObject.toString();
+        mVideosList = new Gson().fromJson(mJsonList, Example.class);
+        adapter = new ChannelItemAdapter(mVideosList);
+        mListViewVideo.setAdapter(adapter);
+        mProgressBar.setVisibility(View.INVISIBLE);
 
     }
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
-        YouTubePlayerSupportCustomFragment fragment = new YouTubePlayerSupportCustomFragment();
-        Item item = (Item) parent.getAdapter().getItem(position);
         Bundle bundle = new Bundle();
-        bundle.putString("VIDEO_ID", item.id.videoId);
-        fragment.setArguments(bundle);
-        ft.replace(mView.findViewById(R.id.frame_test).getId(), fragment).commit();
+        bundle.putString(YoutubePlayVideo.VIDEO_ID, mVideosList.items.get(position).id.videoId);
+        bundle.putString(YoutubePlayVideo.VIDEO_JSON, mJsonList);
+        Intent intent = new Intent(ChannelYoutubeFragment.this.getActivity(), YoutubePlayVideo.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+
     }
+
 }

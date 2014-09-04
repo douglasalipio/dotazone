@@ -32,8 +32,13 @@ public class UrlUtils {
     private static final String CHANNEL_ID = "UCfWCxZLHj0zo_DSMKLLUD7Q";
 
     public static String getUrlNewVideoYoutube() {
-        return "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId="+CHANNEL_ID+"&maxResults=10&order=date&key="+DEVELOPER_KEY_YOUTUBE+"";
+        return "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" + CHANNEL_ID + "&maxResults=10&order=date&key=" + DEVELOPER_KEY_YOUTUBE + "";
     }
+
+    public static String getUrlVideoSearch(String value) {
+        return "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" + CHANNEL_ID + "&maxResults=20&order=date&q=" + value + "&key=" + DEVELOPER_KEY_YOUTUBE + "";
+    }
+
 
     public static String getUrlItem(Context context) {
 

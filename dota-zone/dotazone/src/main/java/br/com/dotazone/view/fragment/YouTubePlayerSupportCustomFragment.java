@@ -20,6 +20,7 @@ public class YouTubePlayerSupportCustomFragment extends com.google.android.youtu
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
 
+
                 youTubePlayer.cueVideo(getArguments().getString("VIDEO_ID"));
             }
 
@@ -31,4 +32,8 @@ public class YouTubePlayerSupportCustomFragment extends com.google.android.youtu
         });
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 }

@@ -81,6 +81,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="offline">OFFLINE</string>
     <string name="online">ONLINE</string>
-    <string name="error_player">Houve um erro ao inicializar o YouTubePlayer (%1$s)</string>
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+    <string name="title_activity_video_search">VideoSearch</string>
+    <string name="video_search">Video search</string>
+    <string name="title_activity_youtube_play_video">YoutubePlayVideo</string>
+    <string name="video_not_found">Video not found</string>
 
 </resources>
