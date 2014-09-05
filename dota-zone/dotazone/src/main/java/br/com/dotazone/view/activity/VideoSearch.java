@@ -1,6 +1,5 @@
 package br.com.dotazone.view.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -9,9 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,6 +25,7 @@ import org.json.JSONObject;
 
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.youtube.Example;
+import br.com.dotazone.model.entity.youtube.Item;
 import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.adapter.ChannelItemAdapter;
 
@@ -57,6 +57,22 @@ public class VideoSearch extends BaseActivity implements Response.Listener<JSONO
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        ImageView searchButton = (ImageView) findViewById(R.id.icon_search_video);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String url = UrlUtils.getUrlVideoSearch(videoSearch.getText().toString().replace(" ", "%20"));
+                RequestQueue queue = Volley.newRequestQueue(VideoSearch.this);
+                JsonObjectRequest jsObjRequest =
+                        new JsonObjectRequest(Request.Method.GET, url, null, VideoSearch.this, VideoSearch.this);
+
+                queue.add(jsObjRequest);
+                mListViewVideo = (ListView) findViewById(R.id.video_search_list);
+                mListViewVideo.setOnItemClickListener(VideoSearch.this);
             }
         });
 
@@ -148,8 +164,11 @@ public class VideoSearch extends BaseActivity implements Response.Listener<JSONO
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+        Item item  = (Item) parent.getItemAtPosition(position);
+
         Bundle bundle = new Bundle();
-        bundle.putString(YoutubePlayVideo.VIDEO_ID, mVideosList.items.get(position).id.videoId);
+        bundle.putString(YoutubePlayVideo.VIDEO_ID,item.id.videoId);
+        bundle.putInt(YoutubePlayVideo.POSITION_ITEM,position);
         bundle.putString(YoutubePlayVideo.VIDEO_JSON, mJsonList);
         Intent intent = new Intent(this, YoutubePlayVideo.class);
         intent.putExtras(bundle);
