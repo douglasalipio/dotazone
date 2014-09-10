@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -68,7 +67,6 @@ public class HeroGridAdapter extends BaseAdapter {
         }
 
         if (id != 0) {
-            Picasso.with(mContext).load(id).into(imageView);
             imageView.setImageResource(id);
 
         }

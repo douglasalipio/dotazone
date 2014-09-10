@@ -14,7 +14,6 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
 
 public class RoundedImageView extends ImageView {
     private Context context;
@@ -22,7 +21,6 @@ public class RoundedImageView extends ImageView {
     public RoundedImageView(Context context) {
         super(context);
         this.context = context;
-        Picasso.with(context).load(this.getId()).into(this);
     }
 
     public RoundedImageView(Context context, AttributeSet attrs) {

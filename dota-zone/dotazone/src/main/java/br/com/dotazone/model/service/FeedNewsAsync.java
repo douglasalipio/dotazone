@@ -19,8 +19,7 @@ import java.util.List;
 
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.R;
-import br.com.dotazone.model.entity.youtube.Example;
-import br.com.dotazone.model.util.UrlUtils;
+import br.com.dotazone.model.entity.VideosOffline;
 import br.com.dotazone.view.activity.BaseActivity;
 import br.com.dotazone.view.adapter.FeedNewsListAdapter;
 import br.com.dotazone.view.fragment.DialogError;
@@ -45,6 +44,7 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
     }
 
     public static InputStream getInputStreamFromUrl(String url) {
+
         InputStream content = null;
         try {
             HttpClient httpclient = new DefaultHttpClient();
@@ -73,7 +73,6 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
             fragmentError.show(mActivity.getSupportFragmentManager(), "Feed");
 
         }
-
         return mRssItems;
     }
 
@@ -97,4 +96,6 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
         mProgressDialog.cancel();
         mAdapterAction.initRating();
     }
+
+
 }

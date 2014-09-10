@@ -9,8 +9,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
+
 import br.com.dotazone.R;
+import br.com.dotazone.model.entity.VideosOffline;
 import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
+import br.com.dotazone.model.util.UrlUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,9 +31,9 @@ import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
  * to handle interaction events.
  * Use the {@link ChannelOfflineFragment#newInstance} factory method to
  * create an instance of this fragment.
- *
  */
-public class ChannelOfflineFragment extends Fragment {
+public class ChannelOfflineFragment extends BaseFragment implements Response.Listener<JSONObject>,
+        Response.ErrorListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -50,6 +62,7 @@ public class ChannelOfflineFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
     public ChannelOfflineFragment() {
         // Required empty public constructor
     }
@@ -61,6 +74,8 @@ public class ChannelOfflineFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        initComponents();
     }
 
     @Override
@@ -92,5 +107,28 @@ public class ChannelOfflineFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void initComponents() {
+
+        String url = UrlUtils.URL_VIDEOS_OFFLINE;
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        JsonObjectRequest jsObjRequest =
+                new JsonObjectRequest(Request.Method.GET, url, null, this, this);
+
+        queue.add(jsObjRequest);
+
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError volleyError) {
+
+    }
+
+    @Override
+    public void onResponse(JSONObject jsonObject) {
+
+        VideosOffline videosOffline = new Gson().fromJson(jsonObject.toString(), VideosOffline.class);
     }
 }

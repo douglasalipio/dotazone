@@ -20,7 +20,6 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.analytics.GoogleAnalytics;
-import com.squareup.picasso.Picasso;
 
 import br.com.dotazone.DotaZoneApplication;
 import br.com.dotazone.DotaZoneBrain;
@@ -119,8 +118,6 @@ public class HeroProfileActivity extends BaseActivity implements OnClickListener
         int idImage = getResources().getIdentifier(mHero.getIdString() + "_avatar", "drawable", getPackageName());
 
         if (idImage != 0) {
-
-            Picasso.with(this).load(idImage).into(mIconHero);
             mIconHero.setImageResource(idImage);
         }
 
