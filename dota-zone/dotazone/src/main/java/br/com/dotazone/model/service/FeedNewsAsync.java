@@ -14,6 +14,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.channels.Channels;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,6 +96,28 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
         mListFragment.setListAdapter(new FeedNewsListAdapter(mListFragment.getActivity()));
         mProgressDialog.cancel();
         mAdapterAction.initRating();
+    }
+
+    private void test() {
+
+        Gson gson = new Gson();
+
+        VideosOffline videosOffline = new VideosOffline();
+        VideosOffline.Championship championship = new VideosOffline().new Championship();
+        VideosOffline.Channel channel = new VideosOffline().new Channel();
+        VideosOffline.Video video = new VideosOffline().new Video();
+        List<VideosOffline.Championship> championships = new ArrayList<VideosOffline.Championship>();
+        championships.add(championship);
+        videosOffline.channels.add(channel);
+
+        channel.mChannel = "NomadTV Dota2";
+        championship.mChampionship = "TI2014";
+        championship.mChampionShipImg = "url_img";
+        channel.championship.add(championships);
+
+
+        String json = gson.toJson(channelOffline);
+        System.out.println();
     }
 
 
