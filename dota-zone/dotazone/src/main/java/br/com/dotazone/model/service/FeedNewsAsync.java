@@ -14,13 +14,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
 import java.net.URL;
-import java.nio.channels.Channels;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.R;
-import br.com.dotazone.model.entity.VideosOffline;
+import br.com.dotazone.model.entity.VideoOffline;
 import br.com.dotazone.view.activity.BaseActivity;
 import br.com.dotazone.view.adapter.FeedNewsListAdapter;
 import br.com.dotazone.view.fragment.DialogError;
@@ -101,22 +100,34 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
     private void test() {
 
         Gson gson = new Gson();
-
-        VideosOffline videosOffline = new VideosOffline();
-        VideosOffline.Championship championship = new VideosOffline().new Championship();
-        VideosOffline.Channel channel = new VideosOffline().new Channel();
-        VideosOffline.Video video = new VideosOffline().new Video();
-        List<VideosOffline.Championship> championships = new ArrayList<VideosOffline.Championship>();
-        championships.add(championship);
-        videosOffline.channels.add(channel);
-
-        channel.mChannel = "NomadTV Dota2";
-        championship.mChampionship = "TI2014";
-        championship.mChampionShipImg = "url_img";
-        channel.championship.add(championships);
+        VideoOffline videosOffline = new VideoOffline();
+        for (int i = 0; i <= 2; i++) {
 
 
-        String json = gson.toJson(channelOffline);
+            VideoOffline.Championship championship = new VideoOffline().new Championship();
+            VideoOffline.Channel channel = new VideoOffline().new Channel();
+
+            List<VideoOffline.Championship> championships = new ArrayList<VideoOffline.Championship>();
+            championships.add(championship);
+            videosOffline.channels.add(channel);
+
+            channel.mChannel = "NomadTV Dota2" + i;
+            championship.mChampionship = "TI2014" + i;
+            championship.mChampionShipImg = "url_img" + i;
+            channel.championship = championships;
+
+            for (int j = 0; i < 10; j++) {
+
+                VideoOffline.Video video = new VideoOffline().new Video();
+                video.mDateVideo = "20-10-2014";
+                video.mTitleVideo = "Navi vc Newbee";
+                video.mUrlVideo = "url_video";
+                championship.mVideos.add(video);
+            }
+        }
+
+
+        String json = gson.toJson(videosOffline);
         System.out.println();
     }
 

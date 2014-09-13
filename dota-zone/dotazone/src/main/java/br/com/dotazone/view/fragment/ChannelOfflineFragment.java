@@ -20,7 +20,8 @@ import com.google.gson.Gson;
 import org.json.JSONObject;
 
 import br.com.dotazone.R;
-import br.com.dotazone.model.entity.VideosOffline;
+
+import br.com.dotazone.model.entity.VideoOffline;
 import br.com.dotazone.model.listeners.OnFragmentInteractionListener;
 import br.com.dotazone.model.util.UrlUtils;
 
@@ -129,6 +130,6 @@ public class ChannelOfflineFragment extends BaseFragment implements Response.Lis
     @Override
     public void onResponse(JSONObject jsonObject) {
 
-        VideosOffline videosOffline = new Gson().fromJson(jsonObject.toString(), VideosOffline.class);
+        VideoOffline videosOffline = new Gson().fromJson(jsonObject.toString(), VideoOffline.class);
     }
 }

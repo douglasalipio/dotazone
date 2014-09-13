@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Douglas on 24/08/2014.
+ * Created by d.alipio on 9/12/2014.
  */
-public class VideosOffline {
+public class VideoOffline {
+
 
     @SerializedName("channels")
     public List<Channel> channels = new ArrayList<Channel>();
@@ -19,7 +20,7 @@ public class VideosOffline {
         public String mChannel;
 
         @SerializedName("championship")
-        public List<Channel> championship = new ArrayList<Channel>();
+        public List<Championship> championship = new ArrayList<Championship>();
 
     }
 

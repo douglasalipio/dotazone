@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
+    <VideoView
         android:background="#FFFFFF"
-        android:id="@+id/frame_test"
+        android:id="@+id/video_offline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

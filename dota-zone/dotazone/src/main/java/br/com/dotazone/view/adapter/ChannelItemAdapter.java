@@ -13,8 +13,8 @@ import com.android.volley.toolbox.NetworkImageView;
 import java.text.ParseException;
 
 import br.com.dotazone.R;
+import br.com.dotazone.model.entity.VideoOffline;
 import br.com.dotazone.model.entity.youtube.Example;
-import br.com.dotazone.model.service.VolleySingleton;
 import br.com.dotazone.model.util.StringUtil;
 
 /**
@@ -23,21 +23,28 @@ import br.com.dotazone.model.util.StringUtil;
 public class ChannelItemAdapter extends BaseAdapter {
 
     static final int LAYOUT = R.layout.feed_video_item_virew;
-    private final Example mVideoList;
+    private Example mVideoList;
+    private VideoOffline mVideosOffline;
 
     public ChannelItemAdapter(Example videoList) {
 
         this.mVideoList = videoList;
     }
 
+    public ChannelItemAdapter(VideoOffline videoList) {
+
+        this.mVideosOffline = videoList;
+    }
+
+
     @Override
     public int getCount() {
-        return mVideoList.items.size();
+        return mVideoList.items.isEmpty() ? mVideosOffline.channels.get(0).championship.get(0).mVideos.size() : mVideoList.items.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return mVideoList.items.get(i);
+        return mVideoList.items.isEmpty() ? mVideosOffline.channels.get(0).championship.get(0).mVideos.get(i) : mVideoList.items.get(i);
     }
 
     @Override
@@ -52,33 +59,41 @@ public class ChannelItemAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(ctx).inflate(LAYOUT, null);
         }
+
         NetworkImageView img = (NetworkImageView) convertView.findViewById(R.id.banner_channel);
 
+        //Verifica qual conteúdo carregar, videos online ou videos offline;
 
-        //LinearLayout.LayoutParams param =  new LinearLayout.LayoutParams(UrlUtils.convertDpToPixel(120,
-        //      ctx.getResources()), UrlUtils.convertDpToPixel(90, ctx.getResources()));
+        if (mVideoList.items.isEmpty()) {
+            fillView(mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mTitleVideo, mVideosOffline.channels.get(0).mChannel,
+                    mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mDateVideo, ctx, convertView);
+        } else {
 
+            fillView(mVideoList.items.get(position).snippet.title, mVideoList.items.get(position).snippet.channelTitle,
+                    mVideoList.items.get(position).snippet.publishedAt, ctx, convertView);
+        }
+        return convertView;
+    }
+
+    private void fillView(String titleParam, String subTitleParam, String dateParam, Context context, View convertView) {
 
         TextView title = (TextView) convertView.findViewById(R.id.title_video_on);
-        img.setImageUrl(mVideoList.items.get(position).snippet.thumbnails.high.url, VolleySingleton.getInstance(
-                ctx).getImageLoader());
-        img.setDefaultImageResId(R.drawable.channel_thumb_default);
-        //img.setLayoutParams(param);
-        title.setText(mVideoList.items.get(position).snippet.title);
+        title.setText(titleParam);
+
         TextView subTitle = (TextView) convertView.findViewById(R.id.channel_name_on);
-        subTitle.setText(mVideoList.items.get(position).snippet.channelTitle);
+        subTitle.setText(subTitleParam);
+
         TextView date = (TextView) convertView.findViewById(R.id.date_post_channel_on);
 
-        Typeface font = Typeface.createFromAsset(ctx.getAssets(), "Roboto-Light.ttf");
+        Typeface font = Typeface.createFromAsset(context.getAssets(), "Roboto-Light.ttf");
         title.setTypeface(font);
 
         try {
-            date.setText(StringUtil.convertDate(mVideoList.items.get(position).snippet.publishedAt));
+            date.setText(StringUtil.convertDate(dateParam));
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-        return convertView;
     }
+
 
 }
