@@ -45,5 +45,6 @@ public class VideoOffline {
         public String mDateVideo;
         @SerializedName("title_video")
         public String mTitleVideo;
+        public String thumbnail;
     }
 }

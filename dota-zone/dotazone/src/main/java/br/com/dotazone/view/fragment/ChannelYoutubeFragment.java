@@ -55,7 +55,6 @@ public class ChannelYoutubeFragment extends BaseFragment implements Response.Lis
     private View mView;
     private ViewPager mPager;
     private ListView mListViewVideo;
-    private ChannelItemAdapter adapter;
     private Example mVideosList;
     private String mJsonList;
     private ProgressBar mProgressBar;
@@ -163,7 +162,7 @@ public class ChannelYoutubeFragment extends BaseFragment implements Response.Lis
 
         mJsonList = jsonObject.toString();
         mVideosList = new Gson().fromJson(mJsonList, Example.class);
-        adapter = new ChannelItemAdapter(mVideosList);
+        ChannelItemAdapter adapter = new ChannelItemAdapter(mVideosList);
         mListViewVideo.setAdapter(adapter);
         mProgressBar.setVisibility(View.INVISIBLE);
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.dotazone"
-    android:versionCode="7"
-    android:versionName="0.2.4">
+    android:versionCode="8"
+    android:versionName="0.2.5">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -82,6 +82,13 @@
         <activity
             android:name=".view.activity.VideoSearch"
             android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".view.activity.OfflinePlayVideo"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="landscape"/>
 
         <activity
             android:name=".view.activity.YoutubePlayVideo"

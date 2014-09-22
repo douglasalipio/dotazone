@@ -28,7 +28,7 @@ public class UrlUtils {
     public static final String PREFS_NAME = "DotaZone";
     public static final String DEVELOPER_KEY_YOUTUBE = "AIzaSyD2QkKGdpL8rq-4Q2d_GS7PJYVsIpcHC-I";
     private static final String CHANNEL_ID = "UCfWCxZLHj0zo_DSMKLLUD7Q";
-    public static final String URL_VIDEOS_OFFLINE = "http://storage.googleapis.com/dotazone_bucket/template_json_videos.txt";
+    public static final String URL_VIDEOS_JSON = "http://storage.googleapis.com/dotazone_bucket/template_json_videos.txt";
 
     public static String getUrlNewVideoYoutube() {
         return "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" + CHANNEL_ID + "&maxResults=10&order=date&key=" + DEVELOPER_KEY_YOUTUBE + "";

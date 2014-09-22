@@ -22,7 +22,7 @@ import br.com.dotazone.model.util.StringUtil;
  */
 public class ChannelOfflineItemAdapter extends BaseAdapter {
 
-    static final int LAYOUT = R.layout.feed_video_item_virew;
+    static final int LAYOUT = R.layout.feed_video_item_view;
     private final Example mVideoList;
 
     public ChannelOfflineItemAdapter(Example videoList) {

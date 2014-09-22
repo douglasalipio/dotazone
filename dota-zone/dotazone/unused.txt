@@ -397,13 +397,357 @@ android.support.v4.widget.ViewDragHelper:
     private static final int EDGE_SIZE
     private static final int BASE_SETTLE_DURATION
     private static final int MAX_SETTLE_DURATION
+android.support.v7.app.ActionBarActivityDelegate:
+    static final java.lang.String METADATA_UI_OPTIONS
+    static final java.lang.String UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW
+    private static final java.lang.String TAG
+android.support.v7.app.ActionBarActivityDelegateBase:
+    private static final java.lang.String TAG
+android.support.v7.app.ActionBarImplBase:
+    private android.app.Dialog mDialog
+    private android.view.View mContentView
+    private boolean mLastMenuVisibility
+    private static final int CONTEXT_DISPLAY_NORMAL
+    private static final int CONTEXT_DISPLAY_SPLIT
+    private static final int INVALID_POSITION
+    java.lang.Runnable mTabSelector
+    176:176:public boolean hasNonEmbeddedTabs()
+android.support.v7.app.ActionBarImplBase$ActionModeImpl:
+    871:871:public void onCloseMenu(android.support.v7.internal.view.menu.MenuBuilder,boolean)
+    874:883:public boolean onSubMenuSelected(android.support.v7.internal.view.menu.SubMenuBuilder)
+    887:887:public void onCloseSubMenu(android.support.v7.internal.view.menu.SubMenuBuilder)
+    890:895:public void onMenuModeChange(android.view.Menu)
+android.support.v7.app.MediaRouteActionProvider:
+    private static final java.lang.String TAG
+android.support.v7.app.MediaRouteButton:
+    private static final java.lang.String TAG
+    private static final java.lang.String CHOOSER_FRAGMENT_TAG
+    private static final java.lang.String CONTROLLER_FRAGMENT_TAG
+android.support.v7.app.MediaRouteButton$AttachCallback
+android.support.v7.app.MediaRouteControllerDialog:
+    private static final java.lang.String TAG
+android.support.v7.app.MediaRouterThemeHelper:
+    26:27:private MediaRouterThemeHelper()
+android.support.v7.internal.view.SupportMenuInflater:
+    private static final java.lang.String LOG_TAG
+    private static final java.lang.String XML_MENU
+    private static final java.lang.String XML_GROUP
+    private static final java.lang.String XML_ITEM
+    private static final int NO_ID
+android.support.v7.internal.view.SupportMenuInflater$MenuState:
+    private static final int defaultGroupId
+    private static final int defaultItemId
+    private static final int defaultItemCategory
+    private static final int defaultItemOrder
+    private static final int defaultItemCheckable
+    private static final boolean defaultItemChecked
+    private static final boolean defaultItemVisible
+    private static final boolean defaultItemEnabled
+android.support.v7.internal.view.menu.ActionMenuItem:
+    private static final int NO_ICON
+    private static final int CHECKABLE
+    private static final int CHECKED
+    private static final int EXCLUSIVE
+    private static final int HIDDEN
+    private static final int ENABLED
+android.support.v7.internal.view.menu.ActionMenuItemView:
+    private static final java.lang.String TAG
+android.support.v7.internal.view.menu.ActionMenuPresenter:
+    private static final java.lang.String TAG
+android.support.v7.internal.view.menu.ActionMenuView:
+    private static final java.lang.String TAG
+    static final int MIN_CELL_SIZE
+    static final int GENERATED_ITEM_PADDING
+android.support.v7.internal.view.menu.BaseWrapper:
+    31:31:public java.lang.Object getWrappedObject()
+android.support.v7.internal.view.menu.ListMenuItemView:
+    private static final java.lang.String TAG
+android.support.v7.internal.view.menu.ListMenuPresenter:
+    private static final java.lang.String TAG
+    163:163:int getItemIndexOffset()
+android.support.v7.internal.view.menu.MenuBuilder:
+    private static final java.lang.String TAG
+    private static final java.lang.String PRESENTER_KEY
+    private static final java.lang.String ACTION_VIEW_STATES_KEY
+    private static final java.lang.String EXPANDED_ACTION_VIEW_ID
+    1276:1277:void setOptionalIconsVisible(boolean)
+android.support.v7.internal.view.menu.MenuItemImpl:
+    private static final java.lang.String TAG
+    private static final int SHOW_AS_ACTION_MASK
+    private static final int CHECKABLE
+    private static final int CHECKED
+    private static final int EXCLUSIVE
+    private static final int HIDDEN
+    private static final int ENABLED
+    private static final int IS_ACTION
+    static final int NO_ICON
+    233:233:java.lang.Runnable getCallback()
+android.support.v7.internal.view.menu.MenuPopupHelper:
+    private static final java.lang.String TAG
+android.support.v7.internal.view.menu.SubMenuWrapperICS:
+    32:32:public android.view.SubMenu getWrappedObject()
+    25:25:public bridge synthetic java.lang.Object getWrappedObject()
+android.support.v7.internal.widget.AbsActionBarView:
+    private static final int FADE_DURATION
+android.support.v7.internal.widget.AbsSpinnerICS:
+    private android.graphics.Rect mTouchFrame
+    41:56:AbsSpinnerICS(android.content.Context)
+    59:60:AbsSpinnerICS(android.content.Context,android.util.AttributeSet)
+    254:257:public void setSelection(int,boolean)
+    275:282:void setSelectionInt(int,boolean)
+    315:315:public int getCount()
+    327:343:public int pointToPosition(int,int)
+    34:34:public bridge synthetic void setAdapter(android.widget.Adapter)
+android.support.v7.internal.widget.ActionBarContextView:
+    private static final java.lang.String TAG
+android.support.v7.internal.widget.ActionBarOverlayLayout:
+    private android.view.View mContent
+    private android.view.View mActionBarTop
+    private android.support.v7.internal.widget.ActionBarContainer mContainerView
+    private android.support.v7.internal.widget.ActionBarView mActionView
+    private android.view.View mActionBarBottom
+    71:89:private boolean applyInsets(android.view.View,android.graphics.Rect,boolean,boolean,boolean,boolean)
+    93:101:void pullChildren()
+android.support.v7.internal.widget.ActionBarView:
+    private static final java.lang.String TAG
+    private static final int DISPLAY_RELAYOUT_MASK
+    private static final int DEFAULT_CUSTOM_GRAVITY
+android.support.v7.internal.widget.ActivityChooserModel:
+    private static final boolean DEBUG
+    private static final java.lang.String TAG_HISTORICAL_RECORDS
+    private static final java.lang.String TAG_HISTORICAL_RECORD
+    private static final java.lang.String ATTRIBUTE_ACTIVITY
+    private static final java.lang.String ATTRIBUTE_TIME
+    private static final java.lang.String ATTRIBUTE_WEIGHT
+    private static final int DEFAULT_ACTIVITY_INFLATION
+    private static final float DEFAULT_HISTORICAL_RECORD_WEIGHT
+    private static final java.lang.String HISTORY_FILE_EXTENSION
+    private static final int INVALID_INDEX
+android.support.v7.internal.widget.ActivityChooserModel$DefaultSorter:
+    private static final float WEIGHT_DECAY_COEFFICIENT
+android.support.v7.internal.widget.ActivityChooserView$ActivityChooserViewAdapter:
+    public static final int MAX_ACTIVITY_COUNT_UNLIMITED
+    public static final int MAX_ACTIVITY_COUNT_DEFAULT
+    private static final int ITEM_VIEW_TYPE_ACTIVITY
+    private static final int ITEM_VIEW_TYPE_FOOTER
+    private static final int ITEM_VIEW_TYPE_COUNT
+    785:785:public int getMaxActivityCount()
+android.support.v7.internal.widget.AdapterViewICS:
+    static final int ITEM_VIEW_TYPE_IGNORE
+    static final int ITEM_VIEW_TYPE_HEADER_OR_FOOTER
+    static final int SYNC_SELECTED_POSITION
+    static final int SYNC_FIRST_POSITION
+    static final int SYNC_MAX_DURATION_MILLIS
+    android.support.v7.internal.widget.AdapterViewICS$OnItemLongClickListener mOnItemLongClickListener
+    public static final int INVALID_POSITION
+    public static final long INVALID_ROW_ID
+    67:229:AdapterViewICS(android.content.Context)
+    67:233:AdapterViewICS(android.content.Context,android.util.AttributeSet)
+    290:290:public final android.support.v7.internal.widget.AdapterViewICS$OnItemClickListener getOnItemClickListener()
+    345:349:public void setOnItemLongClickListener(android.support.v7.internal.widget.AdapterViewICS$OnItemLongClickListener)
+    356:356:public final android.support.v7.internal.widget.AdapterViewICS$OnItemLongClickListener getOnItemLongClickListener()
+    402:402:public final android.support.v7.internal.widget.AdapterViewICS$OnItemSelectedListener getOnItemSelectedListener()
+    public abstract void setAdapter(android.widget.Adapter)
+    575:580:public java.lang.Object getSelectedItem()
+    591:591:public int getCount()
+    604:624:public int getPositionForView(android.view.View)
+    634:634:public int getFirstVisiblePosition()
+    644:644:public int getLastVisiblePosition()
+    public abstract void setSelection(int)
+    659:664:public void setEmptyView(android.view.View)
+    674:674:public android.view.View getEmptyView()
+    765:766:public java.lang.Object getItemAtPosition(int)
+android.support.v7.internal.widget.AdapterViewICS$AdapterDataSetObserver:
+    843:844:public void clearSavedState()
+android.support.v7.internal.widget.LinearLayoutICS:
+    private static final int SHOW_DIVIDER_NONE
+    private static final int SHOW_DIVIDER_BEGINNING
+    private static final int SHOW_DIVIDER_MIDDLE
+    private static final int SHOW_DIVIDER_END
+android.support.v7.internal.widget.ListPopupWindow:
+    private static final java.lang.String TAG
+    private static final boolean DEBUG
+    private static final int EXPAND_LIST_TIMEOUT
+    private int mLayoutDirection
+    775:776:void setListItemExpandMax(int)
+android.support.v7.internal.widget.ListPopupWindow$DropDownListView:
+    private static final java.lang.String TAG
+    public static final int INVALID_POSITION
+    static final int NO_POSITION
+android.support.v7.internal.widget.ProgressBarICS:
+    private static final int MAX_LEVEL
+    private static final int ANIMATION_RESOLUTION
+android.support.v7.internal.widget.ScrollingTabContainerView:
+    private static final java.lang.String TAG
+android.support.v7.internal.widget.SpinnerICS:
+    private static final java.lang.String TAG
+    private static final int MAX_ITEMS_MEASURED
+    static final int MODE_DIALOG
+    static final int MODE_DROPDOWN
+    private static final int MODE_THEME
+    84:85:SpinnerICS(android.content.Context)
+    100:101:SpinnerICS(android.content.Context,int)
+    111:112:SpinnerICS(android.content.Context,android.util.AttributeSet)
+    212:219:public void setGravity(int)
+    460:461:public void setPrompt(java.lang.CharSequence)
+    468:469:public void setPromptId(int)
+    475:475:public java.lang.CharSequence getPrompt()
+    48:48:public bridge synthetic void setAdapter(android.widget.Adapter)
+android.support.v7.internal.widget.SpinnerICS$DialogPopup:
+    672:672:public java.lang.CharSequence getHintText()
+android.support.v7.internal.widget.SpinnerICS$DropdownPopup:
+    726:726:public java.lang.CharSequence getHintText()
+android.support.v7.internal.widget.SpinnerICS$SpinnerPopup:
+    public abstract java.lang.CharSequence getHintText()
+android.support.v7.media.MediaItemStatus:
+    private static final java.lang.String KEY_TIMESTAMP
+    private static final java.lang.String KEY_PLAYBACK_STATE
+    private static final java.lang.String KEY_CONTENT_POSITION
+    private static final java.lang.String KEY_CONTENT_DURATION
+    private static final java.lang.String KEY_EXTRAS
+android.support.v7.media.MediaRouteDescriptor:
+    private static final java.lang.String KEY_ID
+    private static final java.lang.String KEY_NAME
+    private static final java.lang.String KEY_DESCRIPTION
+    private static final java.lang.String KEY_ENABLED
+    private static final java.lang.String KEY_CONNECTING
+    private static final java.lang.String KEY_CONTROL_FILTERS
+    private static final java.lang.String KEY_PLAYBACK_TYPE
+    private static final java.lang.String KEY_PLAYBACK_STREAM
+    private static final java.lang.String KEY_VOLUME
+    private static final java.lang.String KEY_VOLUME_MAX
+    private static final java.lang.String KEY_VOLUME_HANDLING
+    private static final java.lang.String KEY_PRESENTATION_DISPLAY_ID
+    private static final java.lang.String KEY_EXTRAS
+android.support.v7.media.MediaRouteDiscoveryRequest:
+    private static final java.lang.String KEY_SELECTOR
+    private static final java.lang.String KEY_ACTIVE_SCAN
+android.support.v7.media.MediaRouteProvider:
+    private static final int MSG_DELIVER_DESCRIPTOR_CHANGED
+    private static final int MSG_DELIVER_DISCOVERY_REQUEST_CHANGED
+android.support.v7.media.MediaRouteProviderDescriptor:
+    private static final java.lang.String KEY_ROUTES
+android.support.v7.media.MediaRouteProviderService:
+    private static final java.lang.String TAG
+    static final int CLIENT_MSG_REGISTER
+    static final int CLIENT_MSG_UNREGISTER
+    static final int CLIENT_MSG_CREATE_ROUTE_CONTROLLER
+    static final int CLIENT_MSG_RELEASE_ROUTE_CONTROLLER
+    static final int CLIENT_MSG_SELECT_ROUTE
+    static final int CLIENT_MSG_UNSELECT_ROUTE
+    static final int CLIENT_MSG_SET_ROUTE_VOLUME
+    static final int CLIENT_MSG_UPDATE_ROUTE_VOLUME
+    static final int CLIENT_MSG_ROUTE_CONTROL_REQUEST
+    static final int CLIENT_MSG_SET_DISCOVERY_REQUEST
+    static final java.lang.String CLIENT_DATA_ROUTE_ID
+    static final java.lang.String CLIENT_DATA_VOLUME
+    static final int SERVICE_MSG_GENERIC_FAILURE
+    static final int SERVICE_MSG_GENERIC_SUCCESS
+    static final int SERVICE_MSG_REGISTERED
+    static final int SERVICE_MSG_CONTROL_REQUEST_SUCCEEDED
+    static final int SERVICE_MSG_CONTROL_REQUEST_FAILED
+    static final int SERVICE_MSG_DESCRIPTOR_CHANGED
+    static final java.lang.String SERVICE_DATA_ERROR
+    static final int CLIENT_VERSION_1
+    static final int CLIENT_VERSION_CURRENT
+    static final int SERVICE_VERSION_1
+    static final int SERVICE_VERSION_CURRENT
+    private static final int PRIVATE_MSG_CLIENT_DIED
+android.support.v7.media.MediaRouteSelector:
+    private static final java.lang.String KEY_CONTROL_CATEGORIES
+android.support.v7.media.MediaRouter:
+    private static final java.lang.String TAG
+android.support.v7.media.MediaRouter$GlobalMediaRouter:
+    1352:1359:public android.content.Context getProviderContext(java.lang.String)
+android.support.v7.media.MediaRouter$GlobalMediaRouter$CallbackHandler:
+    private static final int MSG_TYPE_MASK
+    private static final int MSG_TYPE_ROUTE
+    private static final int MSG_TYPE_PROVIDER
+    public static final int MSG_ROUTE_ADDED
+    public static final int MSG_ROUTE_REMOVED
+    public static final int MSG_ROUTE_CHANGED
+    public static final int MSG_ROUTE_VOLUME_CHANGED
+    public static final int MSG_ROUTE_PRESENTATION_DISPLAY_CHANGED
+    public static final int MSG_ROUTE_SELECTED
+    public static final int MSG_ROUTE_UNSELECTED
+    public static final int MSG_PROVIDER_ADDED
+    public static final int MSG_PROVIDER_REMOVED
+    public static final int MSG_PROVIDER_CHANGED
+android.support.v7.media.MediaRouter$ProviderInfo:
+    private android.content.res.Resources mResources
+    private boolean mResourcesNotAvailable
+    1092:1103:android.content.res.Resources getResources()
+android.support.v7.media.MediaRouter$RouteInfo:
+    static final int CHANGE_GENERAL
+    static final int CHANGE_VOLUME
+    static final int CHANGE_PRESENTATION_DISPLAY
+android.support.v7.media.MediaRouterJellybean:
+    private static final java.lang.String TAG
+    public static final int ROUTE_TYPE_LIVE_AUDIO
+    public static final int ROUTE_TYPE_LIVE_VIDEO
+    public static final int ROUTE_TYPE_USER
+    public static final int ALL_ROUTE_TYPES
+    29:417:MediaRouterJellybean()
+    58:64:public static java.util.List getCategories(java.lang.Object)
+android.support.v7.media.MediaRouterJellybeanMr1:
+    private static final java.lang.String TAG
+    30:164:MediaRouterJellybeanMr1()
+android.support.v7.media.MediaRouterJellybeanMr1$ActiveScanWorkaround:
+    private static final int WIFI_DISPLAY_SCAN_INTERVAL
+android.support.v7.media.MediaRouterJellybeanMr2:
+    19:39:MediaRouterJellybeanMr2()
+android.support.v7.media.RegisteredMediaRouteProvider:
+    private static final java.lang.String TAG
+android.support.v7.media.SystemMediaRouteProvider:
+    private static final java.lang.String TAG
+    public static final java.lang.String PACKAGE_NAME
+    public static final java.lang.String DEFAULT_ROUTE_ID
+android.support.v7.media.SystemMediaRouteProvider$LegacyImpl:
+    private static final int PLAYBACK_STREAM
+android.support.v7.media.SystemMediaRouteProvider$LegacyImpl$VolumeChangeReceiver:
+    public static final java.lang.String VOLUME_CHANGED_ACTION
+    public static final java.lang.String EXTRA_VOLUME_STREAM_TYPE
+    public static final java.lang.String EXTRA_VOLUME_STREAM_VALUE
+android.support.v7.widget.SearchView:
+    private static final boolean DBG
+    private static final java.lang.String LOG_TAG
+    private static final java.lang.String IME_OPTION_NO_MICROPHONE
+android.support.v7.widget.ShareActionProvider:
+    private static final int DEFAULT_INITIAL_ACTIVITY_COUNT
+android.support.v7.widget.SuggestionsAdapter:
+    private static final boolean DBG
+    private static final java.lang.String LOG_TAG
+    private static final int QUERY_LIMIT
+    static final int REFINE_NONE
+    static final int REFINE_BY_ENTRY
+    static final int REFINE_ALL
+    static final int INVALID_INDEX
+    124:124:public int getQueryRefinement()
+    172:174:public void close()
 br.com.dotazone.DotaZoneApplication:
     private static final java.lang.String PROPERTY_ID
 br.com.dotazone.model.entity.AdMobBanner:
     private static final java.lang.String MY_AD_UNIT_ID
     36:48:private com.google.android.gms.ads.AdView createBannerTests(android.content.Context,com.google.android.gms.ads.AdView,boolean)
+br.com.dotazone.model.service.FeedNewsAsync:
+    102:132:private void test()
+br.com.dotazone.model.util.UrlUtils:
+    private static final java.lang.String CHANNEL_ID
 br.com.dotazone.view.activity.BuyPremiumActivity:
     private android.widget.Button mBuyButton
+br.com.dotazone.view.activity.YouTubeFailureRecoveryActivity:
+    private static final int RECOVERY_DIALOG_REQUEST
+br.com.dotazone.view.adapter.ChannelItemAdapter:
+    static final int LAYOUT
+br.com.dotazone.view.adapter.ChannelOfflineItemAdapter:
+    static final int LAYOUT
+br.com.dotazone.view.fragment.ChannelOfflineFragment:
+    private static final java.lang.String ARG_PARAM1
+    private static final java.lang.String ARG_PARAM2
+    private br.com.dotazone.model.entity.youtube.Example mVideosList
+br.com.dotazone.view.fragment.ChannelYoutubeFragment:
+    private static final java.lang.String ARG_PARAM1
+    private static final java.lang.String ARG_PARAM2
 br.com.dotazone.view.fragment.HeroFragment:
     private static final java.lang.String KEY_CONTENT
 br.com.dotazone.view.fragment.ItemFragment:
@@ -417,6 +761,32 @@ com.android.vending.billing.IInAppBillingService$Stub:
     static final int TRANSACTION_consumePurchase
 com.android.vending.billing.IInAppBillingService$Stub$Proxy:
     186:186:public java.lang.String getInterfaceDescriptor()
+com.android.volley.Request:
+    private static final java.lang.String DEFAULT_PARAMS_ENCODING
+    private static final long SLOW_REQUEST_THRESHOLD_MS
+com.android.volley.RequestQueue:
+    private static final int DEFAULT_NETWORK_THREAD_POOL_SIZE
+com.android.volley.VolleyLog$MarkerLog:
+    private static final long MIN_DURATION_FOR_LOGGING_MS
+com.android.volley.toolbox.DiskBasedCache:
+    private static final int DEFAULT_DISK_USAGE_BYTES
+    private static final float HYSTERESIS_FACTOR
+    private static final int CACHE_MAGIC
+com.android.volley.toolbox.HttpClientStack:
+    private static final java.lang.String HEADER_CONTENT_TYPE
+    67:71:private static java.util.List getPostParameterPairs(java.util.Map)
+com.android.volley.toolbox.HurlStack:
+    private static final java.lang.String HEADER_CONTENT_TYPE
+com.android.volley.toolbox.ImageRequest:
+    private static final int IMAGE_TIMEOUT_MS
+    private static final int IMAGE_MAX_RETRIES
+    private static final float IMAGE_BACKOFF_MULT
+com.android.volley.toolbox.JsonRequest:
+    private static final java.lang.String PROTOCOL_CHARSET
+com.android.volley.toolbox.PoolingByteArrayOutputStream:
+    private static final int DEFAULT_SIZE
+com.android.volley.toolbox.Volley:
+    private static final java.lang.String DEFAULT_CACHE_DIR
 com.example.android.trivialdrivesample.MainActivity:
     static final java.lang.String TAG
     static final java.lang.String SKU_PREMIUM
@@ -1045,98 +1415,6 @@ com.parse.twitter.Twitter:
     private static final java.lang.String USER_ID_PARAM
     private static final java.lang.String SCREEN_NAME_PARAM
     private static final java.lang.String CALLBACK_URL
-com.squareup.picasso.AssetBitmapHunter:
-    protected static final java.lang.String ANDROID_ASSET
-com.squareup.picasso.ContactsPhotoBitmapHunter:
-    private static final int ID_LOOKUP
-    private static final int ID_THUMBNAIL
-    private static final int ID_CONTACT
-    private static final int ID_DISPLAY_PHOTO
-com.squareup.picasso.ContactsPhotoBitmapHunter$ContactPhotoStreamIcs:
-    123:123:private ContactsPhotoBitmapHunter$ContactPhotoStreamIcs()
-com.squareup.picasso.DeferredRequestCreator:
-    30:31:DeferredRequestCreator(com.squareup.picasso.RequestCreator,android.widget.ImageView)
-com.squareup.picasso.Dispatcher:
-    private static final int RETRY_DELAY
-    private static final int AIRPLANE_MODE_ON
-    private static final int AIRPLANE_MODE_OFF
-    static final int REQUEST_SUBMIT
-    static final int REQUEST_CANCEL
-    static final int REQUEST_GCED
-    static final int HUNTER_COMPLETE
-    static final int HUNTER_RETRY
-    static final int HUNTER_DECODE_FAILED
-    static final int HUNTER_DELAY_NEXT_BATCH
-    static final int HUNTER_BATCH_COMPLETE
-    static final int NETWORK_STATE_CHANGE
-    static final int AIRPLANE_MODE_CHANGE
-    private static final java.lang.String DISPATCHER_THREAD_NAME
-    private static final int BATCH_DELAY
-com.squareup.picasso.Dispatcher$NetworkBroadcastReceiver:
-    static final java.lang.String EXTRA_AIRPLANE_STATE
-com.squareup.picasso.MarkableInputStream:
-    private static final int DEFAULT_BUFFER_SIZE
-com.squareup.picasso.NetworkBitmapHunter:
-    static final int DEFAULT_RETRY_COUNT
-    private static final int MARKER
-com.squareup.picasso.OkHttpDownloader:
-    static final java.lang.String RESPONSE_SOURCE_ANDROID
-    static final java.lang.String RESPONSE_SOURCE_OKHTTP
-com.squareup.picasso.Picasso:
-    static final java.lang.String TAG
-com.squareup.picasso.PicassoDrawable:
-    private static final float FADE_DURATION
-com.squareup.picasso.PicassoExecutorService:
-    private static final int DEFAULT_THREAD_COUNT
-com.squareup.picasso.Stats:
-    private static final int CACHE_HIT
-    private static final int CACHE_MISS
-    private static final int BITMAP_DECODE_FINISHED
-    private static final int BITMAP_TRANSFORMED_FINISHED
-    private static final int DOWNLOAD_FINISHED
-    private static final java.lang.String STATS_THREAD_NAME
-com.squareup.picasso.UrlConnectionDownloader:
-    static final java.lang.String RESPONSE_SOURCE
-com.squareup.picasso.UrlConnectionDownloader$ResponseCacheIcs:
-    90:90:private UrlConnectionDownloader$ResponseCacheIcs()
-com.squareup.picasso.Utils:
-    static final java.lang.String THREAD_PREFIX
-    static final java.lang.String THREAD_IDLE_NAME
-    static final int DEFAULT_READ_TIMEOUT
-    static final int DEFAULT_CONNECT_TIMEOUT
-    private static final java.lang.String PICASSO_CACHE
-    private static final int KEY_PADDING
-    private static final int MIN_DISK_CACHE_SIZE
-    private static final int MAX_DISK_CACHE_SIZE
-    static final java.lang.String OWNER_MAIN
-    static final java.lang.String OWNER_DISPATCHER
-    static final java.lang.String OWNER_HUNTER
-    static final java.lang.String VERB_CREATED
-    static final java.lang.String VERB_CHANGED
-    static final java.lang.String VERB_IGNORED
-    static final java.lang.String VERB_ENQUEUED
-    static final java.lang.String VERB_CANCELED
-    static final java.lang.String VERB_BATCHED
-    static final java.lang.String VERB_RETRYING
-    static final java.lang.String VERB_EXECUTING
-    static final java.lang.String VERB_DECODED
-    static final java.lang.String VERB_TRANSFORMED
-    static final java.lang.String VERB_JOINED
-    static final java.lang.String VERB_REMOVED
-    static final java.lang.String VERB_DELIVERED
-    static final java.lang.String VERB_REPLAYING
-    static final java.lang.String VERB_COMPLETED
-    static final java.lang.String VERB_ERRORED
-    private static final int WEBP_FILE_HEADER_SIZE
-    private static final java.lang.String WEBP_FILE_HEADER_RIFF
-    private static final java.lang.String WEBP_FILE_HEADER_WEBP
-    97:99:private Utils()
-com.squareup.picasso.Utils$ActivityManagerHoneycomb:
-    374:374:private Utils$ActivityManagerHoneycomb()
-com.squareup.picasso.Utils$BitmapHoneycombMR1:
-    399:399:private Utils$BitmapHoneycombMR1()
-com.squareup.picasso.Utils$OkHttpLoaderCreator:
-    405:405:private Utils$OkHttpLoaderCreator()
 com.viewpagerindicator.CirclePageIndicator:
     private static final int INVALID_POINTER
 com.viewpagerindicator.IcsLinearLayout:

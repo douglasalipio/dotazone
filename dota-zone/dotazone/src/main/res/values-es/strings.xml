@@ -65,5 +65,6 @@
     <string name="error_player">Hubo un error al inicializar el YouTubePlayer (%1$s)</string>
     <string name="video_search">Ver vídeo</string>
     <string name="video_not_found">Video no encontrado</string>
+    <string name="download_video">Descargar Finalizado...</string>
 
 </resources>

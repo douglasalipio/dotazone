@@ -86,5 +86,8 @@
     <string name="video_search">Video search</string>
     <string name="title_activity_youtube_play_video">YoutubePlayVideo</string>
     <string name="video_not_found">Video not found</string>
+    <string name="download_video">download finalized...</string>
+    <string name="APP_ID">7A1DA992</string>
+    <string name="channel_nomadtv">NoMadTV</string>
 
 </resources>

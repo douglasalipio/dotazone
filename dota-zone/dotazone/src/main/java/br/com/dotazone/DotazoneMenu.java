@@ -185,6 +185,7 @@ public class DotazoneMenu implements Controllable {
         mTextMenuLanguage.setTextColor(Color.WHITE);
         mTextMenuBuild.setTextColor(Color.WHITE);
         mtextMenuAbout.setTextColor(Color.WHITE);
+        mTextMenuChannel.setTextColor(Color.RED);
     }
 
     public void defaultMenu() {
@@ -196,6 +197,8 @@ public class DotazoneMenu implements Controllable {
         mTextMenuLanguage.setTextColor(Color.WHITE);
         mTextMenuBuild.setTextColor(Color.WHITE);
         mtextMenuAbout.setTextColor(Color.WHITE);
+        mTextMenuChannel.setTextColor(Color.WHITE);
+
     }
 
     public void initComponents() {

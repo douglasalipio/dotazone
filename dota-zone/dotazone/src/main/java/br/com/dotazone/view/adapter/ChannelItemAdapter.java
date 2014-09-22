@@ -15,6 +15,7 @@ import java.text.ParseException;
 import br.com.dotazone.R;
 import br.com.dotazone.model.entity.VideoOffline;
 import br.com.dotazone.model.entity.youtube.Example;
+import br.com.dotazone.model.service.VolleySingleton;
 import br.com.dotazone.model.util.StringUtil;
 
 /**
@@ -22,7 +23,7 @@ import br.com.dotazone.model.util.StringUtil;
  */
 public class ChannelItemAdapter extends BaseAdapter {
 
-    static final int LAYOUT = R.layout.feed_video_item_virew;
+    static final int LAYOUT = R.layout.feed_video_item_view;
     private Example mVideoList;
     private VideoOffline mVideosOffline;
 
@@ -39,12 +40,12 @@ public class ChannelItemAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mVideoList.items.isEmpty() ? mVideosOffline.channels.get(0).championship.get(0).mVideos.size() : mVideoList.items.size();
+        return mVideoList == null ? mVideosOffline.channels.get(0).championship.get(0).mVideos.size() : mVideoList.items.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return mVideoList.items.isEmpty() ? mVideosOffline.channels.get(0).championship.get(0).mVideos.get(i) : mVideoList.items.get(i);
+        return mVideoList == null ? mVideosOffline.channels.get(0).championship.get(0).mVideos.get(i) : mVideoList.items.get(i);
     }
 
     @Override
@@ -61,21 +62,28 @@ public class ChannelItemAdapter extends BaseAdapter {
         }
 
         NetworkImageView img = (NetworkImageView) convertView.findViewById(R.id.banner_channel);
+        img.setDefaultImageResId(R.drawable.channel_thumb_default);
 
         //Verifica qual conteúdo carregar, videos online ou videos offline;
 
-        if (mVideoList.items.isEmpty()) {
+        if (mVideoList == null) {
             fillView(mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mTitleVideo, mVideosOffline.channels.get(0).mChannel,
-                    mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mDateVideo, ctx, convertView);
+                    mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mDateVideo, ctx, convertView, false);
+            img.setImageUrl(mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).thumbnail, VolleySingleton.getInstance(
+                    ctx).getImageLoader());
+
         } else {
 
             fillView(mVideoList.items.get(position).snippet.title, mVideoList.items.get(position).snippet.channelTitle,
-                    mVideoList.items.get(position).snippet.publishedAt, ctx, convertView);
+                    mVideoList.items.get(position).snippet.publishedAt, ctx, convertView, true);
+            img.setImageUrl(mVideoList.items.get(position).snippet.thumbnails.high.url, VolleySingleton.getInstance(
+                    ctx).getImageLoader());
+
         }
         return convertView;
     }
 
-    private void fillView(String titleParam, String subTitleParam, String dateParam, Context context, View convertView) {
+    private void fillView(String titleParam, String subTitleParam, String dateParam, Context context, View convertView, boolean convertDate) {
 
         TextView title = (TextView) convertView.findViewById(R.id.title_video_on);
         title.setText(titleParam);
@@ -88,11 +96,16 @@ public class ChannelItemAdapter extends BaseAdapter {
         Typeface font = Typeface.createFromAsset(context.getAssets(), "Roboto-Light.ttf");
         title.setTypeface(font);
 
-        try {
-            date.setText(StringUtil.convertDate(dateParam));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        if (convertDate)
+            try {
+                date.setText(StringUtil.convertDate(dateParam));
+            } catch (ParseException e) {
+                e.printStackTrace();
+                date.setText(dateParam);
+            }
+        else
+            date.setText(dateParam);
+
     }
 
 
