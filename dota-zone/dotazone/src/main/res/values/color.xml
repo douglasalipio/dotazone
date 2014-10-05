@@ -7,4 +7,7 @@
     <color name="background_language">#313234</color>
     <color name="button_payment_color_pressed">#9c371b</color>
     <color name="button_payment_color">#bd4a2a</color>
+    <color name="hover_list_view">#1d1e20</color>
+    <color name="normal_list_view">#252628</color>
+
 </resources>

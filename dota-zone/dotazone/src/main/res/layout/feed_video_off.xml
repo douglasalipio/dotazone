@@ -2,18 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#313234"
-    android:gravity="center|top"
+    android:background="#252628"
     android:orientation="vertical">
 
     <ListView
         android:layout_marginTop="10dp"
         android:id="@+id/feed_video_list_off"
-        android:layout_width="345dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="@null"
-        android:background="#252628"
-        android:dividerHeight="1dp" />
+        android:listSelector="@drawable/listselector"
+        android:dividerHeight="1dp"/>
 
 
 </LinearLayout>

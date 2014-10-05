@@ -2,6 +2,7 @@ package br.com.dotazone.view.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -140,13 +142,11 @@ public class ChannelOfflineFragment extends BaseFragment implements Response.Lis
 
     @Override
     public void onErrorResponse(VolleyError volleyError) {
-
         System.out.println();
     }
 
     @Override
     public void onResponse(JSONObject jsonObject) {
-
         VideoOffline videosOffline = new Gson().fromJson(jsonObject.toString(), VideoOffline.class);
         ChannelItemAdapter adapter = new ChannelItemAdapter(videosOffline);
         mListViewVideo.setAdapter(adapter);
@@ -157,12 +157,27 @@ public class ChannelOfflineFragment extends BaseFragment implements Response.Lis
 
         VideoOffline.Video video = (VideoOffline.Video) parent.getItemAtPosition(position);
         String fileName = video.mTitleVideo.replaceAll("\\s", "_");
+
+        //show video offline
         if (StringUtil.verifyIfExistVideo(getActivity(), fileName, "mp4")) {
             Intent intent = new Intent(getActivity(), OfflinePlayVideo.class);
-            intent.putExtra(OfflinePlayVideo.PATH_VIDEO, Environment.getExternalStorageDirectory().getAbsolutePath() + "/dotazone/video/" + fileName + "." + "mp4");
+            intent.putExtra(OfflinePlayVideo.PATH_VIDEO, Environment.getExternalStorageDirectory()
+                    .getAbsolutePath() + "/dotazone/video/" + fileName + "." + "mp4");
+
             startActivity(intent);
         } else {
-            new DownloadVideo(getActivity().getApplicationContext()).init(video.mTitleVideo, fileName, "mp4", video.mUrlVideo);
+            //retrieve values download progress.
+            final SharedPreferences settings = getActivity().getSharedPreferences(UrlUtils.PREFS_NAME, 0);
+            boolean isDownload = settings.getBoolean(String.valueOf(position), false);
+
+            //verify it's possible execute download
+            if (!isDownload) {
+                new DownloadVideo(getActivity().getApplicationContext(), String.valueOf(position)).
+                        init(video.mTitleVideo, fileName, "mp4", video.mUrlVideo, position);
+            } else {
+                Toast.makeText(getActivity(), getActivity().getString(R.string.download_video_progress)
+                        ,Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

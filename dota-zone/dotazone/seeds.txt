@@ -4820,6 +4820,8 @@ br.com.dotazone.R$color: int default_title_indicator_footer_color
 br.com.dotazone.R$color: int default_title_indicator_selected_color
 br.com.dotazone.R$color: int default_title_indicator_text_color
 br.com.dotazone.R$color: int default_underline_indicator_selected_color
+br.com.dotazone.R$color: int hover_list_view
+br.com.dotazone.R$color: int normal_list_view
 br.com.dotazone.R$color: int vpi__background_holo_dark
 br.com.dotazone.R$color: int vpi__background_holo_light
 br.com.dotazone.R$color: int vpi__bright_foreground_disabled_holo_dark
@@ -5375,6 +5377,7 @@ br.com.dotazone.R$drawable: int heroes_icon_inteligence
 br.com.dotazone.R$drawable: int heroes_icon_strenght
 br.com.dotazone.R$drawable: int heroes_skill_brightness
 br.com.dotazone.R$drawable: int hood_of_defiance_lg
+br.com.dotazone.R$drawable: int hover
 br.com.dotazone.R$drawable: int huskar
 br.com.dotazone.R$drawable: int huskar_avatar
 br.com.dotazone.R$drawable: int huskar_berserkers_blood
@@ -5498,6 +5501,7 @@ br.com.dotazone.R$drawable: int lion_finger_of_death
 br.com.dotazone.R$drawable: int lion_impale
 br.com.dotazone.R$drawable: int lion_mana_drain
 br.com.dotazone.R$drawable: int lion_voodoo
+br.com.dotazone.R$drawable: int listselector
 br.com.dotazone.R$drawable: int lone_druid
 br.com.dotazone.R$drawable: int lone_druid_avatar
 br.com.dotazone.R$drawable: int lone_druid_bg
@@ -5623,6 +5627,7 @@ br.com.dotazone.R$drawable: int night_stalker_crippling_fear
 br.com.dotazone.R$drawable: int night_stalker_darkness
 br.com.dotazone.R$drawable: int night_stalker_hunter_in_the_night
 br.com.dotazone.R$drawable: int night_stalker_void
+br.com.dotazone.R$drawable: int normal
 br.com.dotazone.R$drawable: int null_talisman_lg
 br.com.dotazone.R$drawable: int nyx_assassin
 br.com.dotazone.R$drawable: int nyx_assassin_avatar
@@ -6124,6 +6129,7 @@ br.com.dotazone.R$id: int expand_activities_button
 br.com.dotazone.R$id: int expanded_menu
 br.com.dotazone.R$id: int feed_video_list_off
 br.com.dotazone.R$id: int feed_video_on_list
+br.com.dotazone.R$id: int file_size_channel_on
 br.com.dotazone.R$id: int first_video_date
 br.com.dotazone.R$id: int first_video_title
 br.com.dotazone.R$id: int grayscale
@@ -6431,6 +6437,7 @@ br.com.dotazone.R$string: int common_signin_button_text_long
 br.com.dotazone.R$string: int copyright_dotazone
 br.com.dotazone.R$string: int copyright_valve
 br.com.dotazone.R$string: int download_video
+br.com.dotazone.R$string: int download_video_progress
 br.com.dotazone.R$string: int error_build_alert
 br.com.dotazone.R$string: int error_conection
 br.com.dotazone.R$string: int error_feed_news
@@ -7258,6 +7265,7 @@ br.com.dotazone.model.entity.VideoOffline$Video: java.lang.String mUrlVideo
 br.com.dotazone.model.entity.VideoOffline$Video: java.lang.String mDateVideo
 br.com.dotazone.model.entity.VideoOffline$Video: java.lang.String mTitleVideo
 br.com.dotazone.model.entity.VideoOffline$Video: java.lang.String thumbnail
+br.com.dotazone.model.entity.VideoOffline$Video: java.lang.String fileSize
 br.com.dotazone.model.entity.VideoOffline$Video: VideoOffline$Video(br.com.dotazone.model.entity.VideoOffline)
 br.com.dotazone.model.entity.youtube.Default
 br.com.dotazone.model.entity.youtube.Default: java.lang.String url
@@ -7321,8 +7329,8 @@ br.com.dotazone.model.service.AdapterAction: void initListItem(java.util.List)
 br.com.dotazone.model.service.AdapterAction: void initListIHero(java.util.List)
 br.com.dotazone.model.service.AdapterAction: void initRating()
 br.com.dotazone.model.service.DownloadVideo
-br.com.dotazone.model.service.DownloadVideo: DownloadVideo(android.content.Context)
-br.com.dotazone.model.service.DownloadVideo: void init(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+br.com.dotazone.model.service.DownloadVideo: DownloadVideo(android.content.Context,java.lang.String)
+br.com.dotazone.model.service.DownloadVideo: void init(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int)
 br.com.dotazone.model.service.FeedNewsAsync
 br.com.dotazone.model.service.FeedNewsAsync: FeedNewsAsync(android.support.v4.app.ListFragment,br.com.dotazone.view.activity.BaseActivity)
 br.com.dotazone.model.service.FeedNewsAsync: java.io.InputStream getInputStreamFromUrl(java.lang.String)

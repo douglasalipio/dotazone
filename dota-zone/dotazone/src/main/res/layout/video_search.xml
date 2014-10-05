@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#252628"
-    android:gravity="center|top"
     android:orientation="vertical">
 
     <LinearLayout
@@ -66,10 +65,10 @@
     <ListView
         android:layout_marginTop="10dp"
         android:id="@+id/video_search_list"
-        android:layout_width="345dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="@null"
-        android:layout_marginLeft="5dp"
+        android:listSelector="@drawable/listselector"
         android:dividerHeight="1dp"/>
 
 </LinearLayout>

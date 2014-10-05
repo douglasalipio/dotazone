@@ -41,10 +41,16 @@ public class VideoOffline {
 
         @SerializedName("url_video")
         public String mUrlVideo;
+
         @SerializedName("date_video")
         public String mDateVideo;
+
         @SerializedName("title_video")
         public String mTitleVideo;
+
         public String thumbnail;
+
+        @SerializedName("file_size")
+        public String fileSize;
     }
 }

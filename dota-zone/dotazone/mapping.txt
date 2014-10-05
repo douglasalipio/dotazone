@@ -10249,6 +10249,8 @@ br.com.dotazone.R$color -> br.com.dotazone.R$color:
     int default_title_indicator_selected_color -> default_title_indicator_selected_color
     int default_title_indicator_text_color -> default_title_indicator_text_color
     int default_underline_indicator_selected_color -> default_underline_indicator_selected_color
+    int hover_list_view -> hover_list_view
+    int normal_list_view -> normal_list_view
     int vpi__background_holo_dark -> vpi__background_holo_dark
     int vpi__background_holo_light -> vpi__background_holo_light
     int vpi__bright_foreground_disabled_holo_dark -> vpi__bright_foreground_disabled_holo_dark
@@ -10802,6 +10804,7 @@ br.com.dotazone.R$drawable -> br.com.dotazone.R$drawable:
     int heroes_icon_strenght -> heroes_icon_strenght
     int heroes_skill_brightness -> heroes_skill_brightness
     int hood_of_defiance_lg -> hood_of_defiance_lg
+    int hover -> hover
     int huskar -> huskar
     int huskar_avatar -> huskar_avatar
     int huskar_berserkers_blood -> huskar_berserkers_blood
@@ -10925,6 +10928,7 @@ br.com.dotazone.R$drawable -> br.com.dotazone.R$drawable:
     int lion_impale -> lion_impale
     int lion_mana_drain -> lion_mana_drain
     int lion_voodoo -> lion_voodoo
+    int listselector -> listselector
     int lone_druid -> lone_druid
     int lone_druid_avatar -> lone_druid_avatar
     int lone_druid_bg -> lone_druid_bg
@@ -11050,6 +11054,7 @@ br.com.dotazone.R$drawable -> br.com.dotazone.R$drawable:
     int night_stalker_darkness -> night_stalker_darkness
     int night_stalker_hunter_in_the_night -> night_stalker_hunter_in_the_night
     int night_stalker_void -> night_stalker_void
+    int normal -> normal
     int null_talisman_lg -> null_talisman_lg
     int nyx_assassin -> nyx_assassin
     int nyx_assassin_avatar -> nyx_assassin_avatar
@@ -11550,6 +11555,7 @@ br.com.dotazone.R$id -> br.com.dotazone.R$id:
     int expanded_menu -> expanded_menu
     int feed_video_list_off -> feed_video_list_off
     int feed_video_on_list -> feed_video_on_list
+    int file_size_channel_on -> file_size_channel_on
     int first_video_date -> first_video_date
     int first_video_title -> first_video_title
     int grayscale -> grayscale
@@ -11853,6 +11859,7 @@ br.com.dotazone.R$string -> br.com.dotazone.R$string:
     int copyright_dotazone -> copyright_dotazone
     int copyright_valve -> copyright_valve
     int download_video -> download_video
+    int download_video_progress -> download_video_progress
     int error_build_alert -> error_build_alert
     int error_conection -> error_conection
     int error_feed_news -> error_feed_news
@@ -12752,6 +12759,7 @@ br.com.dotazone.model.entity.VideoOffline$Video -> br.com.dotazone.model.entity.
     java.lang.String mDateVideo -> mDateVideo
     java.lang.String mTitleVideo -> mTitleVideo
     java.lang.String thumbnail -> thumbnail
+    java.lang.String fileSize -> fileSize
     br.com.dotazone.model.entity.VideoOffline this$0 -> a
 br.com.dotazone.model.entity.youtube.Default -> br.com.dotazone.model.entity.youtube.Default:
     java.lang.String url -> url
@@ -12809,14 +12817,17 @@ br.com.dotazone.model.service.DownloadVideo -> br.com.dotazone.model.service.Dow
     android.content.Context mContext -> a
     long enqueue -> b
     android.app.DownloadManager dm -> c
-    57:66:void init(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> init
-    69:73:java.lang.String createADir() -> a
-    21:21:long access$000(br.com.dotazone.model.service.DownloadVideo) -> a
-    21:21:android.app.DownloadManager access$100(br.com.dotazone.model.service.DownloadVideo) -> b
-    21:21:android.content.Context access$200(br.com.dotazone.model.service.DownloadVideo) -> c
+    59:71:void init(java.lang.String,java.lang.String,java.lang.String,java.lang.String,int) -> init
+    76:80:void saveReferenceProgressDownload(java.lang.String,boolean) -> a
+    83:87:java.lang.String createADir() -> a
+    22:22:long access$000(br.com.dotazone.model.service.DownloadVideo) -> a
+    22:22:android.app.DownloadManager access$100(br.com.dotazone.model.service.DownloadVideo) -> b
+    22:22:android.content.Context access$200(br.com.dotazone.model.service.DownloadVideo) -> c
+    22:22:void access$300(br.com.dotazone.model.service.DownloadVideo,java.lang.String,boolean) -> a
 br.com.dotazone.model.service.DownloadVideo$1 -> th:
-    br.com.dotazone.model.service.DownloadVideo this$0 -> a
-    33:48:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+    java.lang.String val$keyReferenceDownload -> a
+    br.com.dotazone.model.service.DownloadVideo this$0 -> b
+    34:50:void onReceive(android.content.Context,android.content.Intent) -> onReceive
 br.com.dotazone.model.service.FeedNewsAsync -> br.com.dotazone.model.service.FeedNewsAsync:
     java.util.ArrayList mRssItems -> a
     android.app.ProgressDialog mProgressDialog -> b
@@ -13364,8 +13375,8 @@ br.com.dotazone.view.adapter.ChannelItemAdapter -> br.com.dotazone.view.adapter.
     43:43:int getCount() -> getCount
     48:48:java.lang.Object getItem(int) -> getItem
     53:53:long getItemId(int) -> getItemId
-    59:83:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    88:109:void fillView(java.lang.String,java.lang.String,java.lang.String,android.content.Context,android.view.View,boolean) -> a
+    59:88:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    94:118:void fillView(java.lang.String,java.lang.String,java.lang.String,android.content.Context,android.view.View,boolean,java.lang.String) -> a
 br.com.dotazone.view.adapter.ChannelOfflineItemAdapter -> br.com.dotazone.view.adapter.ChannelOfflineItemAdapter:
     br.com.dotazone.model.entity.youtube.Example mVideoList -> a
     35:35:int getCount() -> getCount
@@ -13429,17 +13440,17 @@ br.com.dotazone.view.fragment.ChannelOfflineFragment -> br.com.dotazone.view.fra
     br.com.dotazone.model.listeners.OnFragmentInteractionListener mListener -> c
     android.view.View mView -> d
     android.widget.ListView mListViewVideo -> e
-    72:77:br.com.dotazone.view.fragment.ChannelOfflineFragment newInstance(java.lang.String,java.lang.String) -> newInstance
-    86:91:void onCreate(android.os.Bundle) -> onCreate
-    98:100:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    105:108:void onButtonPressed(android.net.Uri) -> onButtonPressed
-    112:119:void onAttach(android.app.Activity) -> onAttach
-    123:125:void onDetach() -> onDetach
-    130:139:void initComponents() -> initComponents
-    144:145:void onErrorResponse(com.android.volley.VolleyError) -> onErrorResponse
+    74:79:br.com.dotazone.view.fragment.ChannelOfflineFragment newInstance(java.lang.String,java.lang.String) -> newInstance
+    88:93:void onCreate(android.os.Bundle) -> onCreate
+    100:102:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    107:110:void onButtonPressed(android.net.Uri) -> onButtonPressed
+    114:121:void onAttach(android.app.Activity) -> onAttach
+    125:127:void onDetach() -> onDetach
+    132:141:void initComponents() -> initComponents
+    145:146:void onErrorResponse(com.android.volley.VolleyError) -> onErrorResponse
     150:153:void onResponse(org.json.JSONObject) -> onResponse
-    158:167:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-    47:47:void onResponse(java.lang.Object) -> onResponse
+    158:182:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    49:49:void onResponse(java.lang.Object) -> onResponse
 br.com.dotazone.view.fragment.ChannelYoutubeFragment -> br.com.dotazone.view.fragment.ChannelYoutubeFragment:
     java.lang.String mParam1 -> a
     java.lang.String mParam2 -> b

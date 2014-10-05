@@ -82,5 +82,6 @@
     <string name="video_search">Buscar Video</string>
     <string name="video_not_found">Video não encontrado</string>
     <string name="download_video">Downloading finalizado...</string>
+    <string name="download_video_progress">download in progress...</string>
 
 </resources>

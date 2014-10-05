@@ -198,7 +198,7 @@ public class LanguageActivity extends BaseActivity implements OnClickListener {
                             DotaZoneBrain.items = new ArrayList<Item>();
                             DotaZoneBrain.heroes = new ArrayList<Hero>();
                             // Commit the edits!
-                            editor.commit();
+                            editor.apply();
 
                             mLanguageText.setText(languages.get(id));
 

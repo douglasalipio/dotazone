@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.net.Uri;
 import android.widget.Toast;
@@ -24,7 +25,7 @@ public class DownloadVideo {
     private long enqueue;
     private DownloadManager dm;
 
-    public DownloadVideo(Context context) {
+    public DownloadVideo(Context context, final String keyReferenceDownload) {
 
         mContext = context;
         BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -35,13 +36,14 @@ public class DownloadVideo {
                     long downloadId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, 0);
                     DownloadManager.Query query = new DownloadManager.Query();
                     query.setFilterById(enqueue);
-                    Cursor c = dm.query(query);
+                    Cursor cursor = dm.query(query);
 
-                    if (c.moveToFirst()) {
+                    if (cursor.moveToFirst()) {
 
-                        int columnIndex = c.getColumnIndex(DownloadManager.COLUMN_STATUS);
-                        if (DownloadManager.STATUS_SUCCESSFUL == c.getInt(columnIndex)) {
+                        int columnIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                        if (DownloadManager.STATUS_SUCCESSFUL == cursor.getInt(columnIndex)) {
                             Toast.makeText(mContext, context.getString(R.string.download_video), Toast.LENGTH_SHORT).show();
+                            saveReferenceProgressDownload(keyReferenceDownload, false);
                         }
                     }
                 }
@@ -52,8 +54,11 @@ public class DownloadVideo {
 
     }
 
-    public void init(String descriptionVideo, String fileName, String extensionFile, String urlVideo) {
+    public void init(String descriptionVideo, String fileName, String extensionFile, String urlVideo, int position) {
 
+        saveReferenceProgressDownload(String.valueOf(position), true);
+
+        //execute download
         dm = (DownloadManager) mContext.getSystemService(Context.DOWNLOAD_SERVICE);
         DownloadManager.Request request = new DownloadManager.Request(
                 Uri.parse(urlVideo));
@@ -63,6 +68,15 @@ public class DownloadVideo {
         request.setTitle(descriptionVideo);
         enqueue = dm.enqueue(request);
 
+    }
+
+    private void saveReferenceProgressDownload(String key, boolean value) {
+
+        //saves the reference in the preference list item
+        SharedPreferences settings = mContext.getSharedPreferences(UrlUtils.PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean(key, value);
+        editor.apply();
     }
 
     private String createADir() {

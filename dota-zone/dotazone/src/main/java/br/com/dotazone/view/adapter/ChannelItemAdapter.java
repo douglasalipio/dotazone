@@ -67,15 +67,20 @@ public class ChannelItemAdapter extends BaseAdapter {
         //Verifica qual conteúdo carregar, videos online ou videos offline;
 
         if (mVideoList == null) {
-            fillView(mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mTitleVideo, mVideosOffline.channels.get(0).mChannel,
-                    mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mDateVideo, ctx, convertView, false);
-            img.setImageUrl(mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).thumbnail, VolleySingleton.getInstance(
+
+            fillView(mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mTitleVideo,
+                    mVideosOffline.channels.get(0).mChannel,
+                    mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).mDateVideo,
+                    ctx, convertView, false, mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).fileSize);
+
+            img.setImageUrl(mVideosOffline.channels.get(0).championship.get(0).mVideos.get(position).
+                    thumbnail, VolleySingleton.getInstance(
                     ctx).getImageLoader());
 
         } else {
 
             fillView(mVideoList.items.get(position).snippet.title, mVideoList.items.get(position).snippet.channelTitle,
-                    mVideoList.items.get(position).snippet.publishedAt, ctx, convertView, true);
+                    mVideoList.items.get(position).snippet.publishedAt, ctx, convertView, true, "");
             img.setImageUrl(mVideoList.items.get(position).snippet.thumbnails.high.url, VolleySingleton.getInstance(
                     ctx).getImageLoader());
 
@@ -83,13 +88,17 @@ public class ChannelItemAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private void fillView(String titleParam, String subTitleParam, String dateParam, Context context, View convertView, boolean convertDate) {
+    private void fillView(String titleParam, String subTitleParam, String dateParam, Context context,
+                          View convertView, boolean convertDate, String fileSize) {
 
         TextView title = (TextView) convertView.findViewById(R.id.title_video_on);
         title.setText(titleParam);
 
         TextView subTitle = (TextView) convertView.findViewById(R.id.channel_name_on);
         subTitle.setText(subTitleParam);
+
+        TextView fileSizeText = (TextView) convertView.findViewById(R.id.file_size_channel_on);
+        fileSizeText.setText(fileSize);
 
         TextView date = (TextView) convertView.findViewById(R.id.date_post_channel_on);
 
