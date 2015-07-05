@@ -4,13 +4,11 @@ android {
     compileSdkVersion 14
     buildToolsVersion "20.0.0"
 
-    defaultConfig {
-        applicationId "nl.matshofman.saxrssreader"
-    }
+
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
