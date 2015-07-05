@@ -15,6 +15,7 @@ public class DotaZoneBrain {
     public static List<Item> items = new ArrayList<Item>();
     public static List<Hero> heroes = new ArrayList<Hero>();
     public static Hero hero;
-    public static boolean isPremium;
+    //TODO Issue https://github.com/douglasalipio/dotazone/issues/2
+    public static boolean isPremium = true;
 
 }

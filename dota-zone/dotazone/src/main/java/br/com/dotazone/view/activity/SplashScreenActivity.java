@@ -112,7 +112,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
             SharedPreferences.Editor editor = settings.edit();
             editor.putBoolean(LanguageActivity.IS_LANGUAGE_SELECTED, true);
             editor.putString(LanguageActivity.LANGUAGE_KEY, languageSelected);
-            editor.commit();
+            editor.apply();
             verifyPremiunUser();
 
         }
@@ -179,10 +179,11 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
 
     private boolean verifyDeveloperPayload(Purchase premiumPurchase) {
 
-        if (premiumPurchase.getSku().equals(BillingUtils.PREMIUM))
-            return true;
+        //TODO ISSUE https://github.com/douglasalipio/dotazone/issues/2
+       // if (premiumPurchase.getSku().equals(BillingUtils.PREMIUM))
+       //     return true;
 
-        return false;
+        return true;
     }
 
     private void verifyPremiunUser() {
@@ -198,7 +199,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
             // esse metodo é invocado quando o setup termina
             public void onIabSetupFinished(IabResult result) {
                 if (!result.isSuccess()) {
-                    Log.e(DotaZoneBrain.TAG, "Erro verify premiun user");
+                    Log.e(DotaZoneBrain.TAG, "Error verify premium user");
                     return;
                 }
 
@@ -215,6 +216,6 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
 
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt(DotaZoneBrain.RATING_DOTA_ZONE, rating + 1);
-        editor.commit();
+        editor.apply();
     }
 }
