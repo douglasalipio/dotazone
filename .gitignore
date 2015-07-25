@@ -16,6 +16,9 @@ gen/
 .gradle/
 build/
 .idea/
+dota-zone/dotazone/class_file.txt
+dota-zone/dotazone/mapping.txt
+dota-zone/dotazone/seeds.txt
 
 
 # Local configuration file (sdk path, etc)
