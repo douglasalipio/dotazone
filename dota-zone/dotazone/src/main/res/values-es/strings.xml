@@ -29,7 +29,7 @@
     <string name="about_description_artwork">Envía tu arte de héroes Dota 2 y tal vez tu trabajo pueda aparecer en la pantalla Splash de la aplicación DotaZone con tus créditos. Enviar a</string>
     <string name="copyright_dotazone">DotaZone es una aplicación independiente para Android y su marca y concepto son propiedad de sus dueños.</string>
     <string name="copyright_valve">Dota 2 es una marca comercial registrada de Valve Corporation. Todas las imágenes y nombres del juego son propiedad de Valve y esta aplicación no está afiliada con Valve Corporation.</string>
-    <string name="loading_dialog">Cargando...</string>
+    <string name="loading_dialog">Cargando…</string>
     <string name="option_no">Cancelar</string>
     <string name="splesh_button">Confirmar</string>
     <string name="splesh_copyright">DOTA 2 ES UNA MARCA REGISTRADA DE VALVE CORPORATION. TODAS LAS IMÁGENES Y NOMBRES DEL JUEGOS SON PROPIEDAD DE VALVE Y ESTA APLICACIÓN NO ESTÁ AFILIADA A VALVE CORPORATION.</string>
@@ -56,7 +56,7 @@
     <string name="save_settings">Guardar</string>
     <string name="selected_fail">selecciona una opción válida</string>
     <string name="language_description">Es necesario reiniciar la aplicación. ¿Quieres hacerlo?</string>
-    <string name="loading">Cargando...</string>
+    <string name="loading">Cargando…</string>
     <string name="payment_remove_ad">Eliminar anuncio</string>
     <string name="payment_redeem_code">Canjear código</string>
     <string name="channel">Canales</string>
@@ -65,7 +65,8 @@
     <string name="error_player">Hubo un error al inicializar el YouTubePlayer (%1$s)</string>
     <string name="video_search">Ver vídeo</string>
     <string name="video_not_found">Video no encontrado</string>
-    <string name="download_video">Descargar Finalizado...</string>
-    <string name="download_video_progress">download in progress...</string>
+    <string name="download_video">Descargar Finalizado…</string>
+    <string name="download_video_progress">download in progress…</string>
+    <string name="wating_roshan">Esperando Roshan…</string>
 
 </resources>
