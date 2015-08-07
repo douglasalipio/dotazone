@@ -18,6 +18,7 @@ import br.com.dotazone.view.activity.AboutActivity;
 import br.com.dotazone.view.activity.LanguageActivity;
 import br.com.dotazone.view.activity.MainActivity;
 import br.com.dotazone.view.activity.PaymentActivity;
+import br.com.dotazone.view.activity.RoshanActivity;
 import br.com.dotazone.view.activity.TabActivity;
 import br.com.dotazone.view.activity.TabChannel;
 
@@ -37,6 +38,7 @@ public class DotazoneMenu implements Controllable {
     private TextView mTextMenuLanguage;
     private TextView mTextMenuBuild;
     private TextView mTextMenuChannel;
+    private TextView mTextMenuRoshan;
     private FragmentActivity mActivity;
     private TextView mtextMenuAbout;
     private Button mPaymentButton;
@@ -89,6 +91,9 @@ public class DotazoneMenu implements Controllable {
                 break;
             case 8:
                 mActivity.startActivity(new Intent(mActivity, TabChannel.class));
+                break;
+            case 9:
+                mActivity.startActivity(new Intent(mActivity, RoshanActivity.class));
                 break;
 
             default:
@@ -188,6 +193,19 @@ public class DotazoneMenu implements Controllable {
         mTextMenuChannel.setTextColor(Color.RED);
     }
 
+    public void checkRoshanlMenu() {
+        mTextMenuItems.setTextColor(Color.WHITE);
+        mTextMenuHero.setTextColor(Color.WHITE);
+        mTextMenuNews.setTextColor(Color.WHITE);
+        mTextMenuInvite.setTextColor(Color.WHITE);
+        mTextMenuLanguage.setTextColor(Color.WHITE);
+        mTextMenuBuild.setTextColor(Color.WHITE);
+        mtextMenuAbout.setTextColor(Color.WHITE);
+        mTextMenuChannel.setTextColor(Color.WHITE);
+        mTextMenuRoshan.setTextColor(Color.RED);
+
+    }
+
     public void defaultMenu() {
 
         mTextMenuItems.setTextColor(Color.WHITE);
@@ -198,7 +216,7 @@ public class DotazoneMenu implements Controllable {
         mTextMenuBuild.setTextColor(Color.WHITE);
         mtextMenuAbout.setTextColor(Color.WHITE);
         mTextMenuChannel.setTextColor(Color.WHITE);
-
+        mTextMenuRoshan.setTextColor(Color.WHITE);
     }
 
     public void initComponents() {
@@ -301,6 +319,17 @@ public class DotazoneMenu implements Controllable {
             }
         });
 
+        mTextMenuRoshan = (TextView) mActivity.findViewById(R.id.textMenuRoshan);
+        mTextMenuRoshan.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                checkRoshanlMenu();
+                displayView(9);
+
+            }
+        });
+
         mtextMenuAbout.setTypeface(font);
         mTextMenuHero.setTypeface(font);
         mTextMenuItems.setTypeface(font);
@@ -309,6 +338,7 @@ public class DotazoneMenu implements Controllable {
         mTextMenuLanguage.setTypeface(font);
         mTextMenuBuild.setTypeface(font);
         mTextMenuChannel.setTypeface(font);
+        mTextMenuRoshan.setTypeface(font);
 
         mPaymentButton = (Button) mActivity.findViewById(R.id.content_drawer_buy_button);
         mPaymentButton.setOnClickListener(new OnClickListener() {

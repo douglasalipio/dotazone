@@ -122,7 +122,7 @@ public class TabActivity extends BaseActivity implements OnPageChangeListener, O
     }
 
     @Override
-    public void initComponents() {
+     public void initComponents() {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (RelativeLayout) findViewById(R.id.list_slidermenu);

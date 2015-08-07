@@ -83,7 +83,9 @@
         <activity
             android:name=".view.activity.VideoSearch"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".view.activity.RoshanActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".view.activity.OfflinePlayVideo"

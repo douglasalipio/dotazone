@@ -67,6 +67,6 @@
     <string name="video_not_found">Video no encontrado</string>
     <string name="download_video">Descargar Finalizado…</string>
     <string name="download_video_progress">download in progress…</string>
-    <string name="wating_roshan">Esperando Roshan…</string>
+    <string name="waiting_roshan">Esperando Roshan…</string>
 
 </resources>

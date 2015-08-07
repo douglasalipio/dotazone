@@ -20,6 +20,7 @@
             android:textColor="#FFFFFF"
             android:textSize="25sp" />
 
+
         <TextView
             android:id="@+id/textMenuHero"
             android:layout_width="wrap_content"
@@ -44,6 +45,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:text="@string/build_menu"
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
+        <TextView
+            android:id="@+id/textMenuRoshan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/roshan_menu"
             android:textColor="#FFFFFF"
             android:textSize="25sp" />
 
