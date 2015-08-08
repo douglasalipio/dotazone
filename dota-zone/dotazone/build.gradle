@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "br.com.dotazone"
-        minSdkVersion 14
-        targetSdkVersion 19
+        minSdkVersion 16
+        targetSdkVersion 22
 
     }
 
