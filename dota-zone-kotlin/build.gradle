@@ -1,0 +1,85 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.41'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0-alpha14'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.0.0.RC6-4"
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://www.jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+//Static code analysis for Kotlin
+detekt {
+    version = "1.0.0.RC6-4"
+    defaultProfile {
+        input = file("app/src/main/java")
+        config = file("detekt-config.yml")
+        filters = ".*/resources/.*,.*/tmp/.*"
+        output = file("reports")
+        outputName = "detekt-report"
+        baseline = file("reports/baseline.xml")
+    }
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 14
+    targetSdkVersion = 26
+    compileSdkVersion = 26
+    buildToolsVersion = '26.0.2'
+    // android support
+    supportLibraryVersion = '27.1.1'
+    supportConstraint = '1.1.0'
+    //Dependency Injection
+    dagger2Version = '2.15'
+    //test libraries
+    runnerVersion = '1.0.1'
+    espressoVersion = '3.0.1'
+    junitVersion = '4.12'
+    //RxAndroid RxJava and dependencies
+    rxAndroid = '2.0.2'
+    rxJava = '2.1.7'
+    //network and dependencies
+    rx2FastAndroidNetworking = '1.0.1'
+    retrofit = '2.3.0'
+    //OkHttp and dependencies
+    okHttp = '3.10.0'
+    interceptor = '3.9.1'
+    moshiKotlin = '1.5.0'
+    //database and dependencies
+    dbflow_version = '4.2.4'
+    sqlcipher_version = '3.5.9'
+    //parser and dependencies
+    gsonVersion = '2.8.0'
+    //Anko and dependencies
+    anko_version = '0.10.4'
+    //okhttp log and dependencies
+    okHttpLog = '3.9.1'
+    //JGit and dependencies
+    jgit = '4.11.0.201803080745-r'
+    slf4j = '1.7.25'
+    tukaani = '1.8'
+    commons = '2.6'
+}

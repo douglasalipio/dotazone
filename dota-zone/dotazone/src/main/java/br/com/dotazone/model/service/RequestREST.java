@@ -23,7 +23,6 @@ import java.net.URL;
 public class RequestREST {
 
     public String getHttpRequest(String url) throws ClientProtocolException, IOException {
-
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet(url);
         HttpResponse httpResponse = httpClient.execute(httpGet);
