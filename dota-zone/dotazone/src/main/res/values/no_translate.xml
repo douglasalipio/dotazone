@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DotaZone</string>
+    <string name="app_name">BattleZone</string>
 
     <string-array name="language_array">
         <item>Select your language</item>

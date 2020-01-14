@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
     <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
     <!--<uses-permission android:name="com.android.vending.BILLING" /> -->
     <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
@@ -22,7 +24,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -52,8 +54,8 @@
 
         <activity
             android:name=".view.activity.BuildHeroActivity"
-            android:theme="@style/page_indicator"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/page_indicator" />
         <activity
             android:name=".view.activity.BuyPremiumActivity"
             android:screenOrientation="portrait" />
@@ -65,8 +67,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.activity.TabChannel"
-            android:theme="@style/page_indicator_channel"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/page_indicator_channel" />
 
         <activity
             android:name=".view.activity.LanguageActivity"
@@ -80,17 +82,15 @@
 
         <activity
             android:name=".view.activity.OfflinePlayVideo"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
         <activity
             android:name=".view.activity.YoutubePlayVideo"
-            android:screenOrientation="nosensor"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-
-
+            android:screenOrientation="nosensor"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     </application>
 
 </manifest>
