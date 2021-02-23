@@ -28,6 +28,7 @@ import com.example.android.trivialdrivesample.util.Purchase;
 
 import java.util.List;
 
+import br.com.dotazone.BuildConfig;
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.R;
 import br.com.dotazone.model.PaymentModel;
@@ -188,7 +189,7 @@ public class SplashScreenActivity extends BaseActivity implements OnClickListene
 
     private void verifyPremiunUser() {
         // chave publica do app
-        String base64EncodedPublicKey = UrlUtils.PUBLIC_KEY;
+        String base64EncodedPublicKey = BuildConfig.DOTA_ZONE_STEAM_PUBLIC_KEY;
         mProgressBar.setVisibility(View.VISIBLE);
         mProgressBar.getIndeterminateDrawable().setColorFilter(Color.rgb(213, 50, 43), Mode.SRC_IN);
         // cria o objeto auxiliar IabHelper

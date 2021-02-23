@@ -1,21 +1,24 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion '27.0.3'
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "br.com.dotazone"
         minSdkVersion 14
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 15
         multiDexEnabled true
+
+		buildConfigField "String", "DOTA_ZONE_YOUTUBE_KEY", "\"${DOTA_ZONE_YOUTUBE_KEY}\""
+		buildConfigField "String", "DOTA_ZONE_STEAM_PUBLIC_KEY", "\"${DOTA_ZONE_STEAM_PUBLIC_KEY}\""
 
     }
 
     signingConfigs {
         test {
-            storeFile file("dotazone.keystore")
+            storeFile file("/Users/hal-9000/Documents/dotazone-kotlin/dotazone.keystore")
             storePassword "D4d42010"
             keyAlias "dotazone"
             keyPassword "D4d42010"

@@ -23,8 +23,8 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 
+import br.com.dotazone.BuildConfig;
 import br.com.dotazone.R;
-import br.com.dotazone.model.util.DeveloperKey;
 
 /**
  * An abstract activity which deals with recovering from errors which may occur during API
@@ -50,7 +50,7 @@ public abstract class YouTubeFailureRecoveryActivity extends YouTubeBaseActivity
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == RECOVERY_DIALOG_REQUEST) {
       // Retry initialization if user performed a recovery action
-      getYouTubePlayerProvider().initialize(DeveloperKey.DEVELOPER_KEY_YOUTUBE, this);
+      getYouTubePlayerProvider().initialize(BuildConfig.DOTA_ZONE_YOUTUBE_KEY, this);
     }
   }
 

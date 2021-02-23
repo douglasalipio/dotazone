@@ -15,6 +15,7 @@ import com.example.android.trivialdrivesample.util.IabHelper;
 import com.example.android.trivialdrivesample.util.IabResult;
 import com.example.android.trivialdrivesample.util.Purchase;
 
+import br.com.dotazone.BuildConfig;
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.DotazoneMenu;
 import br.com.dotazone.R;
@@ -120,7 +121,7 @@ public class PaymentActivity extends BaseActivity implements IabHelper.OnIabPurc
 
     private void paymentGooglePlay(final String sku) {
 
-        String base64EncodedPublicKey = UrlUtils.PUBLIC_KEY;
+        String base64EncodedPublicKey = BuildConfig.DOTA_ZONE_STEAM_PUBLIC_KEY;
         final int requestId = 12345;
         mHelper = new IabHelper(this, base64EncodedPublicKey);
         final String payload = "";

@@ -23,6 +23,7 @@ import com.example.android.trivialdrivesample.util.Purchase;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.viewpagerindicator.PageIndicator;
 
+import br.com.dotazone.BuildConfig;
 import br.com.dotazone.DotaZoneApplication;
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.DotazoneMenu;
@@ -517,7 +518,7 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
             public void onClick(View v) {
 
                 dialog.dismiss();
-                String base64EncodedPublicKey = UrlUtils.PUBLIC_KEY;
+                String base64EncodedPublicKey = BuildConfig.DOTA_ZONE_STEAM_PUBLIC_KEY;
                 final int requestId = 12345;
                 mHelper = new IabHelper(BuildHeroActivity.this, base64EncodedPublicKey);
                 final String payload = "";
