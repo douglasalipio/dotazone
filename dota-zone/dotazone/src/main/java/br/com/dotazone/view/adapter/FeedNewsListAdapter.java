@@ -66,7 +66,7 @@ public class FeedNewsListAdapter extends BaseAdapter implements Controllable {
         titleNews.setText(DotaZoneBrain.rssItems.get(position).getTitle());
 
         TextView hourNews = (TextView) view.findViewById(R.id.textItemHour);
-        hourNews.setText(DotaZoneBrain.rssItems.get(position).getPubDate().toGMTString());
+        hourNews.setText(DotaZoneBrain.rssItems.get(position).getPubDate());
 
         TextView descriptionNews = (TextView) view.findViewById(R.id.textItemDescription);
         descriptionNews.setText(Html.fromHtml(DotaZoneBrain.rssItems.get(position).getDescription()));

@@ -1,97 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.dotazone">
+	package="br.com.dotazone">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
-    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
-    <!--<uses-permission android:name="com.android.vending.BILLING" /> -->
-    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+	<!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+	<!--<uses-permission android:name="com.android.vending.BILLING" /> -->
+	<!--<uses-permission android:name="android.permission.GET_ACCOUNTS" />-->
 
-    <application
-        android:name=".DotaZoneApplication"
-        android:allowBackup="true"
-        android:icon="@drawable/icon_dotazone"
-        android:label="@string/app_name"
-        android:largeHeap="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".view.activity.SplashScreenActivity"
-            android:label="@string/app_name"
-            android:noHistory="true"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".view.activity.TabActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/page_indicator" />
-        <activity
-            android:name=".view.activity.HeroProfileActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".view.activity.HeroBiographActivity" />
-        <activity
-            android:name=".view.activity.MainActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
+	<application
+		android:name=".DotaZoneApplication"
+		android:allowBackup="true"
+		android:icon="@drawable/icon_dotazone"
+		android:label="@string/app_name"
+		android:usesCleartextTraffic="true"
+		android:largeHeap="true"
+		android:theme="@style/AppTheme">
+		<activity
+			android:name=".view.activity.SplashScreenActivity"
+			android:label="@string/app_name"
+			android:noHistory="true"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<action android:name="android.intent.action.VIEW" />
 
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <!-- Google Analytics Version v4 needs this value for easy tracking -->
-        <meta-data
-            android:name="com.google.android.gms.analytics.globalConfigResource"
-            android:resource="@xml/global_tracker" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".view.activity.TabActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/page_indicator" />
+		<activity
+			android:name=".view.activity.HeroProfileActivity"
+			android:screenOrientation="portrait" />
+		<activity android:name=".view.activity.HeroBiographActivity" />
+		<activity
+			android:name=".view.activity.MainActivity"
+			android:screenOrientation="portrait" />
+		<activity
+			android:name="com.google.android.gms.ads.AdActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+			android:theme="@android:style/Theme.Translucent" />
 
-        <activity
-            android:name=".view.activity.BuildHeroActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/page_indicator" />
-        <activity
-            android:name=".view.activity.BuyPremiumActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.activity.AboutActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.activity.PaymentActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.activity.TabChannel"
-            android:screenOrientation="portrait"
-            android:theme="@style/page_indicator_channel" />
+		<meta-data
+			android:name="com.google.android.gms.version"
+			android:value="@integer/google_play_services_version" />
+		<!-- Google Analytics Version v4 needs this value for easy tracking -->
+		<meta-data
+			android:name="com.google.android.gms.analytics.globalConfigResource"
+			android:resource="@xml/global_tracker" />
 
-        <activity
-            android:name=".view.activity.LanguageActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:color/transparent" />
+		<activity
+			android:name=".view.activity.BuildHeroActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/page_indicator" />
+		<activity
+			android:name=".view.activity.BuyPremiumActivity"
+			android:screenOrientation="portrait" />
+		<activity
+			android:name=".view.activity.AboutActivity"
+			android:screenOrientation="portrait" />
+		<activity
+			android:name=".view.activity.PaymentActivity"
+			android:screenOrientation="portrait" />
+		<activity
+			android:name=".view.activity.TabChannel"
+			android:screenOrientation="portrait"
+			android:theme="@style/page_indicator_channel" />
 
-        <activity
-            android:name=".view.activity.VideoSearch"
-            android:screenOrientation="portrait" />
+		<activity
+			android:name=".view.activity.LanguageActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:color/transparent" />
+
+		<activity
+			android:name=".view.activity.VideoSearch"
+			android:screenOrientation="portrait" />
 
 
-        <activity
-            android:name=".view.activity.OfflinePlayVideo"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+		<activity
+			android:name=".view.activity.OfflinePlayVideo"
+			android:configChanges="orientation|screenSize|keyboardHidden"
+			android:screenOrientation="landscape"
+			android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
 
-        <activity
-            android:name=".view.activity.YoutubePlayVideo"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="nosensor"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-    </application>
+		<activity
+			android:name=".view.activity.YoutubePlayVideo"
+			android:configChanges="orientation|screenSize|keyboardHidden"
+			android:screenOrientation="nosensor"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+		<uses-library
+			android:name="org.apache.http.legacy"
+			android:required="false" />
+
+	</application>
 
 </manifest>
 

@@ -6,6 +6,11 @@ import android.support.v4.app.ListFragment;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.parse.Parse;
+import com.prof.rssparser.Article;
+import com.prof.rssparser.Channel;
+import com.prof.rssparser.OnTaskCompleted;
+import com.prof.rssparser.Parser;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -14,6 +19,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,6 +68,7 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
         URL url;
         try {
             url = new URL("http://blog.dota2.com/feed/");
+
             RssFeed feed = RssReader.read(url);
             mRssItems = feed.getRssItems();
 
@@ -90,8 +97,8 @@ public class FeedNewsAsync extends AsyncTask<Void, Void, List<RssItem>> {
     protected void onPostExecute(List<RssItem> result) {
         super.onPostExecute(result);
 
-        DotaZoneBrain.rssItems = new ArrayList<RssItem>();
-        DotaZoneBrain.rssItems = result;
+//        DotaZoneBrain.rssItems = new ArrayList<RssItem>();
+//        DotaZoneBrain.rssItems = result;
         mListFragment.setListAdapter(new FeedNewsListAdapter(mListFragment.getActivity()));
         mProgressDialog.cancel();
         mAdapterAction.initRating();
