@@ -1,3 +1,2 @@
 include ':volley'
 include ':dotazone'
-include ':trivialdrivesample'

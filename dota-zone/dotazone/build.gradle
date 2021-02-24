@@ -35,7 +35,6 @@ android {
 
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        implementation project(':trivialdrivesample')
         implementation files('libs/YouTubeAndroidPlayerApi.jar')
 		implementation 'com.google.code.gson:gson:2.8.6'
 		implementation 'androidx.legacy:legacy-support-v4'

@@ -58,14 +58,8 @@
 			android:name=".view.activity.BuildHeroActivity"
 			android:screenOrientation="portrait"
 			android:theme="@style/page_indicator" />
-		<activity
-			android:name=".view.activity.BuyPremiumActivity"
-			android:screenOrientation="portrait" />
-		<activity
+        <activity
 			android:name=".view.activity.AboutActivity"
-			android:screenOrientation="portrait" />
-		<activity
-			android:name=".view.activity.PaymentActivity"
 			android:screenOrientation="portrait" />
 		<activity
 			android:name=".view.activity.TabChannel"

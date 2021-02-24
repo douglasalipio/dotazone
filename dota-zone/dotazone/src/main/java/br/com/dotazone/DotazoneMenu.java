@@ -12,12 +12,10 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import br.com.dotazone.model.billing.FeaturePremium;
 import br.com.dotazone.model.listeners.Controllable;
 import br.com.dotazone.view.activity.AboutActivity;
 import br.com.dotazone.view.activity.LanguageActivity;
 import br.com.dotazone.view.activity.MainActivity;
-import br.com.dotazone.view.activity.PaymentActivity;
 import br.com.dotazone.view.activity.TabActivity;
 import br.com.dotazone.view.activity.TabChannel;
 
@@ -315,17 +313,11 @@ public class DotazoneMenu implements Controllable {
 
             @Override
             public void onClick(View v) {
-
-
-                mActivity.startActivity(new Intent(mActivity, PaymentActivity.class));
-
+                //mActivity.startActivity(new Intent(mActivity, PaymentActivity.class));
             }
         });
 
         defaultItemSelected();
-
-        FeaturePremium featurePremium = new FeaturePremium(mActivity);
-        featurePremium.unlockOrLockAdPro(mPaymentButton, mFrameAdPro, DotaZoneBrain.isPremium);
     }
 
     @Override
