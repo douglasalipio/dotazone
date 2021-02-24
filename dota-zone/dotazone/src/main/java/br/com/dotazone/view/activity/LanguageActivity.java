@@ -5,8 +5,8 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.widget.DrawerLayout;
+import androidx.fragment.app.DialogFragment;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
@@ -25,7 +25,6 @@ import br.com.dotazone.R;
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
 import br.com.dotazone.model.util.UrlUtils;
-import nl.matshofman.saxrssreader.RssItem;
 
 public class LanguageActivity extends BaseActivity implements OnClickListener {
 

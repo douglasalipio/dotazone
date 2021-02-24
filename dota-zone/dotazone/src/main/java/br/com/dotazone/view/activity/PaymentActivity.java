@@ -2,7 +2,7 @@ package br.com.dotazone.view.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
+import androidx.drawerlayout.widget.DrawerLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +21,6 @@ import br.com.dotazone.DotazoneMenu;
 import br.com.dotazone.R;
 import br.com.dotazone.model.PaymentModel;
 import br.com.dotazone.model.billing.BillingUtils;
-import br.com.dotazone.model.util.UrlUtils;
 
 /**
  * Created by Douglas on 12/08/2014.

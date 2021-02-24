@@ -1,6 +1,6 @@
 package br.com.dotazone.view.fragment;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import br.com.dotazone.model.listeners.Initializable;
 

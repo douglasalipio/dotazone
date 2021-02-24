@@ -2,8 +2,7 @@ package br.com.dotazone.view.fragment;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.ListFragment;
-import android.util.Log;
+import androidx.fragment.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +22,7 @@ import br.com.dotazone.model.entity.AdMobBanner;
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
 import br.com.dotazone.model.service.AdapterAction;
-import br.com.dotazone.model.service.FeedNewsAsync;
 import br.com.dotazone.model.util.UtilActivity;
-import br.com.dotazone.view.activity.MainActivity;
 import br.com.dotazone.view.adapter.FeedNewsListAdapter;
 
 public class FeedNewsFragment extends ListFragment implements AdapterAction {

@@ -7,7 +7,6 @@ import java.util.List;
 
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
-import nl.matshofman.saxrssreader.RssItem;
 
 public class DotaZoneBrain {
 

@@ -3,7 +3,7 @@ package br.com.dotazone.model.service;
 import android.app.ProgressDialog;
 import android.content.res.AssetManager;
 import android.os.AsyncTask;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 
 import org.json.JSONArray;

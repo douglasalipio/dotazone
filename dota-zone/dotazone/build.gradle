@@ -47,7 +47,6 @@ android {
 
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
-        implementation project(':sAXRSSReader')
         implementation project(':trivialdrivesample')
         implementation files('libs/YouTubeAndroidPlayerApi.jar')
         implementation files('libs/gson-2.3.jar')

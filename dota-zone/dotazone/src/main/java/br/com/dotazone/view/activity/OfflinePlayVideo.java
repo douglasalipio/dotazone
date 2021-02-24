@@ -2,8 +2,8 @@ package br.com.dotazone.view.activity;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.media.MediaRouteSelector;
-import android.support.v7.media.MediaRouter;
+import androidx.mediarouter.media.MediaRouteSelector;
+import androidx.mediarouter.media.MediaRouter;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
