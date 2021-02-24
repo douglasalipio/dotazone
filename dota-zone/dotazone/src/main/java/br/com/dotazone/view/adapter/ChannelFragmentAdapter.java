@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import br.com.dotazone.R;
 import br.com.dotazone.view.fragment.ChannelOfflineFragment;
-import br.com.dotazone.view.fragment.ChannelYoutubeFragment;
 
 /**
  * Created by Douglas on 24/08/2014.
@@ -28,9 +27,9 @@ public class ChannelFragmentAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        if (position == 0)
-            return ChannelYoutubeFragment.newInstance("", "");
-        else
+//        if (position == 0)
+//            return ChannelYoutubeFragment.newInstance("", "");
+//        else
             return ChannelOfflineFragment.newInstance("", "");
 
     }

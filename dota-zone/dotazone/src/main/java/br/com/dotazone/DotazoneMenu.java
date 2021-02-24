@@ -17,7 +17,7 @@ import br.com.dotazone.view.activity.AboutActivity;
 import br.com.dotazone.view.activity.LanguageActivity;
 import br.com.dotazone.view.activity.MainActivity;
 import br.com.dotazone.view.activity.TabActivity;
-import br.com.dotazone.view.activity.TabChannel;
+
 
 public class DotazoneMenu implements Controllable {
 
@@ -85,9 +85,9 @@ public class DotazoneMenu implements Controllable {
             case 7:
                 mActivity.startActivity(new Intent(mActivity, AboutActivity.class));
                 break;
-            case 8:
-                mActivity.startActivity(new Intent(mActivity, TabChannel.class));
-                break;
+//            case 8:
+//                mActivity.startActivity(new Intent(mActivity, TabChannel.class));
+//                break;
 
             default:
                 break;

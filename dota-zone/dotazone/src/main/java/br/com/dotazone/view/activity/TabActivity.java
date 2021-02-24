@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.analytics.GoogleAnalytics;
-import com.viewpagerindicator.TabPageIndicator;
+import com.google.android.material.tabs.TabLayout;
 
 import br.com.dotazone.DotaZoneApplication;
 import br.com.dotazone.DotaZoneBrain;
@@ -135,9 +135,9 @@ public class TabActivity extends BaseActivity implements OnPageChangeListener, O
         ViewPager pager = (ViewPager) findViewById(R.id.tab_view_pager);
         adView = (AdView) findViewById(R.id.tab_view_admob);
         setAdapterPage(pager);
-        TabPageIndicator indicator = (TabPageIndicator) findViewById(R.id.indicator);
-        indicator.setViewPager(pager);
-        indicator.setOnPageChangeListener(this);
+        TabLayout indicator = (TabLayout) findViewById(R.id.indicator);
+        indicator.setupWithViewPager(pager);
+        //indicator.setOnPageChangeListener(this);
         new AdMobBanner().createBanner(this, adView, DotaZoneBrain.isPremium);
 
     }

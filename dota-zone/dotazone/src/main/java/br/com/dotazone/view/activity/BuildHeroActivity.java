@@ -17,11 +17,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.analytics.GoogleAnalytics;
-import com.viewpagerindicator.PageIndicator;
+import com.google.android.material.tabs.TabLayout;
 
-import br.com.dotazone.BuildConfig;
 import br.com.dotazone.DotaZoneApplication;
 import br.com.dotazone.DotaZoneBrain;
 import br.com.dotazone.DotazoneMenu;
@@ -188,10 +186,10 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
 		mTextIncArmor = (TextView) findViewById(R.id.hero_text_attribute_add_armor);
 
 		ViewPager viewPager = (ViewPager) findViewById(R.id.build_item_pager);
-		PageIndicator indicator = (PageIndicator) findViewById(R.id.indicator_build_hero);
+		TabLayout indicator = (TabLayout) findViewById(R.id.indicator_build_hero);
 		ItemAdapter itemAdapter = new ItemAdapter(getSupportFragmentManager(), this);
 		viewPager.setAdapter(itemAdapter);
-		indicator.setViewPager(viewPager);
+		indicator.setupWithViewPager(viewPager);
 
 		String nameHero = mHero.getName().replace("_", " ");
 		mTextHeroName.setText(nameHero);

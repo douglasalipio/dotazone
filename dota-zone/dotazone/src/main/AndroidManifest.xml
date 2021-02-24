@@ -19,6 +19,7 @@
 		android:largeHeap="true"
 		android:theme="@style/AppTheme">
 		<activity
+
 			android:name=".view.activity.SplashScreenActivity"
 			android:label="@string/app_name"
 			android:noHistory="true"
@@ -33,7 +34,7 @@
 		<activity
 			android:name=".view.activity.TabActivity"
 			android:screenOrientation="portrait"
-			android:theme="@style/page_indicator" />
+			/>
 		<activity
 			android:name=".view.activity.HeroProfileActivity"
 			android:screenOrientation="portrait" />
@@ -57,14 +58,14 @@
 		<activity
 			android:name=".view.activity.BuildHeroActivity"
 			android:screenOrientation="portrait"
-			android:theme="@style/page_indicator" />
+			 />
         <activity
 			android:name=".view.activity.AboutActivity"
 			android:screenOrientation="portrait" />
 		<activity
 			android:name=".view.activity.TabChannel"
 			android:screenOrientation="portrait"
-			android:theme="@style/page_indicator_channel" />
+			 />
 
 		<activity
 			android:name=".view.activity.LanguageActivity"

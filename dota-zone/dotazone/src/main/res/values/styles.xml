@@ -1,19 +1,12 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.-->
     <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.-->
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+		<item name="tabStyle">@style/AppTheme.TabLayout</item>
+	</style>
 
     <style name="Item">
         <item name="android:layout_width">match_parent</item>
@@ -27,7 +20,7 @@
     </style>
 
     <style name="text_title">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#EDEDED</item>
         <item name="android:gravity">center</item>
@@ -45,23 +38,23 @@
     </style>
 
     <style name="layout_fill">
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
     <style name="layout_f_w">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="h_line">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1.5dip</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
 
     <style name="indicator_style">
-        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">4dip</item>
         <item name="android:background">#DA4923</item>
         <item name="android:orientation">vertical</item>
@@ -88,29 +81,9 @@
         <item name="android:windowBackground">@drawable/pixel</item>
     </style>
 
-    <!-- final style dialog -->
-
-    <style name="page_indicator" parent="Theme.PageIndicatorDefaults">
-        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
-    </style>
-
-    <style name="page_indicator_channel" parent="Theme.PageIndicatorDefaults">
-        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
-    </style>
-
-    <style name="Theme.PageIndicatorDefaults" parent="android:Theme.Holo">
-        <item name="vpiIconPageIndicatorStyle">@style/Widget.IconPageIndicator</item>
-        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
-    </style>
-
-    <style name="Widget.TabPageIndicator" parent="Widget">
-        <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/vpi__tab_indicator</item>
-        <item name="android:paddingTop">12dp</item>
-        <item name="android:paddingBottom">12dp</item>
-        <item name="android:textAppearance">@style/TextAppearance.TabPageIndicator</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:maxLines">1</item>
-    </style>
+	<style name="AppTheme.TabLayout" parent="Widget.Design.TabLayout">
+		<item name="tabSelectedTextColor">@android:color/black</item>
+		<item name="tabTextColor">@android:color/black</item>
+	</style>
 
 </resources>
