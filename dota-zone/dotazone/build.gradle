@@ -8,9 +8,9 @@ android {
         applicationId "br.com.dotazone"
         minSdkVersion 14
         targetSdkVersion 30
-        versionCode 15
+        versionCode 16
         multiDexEnabled true
-
+		versionName "v1.0.5"
 		buildConfigField "String", "DOTA_ZONE_YOUTUBE_KEY", "\"${DOTA_ZONE_YOUTUBE_KEY}\""
 		buildConfigField "String", "DOTA_ZONE_STEAM_PUBLIC_KEY", "\"${DOTA_ZONE_STEAM_PUBLIC_KEY}\""
 
