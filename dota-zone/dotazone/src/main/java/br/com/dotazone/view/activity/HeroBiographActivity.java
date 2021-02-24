@@ -98,11 +98,11 @@ public class HeroBiographActivity extends BaseActivity {
 
         mHeroName = (TextView) findViewById(R.id.hero_text_name_bio);
         mHeroBio = (TextView) findViewById(R.id.hero_text_bio);
-        String nameHero = DotaZoneBrain.hero.getName().replace("_", " ");
+        String nameHero = DotaZoneBrain.INSTANCE.getHero().getName().replace("_", " ");
         mHeroName.setText(nameHero);
-        mHeroBio.setText(DotaZoneBrain.hero.getBio());
+        mHeroBio.setText(DotaZoneBrain.INSTANCE.getHero().getBio());
         adView = (AdView) findViewById(R.id.hero_bio_admob);
-        new AdMobBanner().createBanner(this, adView, DotaZoneBrain.isPremium);
+        new AdMobBanner().createBanner(this, adView, DotaZoneBrain.INSTANCE.isPremium());
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (RelativeLayout) findViewById(R.id.list_slidermenu);

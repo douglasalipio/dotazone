@@ -48,7 +48,7 @@ public class ItemGridAdapter extends BaseAdapter {
 
         View view = convertView;
 
-        Log.i(DotaZoneBrain.TAG, "name image [" + mItems.get(position).getImageName() + "]");
+        Log.i(DotaZoneBrain.INSTANCE.getTAG(), "name image [" + mItems.get(position).getImageName() + "]");
 
         int pos = mItems.get(position).getImageName().lastIndexOf('.');
         int id = mContext.getResources().getIdentifier(mItems.get(position).getImageName().substring(0, pos), "drawable",

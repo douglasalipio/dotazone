@@ -49,7 +49,7 @@ public class HeroGridAdapter extends BaseAdapter {
 
         View view = convertView;
 
-        Log.i(DotaZoneBrain.TAG, "name image [" + mHeroes.get(position).getName() + "]");
+        Log.i(DotaZoneBrain.INSTANCE.getTAG(), "name image [" + mHeroes.get(position).getName() + "]");
 
         int id = mContext.getResources().getIdentifier(mHeroes.get(position).getIdString(), "drawable", mContext.getPackageName());
 

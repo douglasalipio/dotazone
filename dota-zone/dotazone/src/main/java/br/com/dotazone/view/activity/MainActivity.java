@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
         ((DotaZoneApplication) getApplication()).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER);
 
         initComponents();
-        FeedNewsFragment fragment1 = FeedNewsFragment.newInstance();
+        FeedNewsFragment fragment1 = FeedNewsFragment.Companion.newInstance();
         if (getIntent() != null && getIntent().getExtras() != null
                 && getIntent().getExtras().getInt(MainActivity.class.getName()) == DotazoneMenu.MENU_NEWS) {
 

@@ -55,15 +55,15 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
             InputStream inputStreamItemAttrib = assetManager.open("attribs_item.txt");
             resultAttrib = UrlUtils.convertStreamToString(inputStreamItemAttrib);
             result = mRequest.getHttpRequest(UrlUtils.getUrlItem(mFragment.getActivity()));
-            if (DotaZoneBrain.items.isEmpty()) {
+            if (DotaZoneBrain.INSTANCE.getItems().isEmpty()) {
                 createItemAttrib(resultAttrib);
                 createItem(result);
             }
 
         } catch (Exception e) {
 
-            Log.e(DotaZoneBrain.TAG, "Erro ao tentar consultar o arquivo de Item.--------");
-            DialogError fragmentError = DialogError.newFragmentDialog(mFragment.getActivity().getResources()
+            Log.e(DotaZoneBrain.INSTANCE.getTAG(), "Erro ao tentar consultar o arquivo de Item.--------");
+            DialogError fragmentError = DialogError.Companion.newFragmentDialog(mFragment.getActivity().getResources()
                     .getString(R.string.error_item_connection), (BaseActivity) mFragment.getActivity(), TypeError.ONE_OPTIONS);
             // DotaZoneBrain.mItems = new ArrayList<Item>();
             fragmentError.show(mFragment.getActivity().getSupportFragmentManager(), "Item");
@@ -98,14 +98,14 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
                         mItemAttribs.add(itemAttrib);
                     } catch (JSONException e) {
 
-                        Log.e(DotaZoneBrain.TAG, "No item [" + itemAttrib.getId() + "  -]" + e);
+                        Log.e(DotaZoneBrain.INSTANCE.getTAG(), "No item [" + itemAttrib.getId() + "  -]" + e);
 
                     }
                 }
             }
 
         } catch (JSONException e) {
-            DialogError fragmentError = DialogError.newFragmentDialog(mFragment.getActivity().getResources().getString(R.string.error_json_item),
+            DialogError fragmentError = DialogError.Companion.newFragmentDialog(mFragment.getActivity().getResources().getString(R.string.error_json_item),
                     (BaseActivity) mFragment.getActivity(), TypeError.ONE_OPTIONS);
             // DotaZoneBrain.mItems = new ArrayList<Item>();
             fragmentError.show(mFragment.getActivity().getSupportFragmentManager(), "Item");
@@ -153,13 +153,13 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
                         } catch (Exception e) {
 
                             // Trata os itens que não tem um componente.
-                            Log.i(DotaZoneBrain.TAG, "no improvement items[" + item.getName() + "  -]");
+                            Log.i(DotaZoneBrain.INSTANCE.getTAG(), "no improvement items[" + item.getName() + "  -]");
                         }
 
                         if (componentsList != null) {
                             for (int i = 0; i < componentsList.length(); i++) {
                                 item.getComponents().add(componentsList.getString(i));
-                                Log.i(DotaZoneBrain.TAG, "Improvement items[" + item.getName() + "  -]");
+                                Log.i(DotaZoneBrain.INSTANCE.getTAG(), "Improvement items[" + item.getName() + "  -]");
 
                             }
                         }
@@ -168,7 +168,7 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
 
                     } catch (JSONException e) {
 
-                        Log.e(DotaZoneBrain.TAG, "No item [" + item.getName() + "  -]" + e);
+                        Log.e(DotaZoneBrain.INSTANCE.getTAG(), "No item [" + item.getName() + "  -]" + e);
 
                     }
 
@@ -177,7 +177,7 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
             }
 
         } catch (JSONException e) {
-            DialogError fragmentError = DialogError.newFragmentDialog(mFragment.getActivity().getResources().getString(R.string.error_json_item),
+            DialogError fragmentError = DialogError.Companion.newFragmentDialog(mFragment.getActivity().getResources().getString(R.string.error_json_item),
                     (BaseActivity) mFragment.getActivity(), TypeError.ONE_OPTIONS);
             // DotaZoneBrain.mItems = new ArrayList<Item>();
             fragmentError.show(mFragment.getActivity().getSupportFragmentManager(), "Item");
@@ -195,7 +195,7 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
             if (item.getImageName().equals((itemAttrib.getId() + ".png"))) {
 
                 item.setmItemAttrib(itemAttrib);
-                Log.i(DotaZoneBrain.TAG, "attribute item add-" + itemAttrib.getId());
+                Log.i(DotaZoneBrain.INSTANCE.getTAG(), "attribute item add-" + itemAttrib.getId());
                 break;
             }
         }
@@ -203,9 +203,9 @@ public class ItemAsync extends AsyncTask<Void, Void, String> {
         // Verifica se existem a imagem cadastrada no json.
         if (id > 0) {
 
-            DotaZoneBrain.items.add(item);
+            DotaZoneBrain.INSTANCE.getItems().add(item);
             //mItems.add(item);
-            Log.i(DotaZoneBrain.TAG, "adding Item [" + item.getImageName() + "]");
+            Log.i(DotaZoneBrain.INSTANCE.getTAG(), "adding Item [" + item.getImageName() + "]");
 
         }
 

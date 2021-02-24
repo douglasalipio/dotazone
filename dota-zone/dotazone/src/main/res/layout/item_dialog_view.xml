@@ -19,25 +19,25 @@
             android:layout_marginTop="10dp" />
 
         <TextView
-            android:id="@+id/text_Cost"
+            android:id="@+id/textCost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/imageItem"
             android:layout_marginBottom="4dp"
             android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@+id/image_Cost"
+            android:layout_toRightOf="@+id/imageCost"
             android:textColor="#f5c434" />
 
         <ImageView
-            android:id="@+id/image_Cost"
+            android:id="@+id/imageCost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/text_Item_name"
-            android:layout_alignTop="@+id/text_Cost"
+            android:layout_alignLeft="@+id/textItemName"
+            android:layout_alignTop="@+id/textCost"
             android:src="@drawable/items_coins" />
 
         <TextView
-            android:id="@+id/text_Item_name"
+            android:id="@+id/textItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -49,7 +49,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/image_item_cd"
+        android:id="@+id/imageItemCd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -59,21 +59,21 @@
         android:background="@drawable/items_icon_duration" />
 
     <TextView
-        android:id="@+id/text_attribute"
+        android:id="@+id/textAttribute"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/image_item_cd"
+        android:layout_below="@+id/imageItemCd"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="18dp"
         android:textColor="@color/color_text_list" />
 
     <TextView
-        android:id="@+id/text_descripion"
+        android:id="@+id/textDescription"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/text_attribute"
+        android:layout_below="@+id/textAttribute"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="18dp"
         android:paddingRight="10dp"
@@ -83,46 +83,46 @@
         android:id="@+id/line"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/text_descripion"
-        android:layout_below="@+id/text_descripion"
+        android:layout_alignLeft="@+id/textDescription"
+        android:layout_below="@+id/textDescription"
         android:layout_marginRight="18dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/items_line" />
 
     <TextView
-        android:id="@+id/text_cd_timer"
+        android:id="@+id/textCdTimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/image_item_cd"
+        android:layout_alignTop="@+id/imageItemCd"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/image_item_cd"
+        android:layout_toRightOf="@+id/imageItemCd"
         android:textColor="@color/color_text_list" />
 
     <LinearLayout
-        android:id="@+id/item_layout_components"
+        android:id="@+id/itemLayoutComponents"
         android:layout_width="233dp"
         android:layout_height="70dp"
         android:layout_below="@+id/line"
         android:layout_marginLeft="35dp"
         android:gravity="center"
-        android:orientation="horizontal"></LinearLayout>
+        android:orientation="horizontal"/>
 
     <ImageView
-        android:id="@+id/image_mana"
+        android:id="@+id/imageMana"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_attribute"
+        android:layout_above="@+id/textAttribute"
         android:layout_marginLeft="22dp"
-        android:layout_toRightOf="@+id/text_cd_timer"
+        android:layout_toRightOf="@+id/textCdTimer"
         android:background="@drawable/items_icon_mana" />
 
     <TextView
-        android:id="@+id/text_mana"
+        android:id="@+id/textMana"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/text_attribute"
+        android:layout_above="@+id/textAttribute"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/image_mana"
+        android:layout_toRightOf="@+id/imageMana"
         android:textColor="@color/color_text_list" />
 
 </RelativeLayout>

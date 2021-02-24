@@ -63,7 +63,7 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
             resultSkill = mRequest.getHttpRequest(UrlUtils.getUrlSkill(mFragment.getActivity()));
             resultAbility = mRequest.getHttpRequest(UrlUtils.getUrlAbility(mFragment.getActivity()));
 
-            if (DotaZoneBrain.heroes.isEmpty()) {
+            if (DotaZoneBrain.INSTANCE.getHeroes().isEmpty()) {
                 createHero(resultHero);
                 createSkill(resultSkill);
                 createAbility(resultAbility);
@@ -72,10 +72,10 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
 
         } catch (Exception e) {
 
-            Log.e(DotaZoneBrain.TAG, "Erro ao tentar consultar o arquivo de Hero.--------");
+            Log.e(DotaZoneBrain.INSTANCE.getTAG(), "Erro ao tentar consultar o arquivo de Hero.--------");
             e.printStackTrace();
 
-            DialogError fragmentError = DialogError.newFragmentDialog(mFragment.getActivity().getResources()
+            DialogError fragmentError = DialogError.Companion.newFragmentDialog(mFragment.getActivity().getResources()
                     .getString(R.string.error_hero_connection), (BaseActivity) mFragment.getActivity(), TypeError.ONE_OPTIONS);
             // DotaZoneBrain.mHeroes = new ArrayList<Hero>();
             fragmentError.show(mFragment.getActivity().getSupportFragmentManager(), "Hero");
@@ -128,7 +128,7 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
 
             }
 
-            DotaZoneBrain.heroes = this.mHeroes;
+            DotaZoneBrain.INSTANCE.setHeroes(this.mHeroes);
 
         }
     }
@@ -200,7 +200,7 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
                         mAbilities.add(ability);
 
                     } catch (JSONException e) {
-                        Log.e(DotaZoneBrain.TAG, "No ability [" + ability.getName() + "  -]" + e);
+                        Log.e(DotaZoneBrain.INSTANCE.getTAG(), "No ability [" + ability.getName() + "  -]" + e);
                         errorMessengerJSON();
                     }
 
@@ -217,7 +217,7 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
 
     private void errorMessengerJSON() {
 
-        DialogError fragmentError = DialogError.newFragmentDialog(mFragment.getActivity().getResources().getString(R.string.error_json_hero),
+        DialogError fragmentError = DialogError.Companion.newFragmentDialog(mFragment.getActivity().getResources().getString(R.string.error_json_hero),
                 (BaseActivity) mFragment.getActivity(), TypeError.ONE_OPTIONS);
         // DotaZoneBrain.mHeroes = new ArrayList<Hero>();
         fragmentError.show(mFragment.getActivity().getSupportFragmentManager(), "Hero");
@@ -252,7 +252,7 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
 
                     } catch (JSONException e) {
                         errorMessengerJSON();
-                        Log.e(DotaZoneBrain.TAG, "No ability [" + skill.getdName() + "  -]" + e);
+                        Log.e(DotaZoneBrain.INSTANCE.getTAG(), "No ability [" + skill.getdName() + "  -]" + e);
                     }
 
                 }
@@ -306,13 +306,13 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
 
                         } catch (Exception e) {
                             // Trata os nos que não tem um componente.
-                            Log.e(DotaZoneBrain.TAG, "no ability hero[" + hero.getName() + "  -]");
+                            Log.e(DotaZoneBrain.INSTANCE.getTAG(), "no ability hero[" + hero.getName() + "  -]");
                         }
 
                         if (rolesList != null) {
                             for (int i = 0; i < rolesList.length(); i++) {
                                 hero.getRoles().add(rolesList.getString(i));
-                                Log.i(DotaZoneBrain.TAG, "ability hero roles add[" + hero.getName() + "  -]");
+                                Log.i(DotaZoneBrain.INSTANCE.getTAG(), "ability hero roles add[" + hero.getName() + "  -]");
 
                             }
                         }
@@ -320,7 +320,7 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
                         if (rolesLList != null) {
                             for (int i = 0; i < rolesList.length(); i++) {
                                 hero.getRolesL().add(rolesLList.getString(i));
-                                Log.i(DotaZoneBrain.TAG, "ability hero roles_l add[" + hero.getName() + "  -]");
+                                Log.i(DotaZoneBrain.INSTANCE.getTAG(), "ability hero roles_l add[" + hero.getName() + "  -]");
 
                             }
                         }
@@ -329,7 +329,7 @@ public class HeroAsync extends AsyncTask<Void, Void, String> {
 
                     } catch (JSONException e) {
                         errorMessengerJSON();
-                        Log.e(DotaZoneBrain.TAG, "No hero [" + hero.getName() + "  -]" + e);
+                        Log.e(DotaZoneBrain.INSTANCE.getTAG(), "No hero [" + hero.getName() + "  -]" + e);
                     }
 
                 }

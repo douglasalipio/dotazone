@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/linear_skill_description"
+        android:id="@+id/linearSkillDescription"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -15,7 +15,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/hero_text_skill_name"
+            android:id="@+id/heroTextSkillName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -34,6 +34,6 @@
     <View
         android:layout_width="fill_parent"
         android:layout_height="55dp"
-        android:visibility="invisible"></View>
+        android:visibility="invisible"/>
 
 </LinearLayout>

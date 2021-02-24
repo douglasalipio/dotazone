@@ -138,7 +138,7 @@ public class TabActivity extends BaseActivity implements OnPageChangeListener, O
         TabLayout indicator = (TabLayout) findViewById(R.id.indicator);
         indicator.setupWithViewPager(pager);
         //indicator.setOnPageChangeListener(this);
-        new AdMobBanner().createBanner(this, adView, DotaZoneBrain.isPremium);
+        new AdMobBanner().createBanner(this, adView, DotaZoneBrain.INSTANCE.isPremium());
 
     }
 

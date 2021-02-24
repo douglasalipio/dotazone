@@ -30,21 +30,21 @@ public class FeedNewsListAdapter extends BaseAdapter implements Controllable {
 
     @Override
     public int getCount() {
-        Log.d(DotaZoneBrain.TAG, "getCount  " + DotaZoneBrain.rssItems.size() + "");
-        return DotaZoneBrain.rssItems.size();
+        Log.d(DotaZoneBrain.INSTANCE.getTAG(), "getCount  " + DotaZoneBrain.INSTANCE.getRssItems().size() + "");
+        return DotaZoneBrain.INSTANCE.getRssItems().size();
     }
 
     @Override
     public Object getItem(int position) {
 
-        Log.d(DotaZoneBrain.TAG, "getItem  " + position + "");
-        return DotaZoneBrain.rssItems.get(position);
+        Log.d(DotaZoneBrain.INSTANCE.getTAG(), "getItem  " + position + "");
+        return DotaZoneBrain.INSTANCE.getRssItems().get(position);
     }
 
     @Override
     public long getItemId(int positionId) {
 
-        Log.d(DotaZoneBrain.TAG, "getItemId  " + positionId + "");
+        Log.d(DotaZoneBrain.INSTANCE.getTAG(), "getItemId  " + positionId + "");
         return positionId;
     }
 
@@ -63,20 +63,20 @@ public class FeedNewsListAdapter extends BaseAdapter implements Controllable {
         Typeface font = Typeface.createFromAsset(mContext.getAssets(), "Roboto-Light.ttf");
 
         TextView titleNews = (TextView) view.findViewById(R.id.textItemTitle);
-        titleNews.setText(DotaZoneBrain.rssItems.get(position).getTitle());
+        titleNews.setText(DotaZoneBrain.INSTANCE.getRssItems().get(position).getTitle());
 
         TextView hourNews = (TextView) view.findViewById(R.id.textItemHour);
-        hourNews.setText(DotaZoneBrain.rssItems.get(position).getPubDate());
+        hourNews.setText(DotaZoneBrain.INSTANCE.getRssItems().get(position).getPubDate());
 
         TextView descriptionNews = (TextView) view.findViewById(R.id.textItemDescription);
-        descriptionNews.setText(Html.fromHtml(DotaZoneBrain.rssItems.get(position).getDescription()));
+        descriptionNews.setText(Html.fromHtml(DotaZoneBrain.INSTANCE.getRssItems().get(position).getDescription()));
 
         descriptionNews.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(DotaZoneBrain.rssItems.get(position).getLink()));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(DotaZoneBrain.INSTANCE.getRssItems().get(position).getLink()));
                 mContext.startActivity(browserIntent);
 
             }

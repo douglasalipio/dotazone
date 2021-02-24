@@ -68,7 +68,7 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
 	private TextView mTextIncMove;
 	private TextView mTextIncArmor;
 	private TextView mTextHeroName;
-	private Hero mHero = DotaZoneBrain.hero;
+	private Hero mHero = DotaZoneBrain.INSTANCE.getHero();
 	private RoundedImageView mHeroIcon;
 	private DrawerLayout mDrawerLayout;
 	private RelativeLayout mDrawerList;
@@ -295,7 +295,7 @@ public class BuildHeroActivity extends BaseActivity implements OnClickListener, 
 		int pos = item.getImageName().lastIndexOf('.');
 		int idImage = getResources().getIdentifier(item.getImageName().substring(0, pos), "drawable", getPackageName());
 
-		if (DotaZoneBrain.isPremium) {
+		if (DotaZoneBrain.INSTANCE.isPremium()) {
 
 			if (!mBusySlot1 && item != null) {
 				mSlot1.setBackgroundResource(idImage);

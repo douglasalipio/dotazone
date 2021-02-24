@@ -194,8 +194,8 @@ public class LanguageActivity extends BaseActivity implements OnClickListener {
                             editor.putBoolean(IS_LANGUAGE_SELECTED, true);
                             editor.putString(LANGUAGE_KEY, languages.get(id));
                             //DotaZoneBrain.rssItems = new ArrayList<RssItem>();
-                            DotaZoneBrain.items = new ArrayList<Item>();
-                            DotaZoneBrain.heroes = new ArrayList<Hero>();
+                            DotaZoneBrain.INSTANCE.setItems(new ArrayList<Item>());
+                            DotaZoneBrain.INSTANCE.setHeroes(new ArrayList<Hero>());
                             // Commit the edits!
                             editor.apply();
 

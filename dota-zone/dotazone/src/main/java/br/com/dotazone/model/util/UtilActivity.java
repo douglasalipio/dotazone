@@ -117,14 +117,14 @@ public class UtilActivity {
         final Dialog dialog = new Dialog(context, R.style.FullHeightDialog);
         dialog.setContentView(R.layout.item_dialog_view);
 
-        TextView itemName = (TextView) dialog.findViewById(R.id.text_Item_name);
-        TextView itemAttribute = (TextView) dialog.findViewById(R.id.text_attribute);
-        TextView itemCd = (TextView) dialog.findViewById(R.id.text_cd_timer);
-        TextView itemCost = (TextView) dialog.findViewById(R.id.text_Cost);
-        TextView itemDescription = (TextView) dialog.findViewById(R.id.text_descripion);
-        TextView itemMana = (TextView) dialog.findViewById(R.id.text_mana);
+        TextView itemName = (TextView) dialog.findViewById(R.id.textItemName);
+        TextView itemAttribute = (TextView) dialog.findViewById(R.id.textAttribute);
+        TextView itemCd = (TextView) dialog.findViewById(R.id.textCdTimer);
+        TextView itemCost = (TextView) dialog.findViewById(R.id.textCost);
+        TextView itemDescription = (TextView) dialog.findViewById(R.id.textDescription);
+        TextView itemMana = (TextView) dialog.findViewById(R.id.textMana);
         ImageView itemIcon = (ImageView) dialog.findViewById(R.id.imageItem);
-        LinearLayout itemLayoutComponents = (LinearLayout) dialog.findViewById(R.id.item_layout_components);
+        LinearLayout itemLayoutComponents = (LinearLayout) dialog.findViewById(R.id.itemLayoutComponents);
 
 
         itemName.setText(item.getName());

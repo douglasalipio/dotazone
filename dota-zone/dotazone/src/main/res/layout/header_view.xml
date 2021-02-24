@@ -15,7 +15,7 @@
             android:background="@drawable/header_bg" />
 
         <TextView
-            android:id="@+id/textNews"
+            android:id="@+id/titleTextNews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -28,7 +28,7 @@
             android:id="@+id/header_imageLogo"
             android:layout_width="133dp"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/textNews"
+            android:layout_alignLeft="@+id/titleTextNews"
             android:layout_alignParentTop="true"
             android:layout_marginTop="15dp"
             android:background="@drawable/about_logo_dotazone" />

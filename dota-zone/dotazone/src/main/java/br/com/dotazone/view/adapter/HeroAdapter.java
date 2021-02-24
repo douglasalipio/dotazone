@@ -24,7 +24,7 @@ public class HeroAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        return HeroFragment.newInstance(CONTENT[position % CONTENT.length]);
+        return HeroFragment.Companion.newInstance(CONTENT[position % CONTENT.length]);
     }
 
     @Override
