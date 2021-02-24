@@ -21,7 +21,6 @@ import br.com.dotazone.R;
 import br.com.dotazone.model.entity.AdMobBanner;
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
-import br.com.dotazone.model.service.AdapterAction;
 import br.com.dotazone.model.util.UtilActivity;
 import br.com.dotazone.view.adapter.FeedNewsListAdapter;
 

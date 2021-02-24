@@ -18,7 +18,6 @@ import br.com.dotazone.R;
 import br.com.dotazone.model.entity.Ability.AbilityElementy;
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
-import br.com.dotazone.model.service.AdapterAction;
 import br.com.dotazone.model.service.HeroAsync;
 import br.com.dotazone.view.activity.BuildHeroActivity;
 import br.com.dotazone.view.activity.HeroProfileActivity;

@@ -22,7 +22,6 @@ import br.com.dotazone.R;
 import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
 import br.com.dotazone.model.listeners.BuildHeroAction;
-import br.com.dotazone.model.service.AdapterAction;
 import br.com.dotazone.model.service.ItemAsync;
 import br.com.dotazone.model.util.UrlUtils;
 import br.com.dotazone.view.activity.BaseActivity;

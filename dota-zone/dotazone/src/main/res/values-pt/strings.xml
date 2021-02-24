@@ -34,7 +34,7 @@
     <string name="copyright_valve">Dota 2 é marca registrada de Valve Corporation. Todas as imagens e nomes do jogo são de propriedade da Valve. Esta aplicação não tem filiação com a Valve Corporation.</string>
     <string name="loading_dialog">Carregando...</string>
     <string name="option_no">Cancelar</string>
-    <string name="splesh_button">Confirmar</string>
+    <string name="splash_button">Confirmar</string>
     <string name="splesh_copyright">DOTA 2 É MARCA REGISTRADA DE VALVE CORPORATION. TODAS AS IMAGENS E NOMES DO JOGO SÃO DE PROPRIEDADE DA VALVE. ESTE APP NÃO ESTÁ AFILIADO COM A VALVE CORPORATION.</string>
     <string name="error_feed_news">Erro ao tentar obter informações do blog Dota 2. Por favor, tente novamente.</string>
     <string name="error_item_connection">Erro ao tentar obter informações dos Ítens. Por favor, tente novamente.</string>
