@@ -9,7 +9,6 @@ import br.com.dotazone.model.entity.Hero;
 import br.com.dotazone.model.entity.Item;
 
 public class DotaZoneBrain {
-
     public static final String TAG = DotaZoneBrain.class.getName();
     public static final String RATING_DOTA_ZONE = "rating_dota_zone";
     public static List<Article> rssItems;
