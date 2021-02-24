@@ -15,16 +15,6 @@ android {
 		buildConfigField "String", "DOTA_ZONE_STEAM_PUBLIC_KEY", "\"${DOTA_ZONE_STEAM_PUBLIC_KEY}\""
 
     }
-
-    signingConfigs {
-        test {
-            storeFile file("/Users/hal-9000/Documents/dotazone-kotlin/dotazone.keystore")
-            storePassword "D4d42010"
-            keyAlias "dotazone"
-            keyPassword "D4d42010"
-        }
-    }
-
     lintOptions {
         checkReleaseBuilds false
         // Or, if you prefer, you can continue to check for errors in release builds,
@@ -40,7 +30,6 @@ android {
         debug {
             minifyEnabled  false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.test
         }
 
     }
@@ -49,15 +38,13 @@ android {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         implementation project(':trivialdrivesample')
         implementation files('libs/YouTubeAndroidPlayerApi.jar')
-        implementation files('libs/gson-2.3.jar')
-        //noinspection GradleCompatible
-        implementation 'com.android.support:support-v4:27.1.1'
+		implementation 'com.google.code.gson:gson:2.8.6'
+		implementation 'androidx.legacy:legacy-support-v4'
         implementation 'com.google.android.gms:play-services:11.0.4'
         implementation 'com.viewpagerindicator:library:2.4.1@aar'
         implementation 'com.mcxiaoke.volley:library-aar:1.0.0'
-        //noinspection GradleCompatible
-        implementation 'com.android.support:mediarouter-v7:18.0.+'
-        implementation 'com.android.support:appcompat-v7:27.1.1'
+        implementation 'androidx.mediarouter:mediarouter'
+		implementation "androidx.appcompat:appcompat:1.2.0"
 		implementation 'com.prof18.rssparser:rssparser:3.1.3'
 	}
 }
