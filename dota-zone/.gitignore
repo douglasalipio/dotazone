@@ -1,7 +1,9 @@
 # Built application files
 *.apk
 *.ap_
-
+unused.txt
+java_pid59401.hprof
+release/
 # Files for the Dalvik VM
 *.dex
 
