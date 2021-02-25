@@ -13,13 +13,13 @@
     <bool name="ga_dryRun">false</bool>
 
     <!-- The screen names that will appear in reports -->
-    <string name="br.com.dotazone.view.activity.MainActivity">MainActivity</string>
-    <string name="br.com.dotazone.view.activity.TabActivity">TabActivity</string>
-    <screenName name="br.com.dotazone.view.activity.AboutActivity">AboutActivity</screenName>
-    <screenName name="br.com.dotazone.view.activity.LanguageActivity">LanguageActivity</screenName>
-    <screenName name="br.com.dotazone.view.activity.BuildHeroActivity">BuildHeroActivity</screenName>
-    <screenName name="br.com.dotazone.view.activity.HeroProfileActivity">HeroProfileActivity</screenName>
-    <screenName name="br.com.dotazone.view.activity.HeroBiographActivity">HeroBiographActivity</screenName>
+    <string name="com.br.dotazone.view.activity.MainActivity">MainActivity</string>
+    <string name="com.br.dotazone.view.activity.TabActivity">TabActivity</string>
+    <screenName name="com.br.dotazone.view.activity.AboutActivity">AboutActivity</screenName>
+    <screenName name="com.br.dotazone.view.activity.LanguageActivity">LanguageActivity</screenName>
+    <screenName name="com.br.dotazone.view.activity.BuildHeroActivity">BuildHeroActivity</screenName>
+    <screenName name="com.br.dotazone.view.activity.HeroProfileActivity">HeroProfileActivity</screenName>
+    <screenName name="com.br.dotazone.view.activity.HeroBiographActivity">HeroBiographActivity</screenName>
 
 
 </resources>

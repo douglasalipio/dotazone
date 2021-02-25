@@ -21,11 +21,11 @@
     substitute for the full length canonical Activity name in screen view hit. In order to
     specify an alternate screen name use an <screenName> element, with the name attribute
     specifying the canonical name, and the value the alias to use instead. -->
-    <screenName name="br.com.dotazone.view.activity.MainActivity">Blog News View</screenName>
-    <screenName name="br.com.dotazone.view.activity.TabActivity">Hero,Item or build View</screenName>
-    <screenName name="br.com.dotazone.view.activity.AboutActivity">About View</screenName>
-    <screenName name="br.com.dotazone.view.activity.LanguageActivity">Settings View</screenName>
-    <screenName name="br.com.dotazone.view.activity.BuildHeroActivity">Hero Build View</screenName>
-    <screenName name="br.com.dotazone.view.activity.HeroProfileActivity">Hero View</screenName>
-    <screenName name="br.com.dotazone.view.activity.HeroBiographActivity">Bio View</screenName>
+    <screenName name="com.br.dotazone.view.activity.MainActivity">Blog News View</screenName>
+    <screenName name="com.br.dotazone.view.activity.TabActivity">Hero,Item or build View</screenName>
+    <screenName name="com.br.dotazone.view.activity.AboutActivity">About View</screenName>
+    <screenName name="com.br.dotazone.view.activity.LanguageActivity">Settings View</screenName>
+    <screenName name="com.br.dotazone.view.activity.BuildHeroActivity">Hero Build View</screenName>
+    <screenName name="com.br.dotazone.view.activity.HeroProfileActivity">Hero View</screenName>
+    <screenName name="com.br.dotazone.view.activity.HeroBiographActivity">Bio View</screenName>
 </resources>
