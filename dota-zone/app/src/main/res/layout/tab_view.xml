@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/drawer_layout"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+
+		<include layout="@layout/header_view" />
+
+		<com.google.android.material.tabs.TabLayout
+			android:id="@+id/indicator"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			style="@style/Theme"
+			android:background="@android:color/transparent" />
+
+		<androidx.viewpager.widget.ViewPager
+			android:id="@+id/tab_view_pager"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1" />
+
+		<com.google.android.gms.ads.AdView
+			android:id="@+id/tab_view_admob"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:background="#FFFFFF"
+			ads:adSize="BANNER"
+			ads:adUnitId="ca-app-pub-2913317885954925/3784690295" />
+	</LinearLayout>
+
+	<include
+		android:id="@+id/listSliderMenu"
+		layout="@layout/content_drawer_list"
+		android:layout_width="300dp"
+		android:layout_height="match_parent"
+		android:layout_gravity="start" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

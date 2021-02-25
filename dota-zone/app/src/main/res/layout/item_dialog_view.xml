@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#35373b"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="75.67dp"
+        android:background="#28292b">
+
+        <ImageView
+            android:id="@+id/imageItem"
+            android:layout_width="74dp"
+            android:layout_height="55.67dp"
+            android:layout_marginLeft="12.67dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/textCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageItem"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/imageCost"
+            android:textColor="#f5c434" />
+
+        <ImageView
+            android:id="@+id/imageCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textItemName"
+            android:layout_alignTop="@+id/textCost"
+            android:src="@drawable/items_coins" />
+
+        <TextView
+            android:id="@+id/textItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="12.67dp"
+            android:layout_marginTop="13dp"
+            android:layout_toRightOf="@+id/imageItem"
+            android:textColor="#8d8f96"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageItemCd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/items_icon_duration" />
+
+    <TextView
+        android:id="@+id/textAttribute"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageItemCd"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/color_text_list" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textAttribute"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/color_text_list" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="298dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textDescription"
+        android:layout_below="@+id/textDescription"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/items_line" />
+
+    <TextView
+        android:id="@+id/textCdTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageItemCd"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/imageItemCd"
+        android:textColor="@color/color_text_list" />
+
+    <LinearLayout
+        android:id="@+id/itemLayoutComponents"
+        android:layout_width="233dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/line"
+        android:layout_marginLeft="35dp"
+        android:gravity="center"
+        android:orientation="horizontal"/>
+
+    <ImageView
+        android:id="@+id/imageMana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textAttribute"
+        android:layout_marginLeft="22dp"
+        android:layout_toRightOf="@+id/textCdTimer"
+        android:background="@drawable/items_icon_mana" />
+
+    <TextView
+        android:id="@+id/textMana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textAttribute"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/imageMana"
+        android:textColor="@color/color_text_list" />
+
+</RelativeLayout>

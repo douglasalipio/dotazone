@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252628"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/layout_menu_video_search"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#313234"
+        android:gravity="center|left"
+        android:weightSum="3"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/layout_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/header_imageMenu"
+                    android:layout_width="14dp"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/header_arrow" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/channel_nomadtv" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/search_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:layout_marginRight="20dp"
+            android:hint="@string/video_search" />
+
+        <ImageView
+            android:id="@+id/icon_search_video"
+            android:layout_weight="3"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/channel_icon_search" />
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:id="@+id/video_search_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:listSelector="@drawable/listselector"
+        android:dividerHeight="1dp"/>
+
+</LinearLayout>

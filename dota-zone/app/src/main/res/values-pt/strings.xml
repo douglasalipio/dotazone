@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="heroes_menu">Heróis</string>
+    <string name="items_menu">Ítens</string>
+    <string name="build_menu">HeroBuild Pro</string>
+    <string name="news_menu">Notícias</string>
+    <string name="invite_menu">Convidar</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="language_menu">Linguagem</string>
+    <string name="settings_menu">Configurações</string>
+    <string name="about_menu">Sobre</string>
+    <string name="messenger_upgrade_app">Torne-se um Pro e use a versão completa</string>
+    <string name="item_basic">BÁSICOS</string>
+    <string name="item_improvements">MELHORIAS</string>
+    <string name="item_secret_store">SECRETOS</string>
+    <string name="item_no_cd">non</string>
+    <string name="buy_item_error">Houve um erro com sua compra. Por favor, tente novamente.</string>
+    <string name="payment_error">Falha na verificação do seu pagamento.</string>
+    <string name="thank_payment">Obrigado por ajudar o DotaZone a melhorar!</string>
+    <string name="hero_strength">FORÇA</string>
+    <string name="hero_agility">AGILIDADE</string>
+    <string name="hero_intelligence">INTELIGÊNCIA</string>
+    <string name="hero_meele">Ataque</string>
+    <string name="rating_button_out">Fechar</string>
+    <string name="rating_button">Avalie 5 estrelas</string>
+    <string name="hero_ranged">Longo Alcance</string>
+    <string name="rating_messenger">Agora você pode estudar seus heróis antes mesmo de jogar. Você não acha que merecemos 5 estrelas?</string>
+    <string name="option_yes">OK</string>
+    <string name="about_show_artwork">Mostre sua arte para o mundo</string>
+    <string name="about_description_artwork">Envie sua arte dos heróis de Dota 2 e ela poderá aparecer na tela de entrada do App com seus créditos. Envie para</string>
+    <string name="copyright_dotazone">DotaZone é um App independente para Android, e sua marca e conceitos são de propriedade de seus criadores e não podem ser copiadas ou reproduzidas sem autorização.</string>
+    <string name="copyright_valve">Dota 2 é marca registrada de Valve Corporation. Todas as imagens e nomes do jogo são de propriedade da Valve. Esta aplicação não tem filiação com a Valve Corporation.</string>
+    <string name="loading_dialog">Carregando...</string>
+    <string name="option_no">Cancelar</string>
+    <string name="splash_button">Confirmar</string>
+    <string name="splesh_copyright">DOTA 2 É MARCA REGISTRADA DE VALVE CORPORATION. TODAS AS IMAGENS E NOMES DO JOGO SÃO DE PROPRIEDADE DA VALVE. ESTE APP NÃO ESTÁ AFILIADO COM A VALVE CORPORATION.</string>
+    <string name="error_feed_news">Erro ao tentar obter informações do blog Dota 2. Por favor, tente novamente.</string>
+    <string name="error_item_connection">Erro ao tentar obter informações dos Ítens. Por favor, tente novamente.</string>
+    <string name="error_hero_connection">Erro ao tentar obter informações dos Heróis. Por favor, tente novamente.</string>
+    <string name="error_conection">Talvez você não esteja conectado à internet. Deseja conectar?</string>
+    <string name="error_json_item">Erro ao tentar obter informações dos Ítens. Por favor, tente novamente.</string>
+    <string name="error_json_hero">Erro ao tentar obter informações dos Heróies. Por favor, tente novamente.</string>
+    <string name="error_build_alert">Valores com margem de erro de 3% para mais ou para menos.</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>Home</item>
+        <item>Heroes</item>
+        <item>Items</item>
+    </string-array>
+
+    <string name="action_settings">Configurações</string>
+    <string name="feed_name">Notícias</string>
+    <string name="language_choose">Escolha uma língua</string>
+    <string name="hero_bio">Biografia</string>
+    <string name="idioma_language">Tradução do Conteúdo</string>
+    <string name="language_change">Alterar língua</string>
+    <string name="save_settings">Salvar</string>
+    <string name="selected_fail">Selecione uma opção válida</string>
+    <string name="language_description">É necessário reiniciar a aplicação. Reiniciar agora?</string>
+    <string name="loading">Carregando...</string>
+    <string name="full_slot">Inventário cheio</string>
+    <string name="help_build_hero">Pressione e segure sobre um ítem do inventário para mais informações.</string>
+    <string name="alert_buy_buy_now">Comprar agora</string>
+    <string name="alert_buy_description">Compre a versão PRO para liberar o recurso HeroBuildPro e remover a propaganda.\n\n Deseja continuar?</string>
+    <string name="share_app_text"> Falaê! Conhece a ferramenta HeroBuild Pro para Dota 2? Instale agora o DotaZone App e veja como seu Herói cresce nas batalhas! https://play.google.com/store/apps/details?id=br.com.dotazone</string>
+    <string name="payment_remove_ad">Remove Anúncios</string>
+    <string name="payment_title">Atualize a versão completa e desfrute 100%</string>
+    <string name="payment_redeem_code">Código Promocional</string>
+    <string name="payment_londing_code">Carregando código...</string>
+    <string name="error_payment_invalid_code">Código inválido</string>
+    <string name="payment_promotion_active">DotaZone PRO ativado!</string>
+    <string name="payment_messenger_unlock">Destrava a ferramenta HeroBuild Pro</string>
+    <string name="payment_error_conection">Talvez você esteja sem conexão, tente novamente mais tarde.</string>
+    <string name="payment_error_key_used">A chave já foi usada.</string>
+    <string name="channel">Canais</string>
+    <string name="offline">OFFLINE</string>
+    <string name="online">ONLINE</string>
+    <string name="error_player">Hubo un error al inicializar el YouTubePlayer (%1$s)</string>
+    <string name="video_search">Buscar Video</string>
+    <string name="video_not_found">Video não encontrado</string>
+    <string name="download_video">Downloading finalizado...</string>
+    <string name="download_video_progress">download in progress...</string>
+
+</resources>
