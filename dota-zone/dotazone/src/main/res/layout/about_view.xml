@@ -152,7 +152,7 @@
     </LinearLayout>
 
     <include
-        android:id="@+id/list_slidermenu"
+        android:id="@+id/listSliderMenu"
         layout="@layout/content_drawer_list"
         android:layout_width="300dp"
         android:layout_height="match_parent"

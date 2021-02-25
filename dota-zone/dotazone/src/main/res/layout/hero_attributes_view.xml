@@ -24,20 +24,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/hero_icon_attibute_int"
+                    android:id="@+id/heroIconAttributeInt"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:src="@drawable/heroes_icon_inteligence" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_int"
+                    android:id="@+id/heroTextAttributeInt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/white" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_add_int"
+                    android:id="@+id/heroTextAttributeAddInt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -51,20 +51,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/hero_icon_attibute_agi"
+                    android:id="@+id/heroIconAttibuteAgi"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:src="@drawable/heroes_icon_agility" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_agi"
+                    android:id="@+id/heroTextAttributeAgi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/white" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_add_agi"
+                    android:id="@+id/heroTextAttributeAddAgi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -78,20 +78,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/hero_icon_attibute_str"
+                    android:id="@+id/heroIconAttributeStr"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:src="@drawable/heroes_icon_strenght" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_str"
+                    android:id="@+id/heroTextAttributeStr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/white" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_add_str"
+                    android:id="@+id/heroTextAttributeAddStr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -114,20 +114,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/hero_icon_attibute_atk"
+                    android:id="@+id/heroIconAttributeAtk"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:background="@drawable/heroes_atributes_attack" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_atk"
+                    android:id="@+id/heroTextAttributeAtk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/white" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_add_atk"
+                    android:id="@+id/heroTextAttributeAddAtk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#00FF00" />
@@ -140,20 +140,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/hero_icon_attibute_move"
+                    android:id="@+id/heroIconAttibuteMove"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:background="@drawable/heroes_atributes_moviment" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_move"
+                    android:id="@+id/heroTextAttributeMove"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/white" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_add_move"
+                    android:id="@+id/heroTextAttributeAddMove"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#00FF00" />
@@ -166,20 +166,20 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/hero_icon_attibute_armor"
+                    android:id="@+id/heroIconAttributeArmor"
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:background="@drawable/heroes_atributes_defence" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_armor"
+                    android:id="@+id/heroTextAttributeArmor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/white" />
 
                 <TextView
-                    android:id="@+id/hero_text_attribute_add_armor"
+                    android:id="@+id/heroTextAttributeAddArmor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#00FF00" />

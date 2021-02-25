@@ -1,5 +1,6 @@
 package br.com.dotazone.view.fragment
 
+import ErrorListener
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
@@ -7,7 +8,6 @@ import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import br.com.dotazone.R
-import br.com.dotazone.model.listeners.ErrorListener
 import br.com.dotazone.view.activity.BaseActivity
 
 

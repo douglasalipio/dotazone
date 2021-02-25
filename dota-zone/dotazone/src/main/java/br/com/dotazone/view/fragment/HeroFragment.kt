@@ -33,34 +33,34 @@ class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 		}
 		val view = inflater.inflate(R.layout.tab_grid_hero_view, container, false)
 		view.gridHeroView.onItemClickListener = this
-		if (DotaZoneBrain.heroes.isEmpty()) HeroAsync(this).execute() else initList()
+		if (DotaZoneBrain.heroes.isEmpty()) HeroAsync(this).execute() else initList(view)
 		return view
 	}
 
-	override fun initList() {
+	override fun initList(view: View?) {
 		val itemsForTab: MutableList<Hero> = ArrayList()
 		when (mContent) {
 			getString(R.string.hero_agility) -> {
 				for (hero in DotaZoneBrain.heroes) {
-					if (hero.abilites != null && hero.abilites.pa == AbilityElementy.AGI.value) {
+					if (hero.abilites != null && hero.abilites!!.pa == AbilityElementy.AGI.value) {
 						itemsForTab.add(hero)
 					}
 				}
 			}
 			getString(R.string.hero_strength) -> {
 				for (hero in DotaZoneBrain.heroes) {
-					if (hero.abilites != null && hero.abilites.pa == AbilityElementy.STR.value) {
+					if (hero.abilites != null && hero.abilites!!.pa == AbilityElementy.STR.value) {
 						itemsForTab.add(hero)
 					}
 				}
 			}
 			else -> for (hero in DotaZoneBrain.heroes) {
-				if (hero.abilites != null && hero.abilites.pa == AbilityElementy.INT.value) {
+				if (hero.abilites != null && hero.abilites!!.pa == AbilityElementy.INT.value) {
 					itemsForTab.add(hero)
 				}
 			}
 		}
-		gridHeroView.adapter = HeroGridAdapter(activity, itemsForTab)
+		view?.gridHeroView?.adapter = HeroGridAdapter(requireActivity(), itemsForTab)
 	}
 
 	override fun onSaveInstanceState(outState: Bundle) {

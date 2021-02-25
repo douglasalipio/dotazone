@@ -33,8 +33,9 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 		if (savedInstanceState != null && savedInstanceState.containsKey(KEY_CONTENT)) {
 			mContent = savedInstanceState.getString(KEY_CONTENT)
 		}
-		if (DotaZoneBrain.items.isEmpty()) ItemAsync(this).execute() else initList()
-		return inflater.inflate(R.layout.tab_grid_item_view, container, false)
+		val view = inflater.inflate(R.layout.tab_grid_item_view, container, false)
+		if (DotaZoneBrain.items.isEmpty()) ItemAsync(this).execute() else initList(view)
+		return view
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,11 +43,11 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 		gridViewItem.onItemClickListener = this
 	}
 
-	override fun initList() {
+	override fun initList(view: View?) {
 		val itemsForTab: MutableList<Item> = ArrayList()
 
 		// Valida se existe item a ser tratado
-		if (DotaZoneBrain.items != null && DotaZoneBrain.items.isNotEmpty()) {
+		if (DotaZoneBrain.items.isNotEmpty()) {
 			when (mContent) {
 				getString(R.string.item_secret_store) -> {
 					for (item in DotaZoneBrain.items) {
@@ -70,7 +71,7 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 					}
 				}
 			}
-			gridViewItem.adapter = ItemGridAdapter(activity, itemsForTab)
+			gridViewItem.adapter = ItemGridAdapter(requireActivity(), itemsForTab)
 			if (mActivity != null) {
 				val buildAction: BuildHeroAction = mActivity as BuildHeroActivity
 				buildAction.verifyPayment()

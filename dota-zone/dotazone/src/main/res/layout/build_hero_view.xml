@@ -10,15 +10,15 @@
 		android:orientation="vertical">
 
 		<RelativeLayout
-			android:id="@+id/layout_hero_build_background"
+			android:id="@+id/layoutHeroBuildBackground"
 			android:layout_width="match_parent"
 			android:layout_height="70dp"
 			android:layout_gravity="left"
 			android:background="@drawable/build_bg"
 			android:orientation="horizontal">
 
-			<br.com.dotazone.view.components.RoundedImageView
-				android:id="@+id/build_hero_icon"
+			<de.hdodenhof.circleimageview.CircleImageView
+				android:id="@+id/buildHeroCircleImage"
 				android:layout_width="50dp"
 				android:layout_height="50dp"
 				android:layout_alignParentStart="true"
@@ -28,23 +28,23 @@
 				android:layout_marginLeft="21dp" />
 
 			<TextView
-				android:id="@+id/hero_text_name"
+				android:id="@+id/heroTextNameView"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_centerVertical="true"
 				android:layout_gravity="center"
 				android:layout_marginLeft="19dp"
-				android:layout_toEndOf="@+id/build_hero_icon"
-				android:layout_toRightOf="@+id/build_hero_icon"
+				android:layout_toEndOf="@+id/buildHeroCircleImage"
+				android:layout_toRightOf="@+id/buildHeroCircleImage"
 				android:text="Abbaddon"
 				android:textColor="@android:color/white"
 				android:textSize="25sp" />
 
 			<ImageView
-				android:id="@+id/build_hero_help"
+				android:id="@+id/buildHeroHelp"
 				android:layout_width="15dp"
 				android:layout_height="25dp"
-				android:layout_alignTop="@+id/hero_text_name"
+				android:layout_alignTop="@+id/heroTextNameView"
 				android:layout_alignParentEnd="true"
 				android:layout_alignParentRight="true"
 				android:layout_gravity="center"
@@ -58,22 +58,20 @@
 			android:layout_height="wrap_content" />
 
 		<com.google.android.material.tabs.TabLayout
-			android:id="@+id/indicator_build_hero"
+			android:id="@+id/indicatorBuildHero"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="@android:color/transparent" />
 
 		<androidx.viewpager.widget.ViewPager
-			android:id="@+id/build_item_pager"
+			android:id="@+id/buildItemPager"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:orientation="vertical" />
-
-
 	</LinearLayout>
 
 	<include
-		android:id="@+id/list_slidermenu"
+		android:id="@+id/listSliderMenu"
 		layout="@layout/content_drawer_list"
 		android:layout_width="300dp"
 		android:layout_height="match_parent"

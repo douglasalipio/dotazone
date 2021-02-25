@@ -15,8 +15,9 @@ import kotlinx.android.synthetic.main.hero_descripition_skill_view.*
 
 
 class HeroSkillFragment : BaseFragment() {
-	private var mView: View? = null
+
 	private lateinit var mSkill: Skill
+
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		return inflater.inflate(R.layout.hero_descripition_skill_view, container, false)
 	}
@@ -52,7 +53,7 @@ class HeroSkillFragment : BaseFragment() {
 			textView.maxLines = countLine
 			textView.includeFontPadding = false
 			if (imageInHTML) {
-				textView.text = Html.fromHtml(attribute, ImageGetter(activity), null)
+				textView.text = Html.fromHtml(attribute, ImageGetter(requireContext()), null)
 			} else {
 				textView.text = Html.fromHtml(attribute)
 			}

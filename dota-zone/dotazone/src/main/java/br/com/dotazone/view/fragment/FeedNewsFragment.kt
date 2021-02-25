@@ -52,7 +52,7 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 
 	private fun initialize() {
 
-		AdMobBanner().createBanner(activity, myAdView, DotaZoneBrain.isPremium)
+		AdMobBanner().createBanner(requireActivity(), myAdView, DotaZoneBrain.isPremium)
 		val font = Typeface.createFromAsset(activity!!.assets, "Roboto-Thin.ttf")
 		titleTextNews.typeface = font
 		val parser: Parser = Parser.Builder()
@@ -62,18 +62,18 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 		parser.onFinish(object : OnTaskCompleted {
 			override fun onTaskCompleted(channel: Channel) {
 				DotaZoneBrain.rssItems = channel.articles
-				activity!!.runOnUiThread { listAdapter = FeedNewsListAdapter(activity) }
+				requireActivity().runOnUiThread { listAdapter = FeedNewsListAdapter(requireActivity()) }
 			}
 
 			override fun onError(e: Exception) {}
 		})
 	}
 
-	override fun initList() {}
+	override fun initList(view: View?) {}
 	override fun initListIHero(heroes: List<Hero>) {}
 	override fun initListItem(items: List<Item>) {}
 	override fun initRating() {
-		UtilActivity.ratingDotaZoneDialog(activity)
+		UtilActivity.ratingDotaZoneDialog(requireActivity())
 	}
 
 	companion object {

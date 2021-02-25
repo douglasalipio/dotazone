@@ -1,10 +1,17 @@
-package br.com.dotazone.model.entity;
-
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.dotazone.model.entity.ItemAtrrib;
+
+//package br.com.dotazone.model.entity;
+//
+//import android.widget.ImageView;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
 public class Item {
 
     private Integer id;
