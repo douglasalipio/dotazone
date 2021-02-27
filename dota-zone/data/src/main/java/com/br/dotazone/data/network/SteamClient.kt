@@ -4,6 +4,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class SteamClient {
 
@@ -20,9 +21,9 @@ class SteamClient {
 		return clientBuilder.build()
 	}
 
-	fun createRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
+	fun provideHeroesDataService(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
 			.baseUrl(BASE_URL)
-			.addConverterFactory(GsonConverterFactory.create())
+			.addConverterFactory(ScalarsConverterFactory.create())
 			.client(okHttpClient)
 			.build()
 }
