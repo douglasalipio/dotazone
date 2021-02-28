@@ -1,6 +1,7 @@
-package com.br.dotazone.data.repository
+package com.br.dotazone.data.repository.hereos
 
 import com.br.dotazone.data.model.HeroesDataModelToHeroesDataMapper
+import com.br.dotazone.data.repository.HeroesDataRepositoryImp
 import com.br.dotazone.data.service.HeroesDataService
 import com.br.dotazone.domain.heroes.HeroesRepository
 import com.nhaarman.mockitokotlin2.verify

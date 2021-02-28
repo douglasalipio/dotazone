@@ -1,6 +1,7 @@
 package com.br.dotazone.domain.heroes
 
-import com.br.dotazone.domain.fakeHeroesData
+
+import com.br.dotazone.domain.heroes.entity.HeroesData
 import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.flow.flowOf
@@ -41,4 +42,4 @@ class GetHeroesDataTest {
 	}
 }
 
-
+val fakeHeroesData = HeroesData("")

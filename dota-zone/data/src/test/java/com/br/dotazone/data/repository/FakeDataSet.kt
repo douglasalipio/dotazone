@@ -1,4 +1,4 @@
-package com.br.dotazone.domain
+package com.br.dotazone.data.repository
 
 import com.br.dotazone.domain.heroes.entity.HeroesData
 
