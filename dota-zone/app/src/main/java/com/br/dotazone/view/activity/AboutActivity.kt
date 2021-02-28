@@ -22,7 +22,7 @@ class AboutActivity : BaseActivity() {
 		mMenu = DotazoneMenu(this, mDrawerLayout, mDrawerList)
 		mMenu!!.checkAboutMenu()
 		initComponents()
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
+
 	}
 
 	override fun onStart() {

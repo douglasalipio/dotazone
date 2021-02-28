@@ -47,7 +47,6 @@ class HeroProfileActivity : BaseActivity(), View.OnClickListener {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.hero_profile_view)
 		initComponents()
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
 	}
 
 	override fun onStart() {

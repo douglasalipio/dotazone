@@ -30,7 +30,6 @@ class LanguageActivity : BaseActivity(), View.OnClickListener {
 	override fun onCreate(bundleState: Bundle?) {
 		super.onCreate(bundleState)
 		setContentView(R.layout.language_view)
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
 		initComponents()
 	}
 

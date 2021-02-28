@@ -7,7 +7,7 @@ android {
 	useLibrary 'org.apache.http.legacy'
 	defaultConfig {
 		applicationId "com.br.dotazone"
-		minSdkVersion 14
+		minSdkVersion 22
 		targetSdkVersion 30
 		versionCode 16
 		multiDexEnabled true
@@ -39,6 +39,7 @@ android {
 		implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
 		implementation project(":data")
+		implementation project(":domain")
 
 		implementation 'androidx.core:core-ktx:1.3.2'
 		implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -54,6 +55,10 @@ android {
 		implementation "androidx.appcompat:appcompat:1.2.0"
 		implementation 'com.prof18.rssparser:rssparser:3.1.3'
 		implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+		//Asynchronous dependencies
+		implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2'
+		implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
 
 		//DI dependencies
 		implementation "org.koin:koin-android:2.2.0"

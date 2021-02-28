@@ -29,7 +29,6 @@ class HeroBiographActivity : BaseActivity() {
 		super.onCreate(arg0)
 		setContentView(R.layout.hero_bio_view)
 		initComponents()
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
 	}
 
 	public override fun onPause() {

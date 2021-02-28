@@ -60,7 +60,6 @@ class BuildHeroActivity : BaseActivity(), BuildHeroAction {
 		val idImage = resources.getIdentifier((mHero?.idString ?: "") + "_avatar", "drawable", packageName)
 		buildHeroCircleImage.setImageResource(idImage)
 		Toast.makeText(this, getString(R.string.error_build_alert), Toast.LENGTH_LONG).show()
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
 	}
 
 	override fun onStart() {

@@ -29,7 +29,6 @@ class TabActivity : BaseActivity(), OnPageChangeListener, View.OnClickListener {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.tab_view)
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
 		initComponents()
 	}
 

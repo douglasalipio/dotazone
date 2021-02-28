@@ -13,27 +13,27 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
-class GetHeroesDataTest {
+class GetHeroesDataInteractorTest {
 
 	@Mock
 	lateinit var heroesRepositoryMock: HeroesRepository
-	private lateinit var getHeroesData: GetHeroesData
+	private lateinit var getHeroesDataInteractor: GetHeroesDataInteractor
 
 	@Before
 	fun setUp() {
 		MockitoAnnotations.initMocks(this)
-		getHeroesData = GetHeroesData(heroesRepositoryMock)
+		getHeroesDataInteractor = GetHeroesDataInteractor(heroesRepositoryMock)
 	}
 
 	@Test
 	fun `should load heroes data`() {
 		runBlocking {
 			//given
-			val params = GetHeroesData.Params("pt-br")
+			val params = GetHeroesDataInteractor.Params("pt-br")
 			given(heroesRepositoryMock.getHeroesData("pt-br")).willReturn(flowOf(fakeHeroesData))
 
 			//when
-			val actual = getHeroesData.execute(params).single()
+			val actual = getHeroesDataInteractor.execute(params).single()
 
 			//then
 			assertEquals(fakeHeroesData.heroesStringData, actual.heroesStringData)

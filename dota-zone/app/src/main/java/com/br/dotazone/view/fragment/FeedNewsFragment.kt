@@ -2,12 +2,15 @@ package com.br.dotazone.view.fragment
 
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.ListFragment
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
+import com.br.dotazone.domain.heroes.HeroesRepository
+import com.br.dotazone.heroes.HeroesViewModel
 import com.br.dotazone.model.entity.AdMobBanner
 import com.br.dotazone.model.entity.Hero
 import com.br.dotazone.model.entity.Item
@@ -19,11 +22,17 @@ import com.prof.rssparser.OnTaskCompleted
 import com.prof.rssparser.Parser
 import kotlinx.android.synthetic.main.feed_news.*
 import kotlinx.android.synthetic.main.header_view.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.nio.charset.Charset
 
 
 class FeedNewsFragment : ListFragment(), AdapterAction {
 	private var mView: View? = null
+
+	private val heroesViewModel: HeroesViewModel by viewModel()
+
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		mView = inflater.inflate(R.layout.feed_news, container, false)
 		return mView
@@ -32,6 +41,7 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		initialize()
+		heroesViewModel.getHeroesData()
 	}
 
 	override fun onPause() {
@@ -42,6 +52,7 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 	override fun onResume() {
 		super.onResume()
 		myAdView?.resume()
+
 	}
 
 	override fun onDestroy() {
@@ -52,7 +63,7 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 	private fun initialize() {
 
 		AdMobBanner().createBanner(requireActivity(), myAdView, DotaZoneBrain.isPremium)
-		val font = Typeface.createFromAsset(activity!!.assets, "Roboto-Thin.ttf")
+		val font = Typeface.createFromAsset(requireActivity().assets, "Roboto-Thin.ttf")
 		titleTextNews.typeface = font
 		val parser: Parser = Parser.Builder()
 				.charset(Charset.forName("UTF-8"))

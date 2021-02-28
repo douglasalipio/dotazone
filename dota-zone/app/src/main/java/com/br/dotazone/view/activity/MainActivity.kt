@@ -21,7 +21,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
+
 		initComponents()
 		val fragment1 = newInstance()
 		if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == DotazoneMenu.MENU_NEWS) {
@@ -31,7 +31,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 			mMenu!!.checkNewsMenu()
 		}
 		// Get a Tracker (should auto-report)
-		(application as DotaZoneApplication).getTracker(DotaZoneApplication.TrackerName.APP_TRACKER)
+
 		if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == 100) {
 		}
 	}
