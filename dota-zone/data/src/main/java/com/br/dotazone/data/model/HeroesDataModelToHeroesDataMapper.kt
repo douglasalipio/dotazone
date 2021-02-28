@@ -5,7 +5,7 @@ import com.br.dotazone.domain.heroes.entity.Abaddon
 import com.br.dotazone.domain.heroes.entity.Heroes
 import com.br.dotazone.domain.heroes.entity.HeroesData
 
-class HeroesDataModelToHeroesDataMapper : Mapper<HeroesDataModel, HeroesData> {
+class HeroesDataModelToHeroesDataMapper : Mapper<String, HeroesData> {
 
-	override fun map(from: HeroesDataModel) = HeroesData(from.heroesData)
+	override fun map(from: String) = HeroesData(from)
 }
