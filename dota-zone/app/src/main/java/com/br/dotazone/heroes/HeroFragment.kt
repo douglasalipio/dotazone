@@ -1,4 +1,4 @@
-package com.br.dotazone.view.fragment
+package com.br.dotazone.heroes
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
 import com.br.dotazone.model.entity.Ability.AbilityElementy
@@ -19,11 +20,16 @@ import com.br.dotazone.view.activity.BuildHeroActivity
 import com.br.dotazone.view.activity.HeroProfileActivity
 import com.br.dotazone.view.activity.TabActivity
 import com.br.dotazone.view.adapter.HeroGridAdapter
+import com.google.android.gms.internal.he
 import kotlinx.android.synthetic.main.tab_grid_hero_view.view.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
+
 	private var mContent: String? = "???"
+	private val heroesViewModel: HeroesViewModel by viewModel()
+	private val observer = Observer<HeroesState> { handleResponse(it) }
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		if (savedInstanceState != null && savedInstanceState.containsKey(KEY_CONTENT)) {
@@ -32,6 +38,8 @@ class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 		val view = inflater.inflate(R.layout.tab_grid_hero_view, container, false)
 		view.gridHeroView.onItemClickListener = this
 		if (DotaZoneBrain.heroes.isEmpty()) HeroAsync(this).execute() else initList(view)
+		heroesViewModel.heroesStream.observe(viewLifecycleOwner, observer)
+		heroesViewModel.requestHeroesData()
 		return view
 	}
 
@@ -72,6 +80,14 @@ class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 			startActivity(Intent(activity, BuildHeroActivity::class.java))
 		} else {
 			startActivity(Intent(activity, HeroProfileActivity::class.java))
+		}
+	}
+
+	private fun handleResponse(heroesState: HeroesState) {
+		when (heroesState) {
+			HeroesState.DataLoaded -> ""
+			HeroesState.Error -> ""
+			HeroesState.HeroLoadded -> ""
 		}
 	}
 

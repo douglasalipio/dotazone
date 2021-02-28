@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.br.dotazone.R
-import com.br.dotazone.view.fragment.HeroFragment.Companion.newInstance
+import com.br.dotazone.heroes.HeroFragment.Companion.newInstance
 
 
 class HeroAdapter(fm: FragmentManager?, private val mContext: Context) : FragmentPagerAdapter(fm!!) {

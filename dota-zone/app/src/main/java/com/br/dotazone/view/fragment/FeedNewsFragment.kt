@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.ListFragment
+import androidx.lifecycle.Observer
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
 import com.br.dotazone.domain.heroes.HeroesRepository
+import com.br.dotazone.heroes.HeroesState
 import com.br.dotazone.heroes.HeroesViewModel
 import com.br.dotazone.model.entity.AdMobBanner
 import com.br.dotazone.model.entity.Hero
@@ -31,8 +33,6 @@ import java.nio.charset.Charset
 class FeedNewsFragment : ListFragment(), AdapterAction {
 	private var mView: View? = null
 
-	private val heroesViewModel: HeroesViewModel by viewModel()
-
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		mView = inflater.inflate(R.layout.feed_news, container, false)
 		return mView
@@ -41,7 +41,6 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 		initialize()
-		heroesViewModel.getHeroesData()
 	}
 
 	override fun onPause() {

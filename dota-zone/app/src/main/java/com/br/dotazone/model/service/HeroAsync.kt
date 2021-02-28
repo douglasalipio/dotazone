@@ -19,7 +19,7 @@ import com.br.dotazone.model.util.UrlUtils.Companion.getUrlSkill
 import com.br.dotazone.view.activity.BaseActivity
 import com.br.dotazone.view.fragment.DialogError.Companion.newFragmentDialog
 import com.br.dotazone.view.fragment.DialogError.TypeError
-import com.br.dotazone.view.fragment.HeroFragment
+import com.br.dotazone.heroes.HeroFragment
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
