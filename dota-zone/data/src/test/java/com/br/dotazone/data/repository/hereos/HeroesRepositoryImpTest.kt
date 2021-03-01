@@ -1,8 +1,9 @@
 package com.br.dotazone.data.repository.hereos
 
 import com.br.dotazone.data.model.HeroesDataModelToHeroesDataMapper
-import com.br.dotazone.data.repository.HeroesDataRepositoryImp
-import com.br.dotazone.data.service.HeroesDataService
+import com.br.dotazone.data.repository.HeroesRepositoryImp
+import com.br.dotazone.data.repository.fakeHeroes
+import com.br.dotazone.data.service.HeroesService
 import com.br.dotazone.domain.heroes.HeroesRepository
 import com.nhaarman.mockitokotlin2.verify
 import kotlinx.coroutines.flow.single
@@ -14,10 +15,10 @@ import org.mockito.BDDMockito.given
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
-class HeroesDataRepositoryImpTest {
+class HeroesRepositoryImpTest {
 
 	@Mock
-	lateinit var heroesDataServiceMock: HeroesDataService
+	lateinit var heroesServiceMock: HeroesService
 
 	private val mapper = HeroesDataModelToHeroesDataMapper()
 
@@ -26,7 +27,7 @@ class HeroesDataRepositoryImpTest {
 	@Before
 	fun setUp() {
 		MockitoAnnotations.initMocks(this)
-		heroesRepository = HeroesDataRepositoryImp(heroesDataServiceMock, mapper)
+		heroesRepository = HeroesRepositoryImp(heroesServiceMock, mapper)
 	}
 
 	@Test
@@ -35,13 +36,22 @@ class HeroesDataRepositoryImpTest {
 			//Given
 			val heroesDataAsString = " "
 			val language = "pt-br"
-			given(heroesDataServiceMock.getHeroesData(language)).willReturn(heroesDataAsString)
+			given(heroesServiceMock.getHeroesData(language)).willReturn(heroesDataAsString)
 			//When
 			val heroesDataModelActual = heroesRepository.getHeroesData(language).single()
 			val heroesData = mapper.map(heroesDataAsString)
 			//Then
 			assertEquals(heroesDataAsString, heroesDataModelActual.heroesStringData)
-			verify(heroesDataServiceMock).getHeroesData(language)
+			verify(heroesServiceMock).getHeroesData(language)
+		}
+	}
+
+	@Test
+	fun `should parse heroes successfully`(){
+		runBlocking {
+			//Given
+			val heroesDataAsString = " "
+			given(heroesServiceMock.parseHeroesData(heroesDataAsString)).willReturn(fakeHeroes)
 		}
 	}
 }

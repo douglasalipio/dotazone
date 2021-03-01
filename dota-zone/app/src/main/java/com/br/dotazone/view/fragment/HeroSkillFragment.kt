@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.Skill
+import com.br.dotazone.domain.heroes.prov.Skill
 import com.br.dotazone.model.util.UrlUtils
 import com.br.dotazone.view.components.ImageGetter
 import kotlinx.android.synthetic.main.hero_descripition_skill_view.*

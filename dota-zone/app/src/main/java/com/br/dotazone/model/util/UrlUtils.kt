@@ -10,6 +10,7 @@ import java.io.InputStreamReader
 class UrlUtils {
 
 	companion object {
+
 		const val URL_IMAGE_ITEM = "http://media.steampowered.com/apps/dota2/images/items/"
 		const val PREFS_NAME = "DotaZone"
 

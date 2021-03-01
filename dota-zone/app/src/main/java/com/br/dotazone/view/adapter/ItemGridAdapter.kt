@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import com.br.dotazone.DotaZoneBrain.TAG
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.Item
+import com.br.dotazone.domain.heroes.prov.Item
 
 
 class ItemGridAdapter(private val mContext: Context, private val mItems: List<Item>) : BaseAdapter() {

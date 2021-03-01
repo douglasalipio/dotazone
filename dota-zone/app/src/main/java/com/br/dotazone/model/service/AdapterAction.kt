@@ -1,8 +1,8 @@
 package com.br.dotazone.model.service
 
 import android.view.View
-import com.br.dotazone.model.entity.Hero;
-import com.br.dotazone.model.entity.Item;
+import com.br.dotazone.domain.heroes.prov.Hero;
+import com.br.dotazone.domain.heroes.prov.Item;
 
 
 interface AdapterAction {

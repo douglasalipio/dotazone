@@ -1,4 +1,4 @@
-package com.br.dotazone.model.entity
+package com.br.dotazone.domain.heroes.prov
 
 
 class Hero {

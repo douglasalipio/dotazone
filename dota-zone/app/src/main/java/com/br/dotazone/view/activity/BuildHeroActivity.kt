@@ -7,12 +7,11 @@ import android.view.View
 import android.widget.*
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
-import com.br.dotazone.DotaZoneApplication
 import com.br.dotazone.DotaZoneBrain.hero
 import com.br.dotazone.DotaZoneBrain.isPremium
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.Item
-import com.br.dotazone.model.entity.ItemAtrrib
+import com.br.dotazone.domain.heroes.prov.Item
+import com.br.dotazone.domain.heroes.prov.ItemAtrrib
 import com.br.dotazone.model.listeners.BuildHeroAction
 import com.br.dotazone.model.util.UrlUtils
 import com.br.dotazone.model.util.UtilActivity

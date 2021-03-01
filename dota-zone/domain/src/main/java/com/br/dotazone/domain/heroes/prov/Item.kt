@@ -1,6 +1,7 @@
-package com.br.dotazone.model.entity
+package com.br.dotazone.domain.heroes.prov
 
-import android.widget.ImageView
+
+import javax.swing.text.html.ImageView
 
 class Item {
 	var id: Int? = null

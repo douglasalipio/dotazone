@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.*
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.Item
+import com.br.dotazone.domain.heroes.prov.Item
 import com.br.dotazone.model.util.UrlUtils.Companion.convertDpToPixel
 import kotlinx.android.synthetic.main.item_dialog_view.*
 

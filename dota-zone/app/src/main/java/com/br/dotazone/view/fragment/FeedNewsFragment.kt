@@ -2,20 +2,15 @@ package com.br.dotazone.view.fragment
 
 import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.ListFragment
-import androidx.lifecycle.Observer
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
-import com.br.dotazone.domain.heroes.HeroesRepository
-import com.br.dotazone.heroes.HeroesState
-import com.br.dotazone.heroes.HeroesViewModel
 import com.br.dotazone.model.entity.AdMobBanner
-import com.br.dotazone.model.entity.Hero
-import com.br.dotazone.model.entity.Item
+import com.br.dotazone.domain.heroes.prov.Hero
+import com.br.dotazone.domain.heroes.prov.Item
 import com.br.dotazone.model.service.AdapterAction
 import com.br.dotazone.model.util.UtilActivity
 import com.br.dotazone.view.adapter.FeedNewsListAdapter
@@ -24,9 +19,6 @@ import com.prof.rssparser.OnTaskCompleted
 import com.prof.rssparser.Parser
 import kotlinx.android.synthetic.main.feed_news.*
 import kotlinx.android.synthetic.main.header_view.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.nio.charset.Charset
 
 

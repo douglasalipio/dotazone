@@ -3,7 +3,7 @@ package com.br.dotazone.di
 import com.br.dotazone.data.model.HeroesDataModelToHeroesDataMapper
 import com.br.dotazone.data.network.createOkHttpClient
 import com.br.dotazone.data.network.provideHeroesDataService
-import com.br.dotazone.data.repository.HeroesDataRepositoryImp
+import com.br.dotazone.data.repository.HeroesRepositoryImp
 import com.br.dotazone.domain.heroes.GetHeroesDataInteractor
 import com.br.dotazone.domain.heroes.HeroesRepository
 import com.br.dotazone.heroes.HeroesViewModel
@@ -23,7 +23,7 @@ val interactorsModule = module {
 }
 
 val repositoryModule = module {
-	single<HeroesRepository> { HeroesDataRepositoryImp(get(), get()) }
+	single<HeroesRepository> { HeroesRepositoryImp(get(), get()) }
 }
 val serviceModules = module {
 	single { provideHeroesDataService(createOkHttpClient()) }

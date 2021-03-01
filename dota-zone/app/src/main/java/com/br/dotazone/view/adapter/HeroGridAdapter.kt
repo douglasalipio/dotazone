@@ -9,7 +9,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import com.br.dotazone.DotaZoneBrain.TAG
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.Hero
+import com.br.dotazone.domain.heroes.prov.Hero
 
 
 class HeroGridAdapter(private val mContext: Context, private val mHeroes: List<Hero>) : BaseAdapter() {

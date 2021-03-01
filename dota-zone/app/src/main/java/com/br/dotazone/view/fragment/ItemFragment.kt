@@ -11,8 +11,8 @@ import android.widget.AdapterView.OnItemClickListener
 import androidx.fragment.app.Fragment
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.Hero
-import com.br.dotazone.model.entity.Item
+import com.br.dotazone.domain.heroes.prov.Hero
+import com.br.dotazone.domain.heroes.prov.Item
 import com.br.dotazone.model.listeners.BuildHeroAction
 import com.br.dotazone.model.service.AdapterAction
 import com.br.dotazone.model.service.ItemAsync

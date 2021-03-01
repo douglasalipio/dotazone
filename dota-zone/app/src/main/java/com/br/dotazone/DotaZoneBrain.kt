@@ -1,7 +1,7 @@
 package com.br.dotazone
 
-import com.br.dotazone.model.entity.Hero
-import com.br.dotazone.model.entity.Item
+import com.br.dotazone.domain.heroes.prov.Hero
+import com.br.dotazone.domain.heroes.prov.Item
 import com.prof.rssparser.Article
 
 object DotaZoneBrain {

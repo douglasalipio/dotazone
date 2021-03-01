@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment
 import com.br.dotazone.DotaZoneBrain.TAG
 import com.br.dotazone.DotaZoneBrain.items
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.Item
-import com.br.dotazone.model.entity.Item.ItemElementy
-import com.br.dotazone.model.entity.ItemAtrrib
-import com.br.dotazone.model.entity.ItemAtrrib.ItemAttribElementy
+import com.br.dotazone.domain.heroes.prov.Item
+import com.br.dotazone.domain.heroes.prov.Item.ItemElementy
+import com.br.dotazone.domain.heroes.prov.ItemAtrrib
+import com.br.dotazone.domain.heroes.prov.ItemAtrrib.ItemAttribElementy
 import com.br.dotazone.model.util.UrlUtils.Companion.convertStreamToString
 import com.br.dotazone.model.util.UrlUtils.Companion.getUrlItem
 import com.br.dotazone.view.activity.BaseActivity

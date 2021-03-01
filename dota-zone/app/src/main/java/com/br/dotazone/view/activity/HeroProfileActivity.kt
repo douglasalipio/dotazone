@@ -11,7 +11,6 @@ import android.view.Gravity
 import android.view.View
 import android.widget.*
 import androidx.drawerlayout.widget.DrawerLayout
-import com.br.dotazone.DotaZoneApplication
 import com.br.dotazone.DotaZoneBrain.hero
 import com.br.dotazone.DotaZoneBrain.isPremium
 import com.br.dotazone.R

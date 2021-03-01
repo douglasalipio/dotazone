@@ -7,7 +7,6 @@ import android.widget.RelativeLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
-import com.br.dotazone.DotaZoneApplication
 import com.br.dotazone.DotaZoneBrain.isPremium
 import com.br.dotazone.R
 import com.br.dotazone.model.entity.AdMobBanner

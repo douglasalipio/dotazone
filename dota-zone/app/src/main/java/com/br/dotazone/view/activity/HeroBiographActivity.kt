@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
-import com.br.dotazone.DotaZoneApplication
 import com.br.dotazone.DotaZoneBrain.hero
 import com.br.dotazone.DotaZoneBrain.isPremium
 import com.br.dotazone.R
