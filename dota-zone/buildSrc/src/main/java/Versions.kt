@@ -1,6 +1,6 @@
 object Versions {
 	val appCompact = "1.2.0"
-	val legacySupport = "1.0.0'"
+	val legacySupport = "1.0.0"
 	val mediaRouter = "1.2.2"
 	val viewPager = "1.0.0"
 	val constraintlayout = "2.0.4"
@@ -14,7 +14,7 @@ object Versions {
 	val volley = "1.0.0"
 	val rssParser = "3.1.3"
 	val circleImage = "3.1.0"
-	val couchbase = "2.6.0."
+	val couchbase = "2.6.0"
 	val gradlePlugin = "4.1.2"
 	val junit = "4.13.2"
 	val mockito = "3.2.4"

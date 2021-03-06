@@ -2,6 +2,7 @@ package com.br.dotazone
 
 import android.app.Application
 import com.br.dotazone.di.*
+import com.couchbase.lite.CouchbaseLite
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -14,6 +15,11 @@ class DotaZoneApplication : Application() {
 	override fun onCreate() {
 		super.onCreate()
 
+		initKoin()
+		initCouchbaseDb()
+	}
+
+	private fun initKoin() {
 		startKoin {
 			androidLogger(Level.ERROR)
 			androidContext(this@DotaZoneApplication)
@@ -21,9 +27,8 @@ class DotaZoneApplication : Application() {
 		}
 	}
 
-	private fun initCouchbaseDb(){
-
+	private fun initCouchbaseDb() {
+		CouchbaseLite.init(this);
 	}
-
 }
 
