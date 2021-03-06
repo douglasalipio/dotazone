@@ -20,5 +20,10 @@ class DotaZoneApplication : Application() {
 			modules(mappersModule, interactorsModule, serviceModules, appModule, repositoryModule)
 		}
 	}
+
+	private fun initCouchbaseDb(){
+
+	}
+
 }
 

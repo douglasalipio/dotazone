@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemClickListener
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.br.dotazone.DotaZoneBrain
@@ -24,7 +25,7 @@ import kotlinx.android.synthetic.main.tab_grid_hero_view.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
-class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
+class  HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 
 	private var mContent: String? = "???"
 	private val heroesViewModel: HeroesViewModel by viewModel()
@@ -36,7 +37,7 @@ class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 		}
 		val view = inflater.inflate(R.layout.tab_grid_hero_view, container, false)
 		view.gridHeroView.onItemClickListener = this
-		if (DotaZoneBrain.heroes.isEmpty()) HeroAsync(this).execute() else initList(view)
+		//if (DotaZoneBrain.heroes.isEmpty()) HeroAsync(this).execute() else initList(view)
 		heroesViewModel.heroesStream.observe(viewLifecycleOwner, observer)
 		heroesViewModel.requestHeroesData()
 		return view
@@ -84,9 +85,9 @@ class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 
 	private fun handleResponse(heroesState: HeroesState) {
 		when (heroesState) {
-			HeroesState.DataLoaded -> ""
-			HeroesState.Error -> ""
-			HeroesState.HeroLoadded -> ""
+			is HeroesState.DataLoaded -> heroesViewModel.requestParseHeroesData(heroesState.heroesDataString)
+			is HeroesState.Error -> Toast.makeText(requireContext(),heroesState.error, Toast.LENGTH_LONG).show()
+			is HeroesState.HeroLoaded -> ""
 		}
 	}
 

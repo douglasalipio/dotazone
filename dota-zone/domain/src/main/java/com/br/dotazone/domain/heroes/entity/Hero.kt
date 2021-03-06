@@ -1,27 +1,14 @@
-package com.br.dotazone.data.model
+package com.br.dotazone.domain.heroes.entity
 
-import java.util.*
-
-data class HeroModel(
+data class Hero(
 		val name: String,
 		val idString: String,
 		val bio: String,
 		val atk: String,
 		val roles: List<String>
-
 ) {
-
 	var skills: MutableList<Skill> = mutableListOf()
 	var abilities: Ability? = null
-
-	enum class Elements {
-		Name, Bio, Atk, Roles;
-
-		override fun toString(): String {
-			return super.toString().toLowerCase(Locale.ROOT)
-		}
-	}
-
 }
 
 data class Skill(
@@ -35,13 +22,7 @@ data class Skill(
 		val lore: String,
 		val hurl: String,
 		val idString: String
-) {
-	enum class Elements(val elementName: String) {
-		DNAME("dname"), AFFECTS("affects"), DESC("desc"),
-		NOTES("notes"), DMG("dmg"), ATTRIB("attrib"),
-		CMB("cmb"), LORE("lore"), HURL("hurl")
-	}
-}
+)
 
 data class Ability(
 		val name: String,

@@ -6,6 +6,7 @@ java_pid59401.hprof
 release/
 # Files for the Dalvik VM
 *.dex
+gradlew
 
 # Java class files
 *.class
