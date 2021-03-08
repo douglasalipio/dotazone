@@ -32,33 +32,31 @@ android {
 
 dependencies {
 	debugImplementation project(Modules.domain)
+
 	implementation ProjectDependencies.kotlin
 	implementation Androidx.androidxCoreKtx
 	implementation Google.gson
-
 	//Asynchronous dependencies
 	implementation Coroutines.core
 	implementation Coroutines.android
-
 	//Test dependencies
 	testImplementation TestDependencies.mockito
 	testImplementation TestDependencies.hamcrest
 	testImplementation TestDependencies.mockitokotlin2
 	testImplementation TestDependencies.junit
 	testImplementation TestDependencies.coroutines
-
 	//DI dependencies
 	implementation Koin.android
 	implementation Koin.scope
-	implementation Koin.android
-
+	implementation Koin.ext
 	//Network dependencies
 	implementation Retrofit.core
 	implementation Retrofit.gson
 	implementation Retrofit.scalars
+
 	implementation ProjectDependencies.okHttp
 	implementation ProjectDependencies.interceptor
-
+	implementation ProjectDependencies.timber
 	//Database
 	implementation ProjectDependencies.couchbase
 }

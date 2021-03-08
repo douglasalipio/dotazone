@@ -1,8 +1,7 @@
-import org.gradle.initialization.StartParameterBuildOptions
-
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+
 android {
 	compileSdkVersion 30
 	buildToolsVersion '29.0.3'
@@ -66,6 +65,8 @@ android {
 		implementation ProjectDependencies.volley
 		implementation ProjectDependencies.rssParser
 		implementation ProjectDependencies.circleImage
+		implementation ProjectDependencies.timber
+		debugImplementation ProjectDependencies.leakCanary
 
 		//Asynchronous dependencies
 		implementation Coroutines.core

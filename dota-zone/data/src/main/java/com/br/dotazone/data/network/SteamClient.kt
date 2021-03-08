@@ -12,7 +12,8 @@ fun createOkHttpClient(): OkHttpClient {
 	val httpLoggingInterceptor = HttpLoggingInterceptor()
 	val clientBuilder = OkHttpClient.Builder()
 	httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.HEADERS
-	httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+	//httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+	clientBuilder.addInterceptor(httpLoggingInterceptor)
 	return clientBuilder.build()
 }
 

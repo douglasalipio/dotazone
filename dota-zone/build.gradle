@@ -9,6 +9,7 @@ buildscript {
 	dependencies {
 		classpath PluginDependencies.kotlin
 		classpath PluginDependencies.gradle
+		classpath PluginDependencies.koin
 		// NOTE: Do not place your application dependencies here; they belong
 		// in the individual module build.gradle files
 	}
@@ -26,4 +27,7 @@ allprojects {
 			maven { url "https://www.jitpack.io" }
 		}
 	}
+}
+task clean(type: Delete) {
+	delete rootProject.buildDir
 }

@@ -10,7 +10,7 @@ object Versions {
 	val playService = "11.0.4"
 	val material = "1.3.0"
 	val coroutines = "1.4.2"
-	val koin = "2.2.0"
+	val koin = "2.2.2"
 	val volley = "1.0.0"
 	val rssParser = "3.1.3"
 	val circleImage = "3.1.0"
@@ -26,5 +26,7 @@ object Versions {
 	val retrofitConverterScalars = "2.1.0"
 	val okHttp = "4.7.2"
 	val interceptor = "4.7.2"
+	val timber = "4.7.1"
+	val leakCanary = "2.6"
 }
 

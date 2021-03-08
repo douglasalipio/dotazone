@@ -14,6 +14,7 @@ object Modules {
 object PluginDependencies {
 	val gradle = "com.android.tools.build:gradle:${Versions.gradlePlugin}"
 	val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
+	val koin = "org.koin:koin-gradle-plugin:${Versions.koin}"
 }
 
 object ProjectDependencies {
@@ -24,6 +25,9 @@ object ProjectDependencies {
 	val couchbase = "com.couchbase.lite:couchbase-lite-android:${Versions.couchbase}"
 	val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
 	val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
+	val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+	val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
+
 }
 
 object Retrofit {
@@ -39,7 +43,7 @@ object Google {
 }
 
 object Koin {
-	val android = "org.koin:koin-android:2.2.0:${Versions.koin}"
+	val android = "org.koin:koin-android:${Versions.koin}"
 	val scope = "org.koin:koin-androidx-scope:${Versions.koin}"
 	val viewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
 	val fragment = "org.koin:koin-androidx-fragment:${Versions.koin}"

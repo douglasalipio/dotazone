@@ -1,7 +1,8 @@
 package com.br.dotazone.heroes
 
+import com.br.dotazone.domain.heroes.entity.Hero
+
 sealed class HeroesState {
-	data class DataLoaded(val heroesDataString : String) : HeroesState()
-	object HeroLoaded : HeroesState()
+	data class HeroDataLoaded(val heroList : List<Hero>) : HeroesState()
 	data class Error (val error : String): HeroesState()
 }

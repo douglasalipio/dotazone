@@ -12,7 +12,7 @@ import com.br.dotazone.R
 import com.br.dotazone.domain.heroes.prov.Hero
 
 
-class HeroGridAdapter(private val mContext: Context, private val mHeroes: List<Hero>) : BaseAdapter() {
+class HeroGridAdapter(private val mContext: Context, private val mHeroes: MutableList<com.br.dotazone.domain.heroes.entity.Hero>) : BaseAdapter() {
 	override fun getCount(): Int {
 		return mHeroes.size
 	}

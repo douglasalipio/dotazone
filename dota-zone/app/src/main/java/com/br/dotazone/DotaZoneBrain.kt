@@ -9,7 +9,7 @@ object DotaZoneBrain {
 	const val RATING_DOTA_ZONE = "rating_dota_zone"
 	var rssItems: List<Article>? = null
 	var items: MutableList<Item> = mutableListOf()
-	var heroes: MutableList<Hero> = mutableListOf()
+	var heroes: MutableList<com.br.dotazone.domain.heroes.entity.Hero> = mutableListOf()
 	var hero: Hero? = null
 
 	//TODO Issue https://github.com/douglasalipio/dotazone/issues/2

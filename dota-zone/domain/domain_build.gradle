@@ -14,6 +14,7 @@ dependencies {
 	//Asynchronous dependencies
 	implementation Coroutines.core
 	implementation Coroutines.android
+	implementation ProjectDependencies.timber
 
 	testImplementation TestDependencies.junit
 	testImplementation TestDependencies.mockito

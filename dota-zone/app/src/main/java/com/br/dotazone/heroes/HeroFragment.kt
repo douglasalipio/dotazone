@@ -16,7 +16,6 @@ import com.br.dotazone.domain.heroes.prov.Ability.AbilityElementy
 import com.br.dotazone.domain.heroes.prov.Hero
 import com.br.dotazone.domain.heroes.prov.Item
 import com.br.dotazone.model.service.AdapterAction
-import com.br.dotazone.model.service.HeroAsync
 import com.br.dotazone.view.activity.BuildHeroActivity
 import com.br.dotazone.view.activity.HeroProfileActivity
 import com.br.dotazone.view.activity.TabActivity
@@ -25,7 +24,7 @@ import kotlinx.android.synthetic.main.tab_grid_hero_view.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
-class  HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
+class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 
 	private var mContent: String? = "???"
 	private val heroesViewModel: HeroesViewModel by viewModel()
@@ -44,24 +43,24 @@ class  HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 	}
 
 	override fun initList(view: View?) {
-		val itemsForTab: MutableList<Hero> = ArrayList()
+		val itemsForTab: MutableList<com.br.dotazone.domain.heroes.entity.Hero> = ArrayList()
 		when (mContent) {
 			getString(R.string.hero_agility) -> {
 				for (hero in DotaZoneBrain.heroes) {
-					if (hero.abilites != null && hero.abilites!!.pa == AbilityElementy.AGI.value) {
+					if (hero.heroAbility != null && hero.heroAbility!!.pa == AbilityElementy.AGI.value) {
 						itemsForTab.add(hero)
 					}
 				}
 			}
 			getString(R.string.hero_strength) -> {
 				for (hero in DotaZoneBrain.heroes) {
-					if (hero.abilites != null && hero.abilites!!.pa == AbilityElementy.STR.value) {
+					if (hero.heroAbility != null && hero.heroAbility!!.pa == AbilityElementy.STR.value) {
 						itemsForTab.add(hero)
 					}
 				}
 			}
 			else -> for (hero in DotaZoneBrain.heroes) {
-				if (hero.abilites != null && hero.abilites!!.pa == AbilityElementy.INT.value) {
+				if (hero.heroAbility != null && hero.heroAbility!!.pa == AbilityElementy.INT.value) {
 					itemsForTab.add(hero)
 				}
 			}
@@ -85,9 +84,8 @@ class  HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
 
 	private fun handleResponse(heroesState: HeroesState) {
 		when (heroesState) {
-			is HeroesState.DataLoaded -> heroesViewModel.requestParseHeroesData(heroesState.heroesDataString)
-			is HeroesState.Error -> Toast.makeText(requireContext(),heroesState.error, Toast.LENGTH_LONG).show()
-			is HeroesState.HeroLoaded -> ""
+			is HeroesState.HeroDataLoaded -> if (DotaZoneBrain.heroes.isEmpty())DotaZoneBrain.heroes.addAll(heroesState.heroList)
+			is HeroesState.Error -> Toast.makeText(requireContext(), heroesState.error, Toast.LENGTH_LONG).show()
 		}
 	}
 

@@ -1,3 +1,4 @@
+/*
 package com.br.dotazone.model.service
 
 import android.app.ProgressDialog
@@ -261,3 +262,4 @@ class HeroAsync(private val mFragment: Fragment) : AsyncTask<Void?, Void?, Strin
 		mAbilities = ArrayList()
 	}
 }
+*/

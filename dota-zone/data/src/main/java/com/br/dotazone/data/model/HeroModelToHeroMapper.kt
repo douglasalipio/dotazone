@@ -2,7 +2,6 @@ package com.br.dotazone.data.model
 
 import com.br.dotazone.domain.Mapper
 import com.br.dotazone.domain.heroes.entity.Hero
-import com.br.dotazone.domain.heroes.entity.HeroesData
 
 class HeroModelToHeroMapper : Mapper<HeroModel, Hero> {
 
