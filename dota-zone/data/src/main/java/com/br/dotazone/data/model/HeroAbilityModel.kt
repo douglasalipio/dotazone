@@ -1,5 +1,5 @@
 package com.br.dotazone.data.model
-
+//
 import java.util.*
 
 data class HeroAbilityModel(

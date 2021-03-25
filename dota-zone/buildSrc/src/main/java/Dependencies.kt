@@ -1,3 +1,4 @@
+//
 object TestDependencies {
 	val junit = "junit:junit:${Versions.junit}"
 	val mockito = "org.mockito:mockito-core:${Versions.mockito}"
