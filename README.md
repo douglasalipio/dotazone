@@ -1,4 +1,0 @@
-dotazone
-========
-
-The application DotaZone

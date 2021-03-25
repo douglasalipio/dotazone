@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+	compileSdkVersion 30
+	buildToolsVersion '29.0.3'
+	useLibrary 'org.apache.http.legacy'
+	defaultConfig {
+		applicationId "com.br.dotazone"
+		minSdkVersion 22
+		targetSdkVersion 30
+		versionCode 16
+		multiDexEnabled true
+		versionName "v1.0.5"
+		buildConfigField "String", "DOTA_ZONE_YOUTUBE_KEY", "\"${DOTA_ZONE_YOUTUBE_KEY}\""
+		buildConfigField "String", "DOTA_ZONE_STEAM_PUBLIC_KEY", "\"${DOTA_ZONE_STEAM_PUBLIC_KEY}\""
+
+	}
+	lintOptions {
+		checkReleaseBuilds false
+		// Or, if you prefer, you can continue to check for errors in release builds,
+		// but continue the build even when errors are found:
+		abortOnError false
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled true
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+		debug {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+		compileOptions {
+			sourceCompatibility 1.8
+			targetCompatibility 1.8
+		}
+	}
+
+	dependencies {
+		implementation fileTree(dir: 'libs', include: ['*.jar'])
+		implementation files('libs/YouTubeAndroidPlayerApi.jar')
+
+		debugImplementation project(Modules.data)
+		debugImplementation project(Modules.domain)
+
+		//Kotlin
+		implementation ProjectDependencies.kotlin
+
+		//Androidx dependencies
+		implementation Androidx.androidxCoreKtx
+		implementation Androidx.legacySupport
+		implementation Androidx.viewPager
+		implementation Androidx.constraintlayout
+		implementation Androidx.mediaRouter
+		implementation Androidx.appCompact
+
+		//Google dependencies
+		implementation Google.gson
+		implementation Google.playService
+		implementation Google.material
+
+		implementation ProjectDependencies.volley
+		implementation ProjectDependencies.rssParser
+		implementation ProjectDependencies.circleImage
+		implementation ProjectDependencies.timber
+		debugImplementation ProjectDependencies.leakCanary
+
+		//Asynchronous dependencies
+		implementation Coroutines.core
+		implementation Coroutines.android
+
+		//DI dependencies
+		implementation Koin.android
+		implementation Koin.scope
+		implementation Koin.viewModel
+		implementation Koin.fragment
+		implementation Koin.ext
+
+		//Database
+		implementation ProjectDependencies.couchbase
+	}
+}

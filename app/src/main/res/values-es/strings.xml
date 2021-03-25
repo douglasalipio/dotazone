@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="heroes_menu">Héroes</string>
+    <string name="items_menu">Artículos</string>
+    <string name="build_menu">Construir</string>
+    <string name="news_menu">Noticias</string>
+    <string name="invite_menu">Invitar</string>
+    <string name="language_menu">Idioma</string>
+    <string name="settings_menu">Configuración</string>
+    <string name="about_menu">Acerca de</string>
+    <string name="messenger_upgrade_app">Actualiza ahora para eliminar la publicidad</string>
+    <string name="item_basic">BÁSICO</string>
+    <string name="item_improvements">MEJORAS</string>
+    <string name="item_secret_store">S/TIENDA</string>
+    <string name="item_no_cd">ninguno</string>
+    <string name="buy_item_error">Se produjo un error con tu compra. Inténtalo otra vez.</string>
+    <string name="payment_error">Se produjo un error en la verificación de tu pago.</string>
+    <string name="thank_payment">¡Gracias por ayudar a que DotaZone crezca!</string>
+    <string name="hero_strength">FUERZA</string>
+    <string name="hero_agility">AGILIDAD</string>
+    <string name="hero_intelligence">INTELIGENCIA</string>
+    <string name="hero_meele">AGLOMERACIÓN</string>
+    <string name="rating_button_out">Cerrar</string>
+    <string name="rating_button">Disponibles 5 estrellas</string>
+    <string name="hero_ranged">A DISTANCIA</string>
+    <string name="rating_messenger">Ahora puedes estudiar a tus héroes incluso antes de jugar. ¿No crees que merecemos 5 estrellas?</string>
+    <string name="option_yes">Aceptar</string>
+    <string name="about_show_artwork">Muestra tu arte al mundo</string>
+    <string name="about_description_artwork">Envía tu arte de héroes Dota 2 y tal vez tu trabajo pueda aparecer en la pantalla Splash de la aplicación DotaZone con tus créditos. Enviar a</string>
+    <string name="copyright_dotazone">DotaZone es una aplicación independiente para Android y su marca y concepto son propiedad de sus dueños.</string>
+    <string name="copyright_valve">Dota 2 es una marca comercial registrada de Valve Corporation. Todas las imágenes y nombres del juego son propiedad de Valve y esta aplicación no está afiliada con Valve Corporation.</string>
+    <string name="loading_dialog">Cargando...</string>
+    <string name="option_no">Cancelar</string>
+    <string name="splash_button">Confirmar</string>
+    <string name="splesh_copyright">DOTA 2 ES UNA MARCA REGISTRADA DE VALVE CORPORATION. TODAS LAS IMÁGENES Y NOMBRES DEL JUEGOS SON PROPIEDAD DE VALVE Y ESTA APLICACIÓN NO ESTÁ AFILIADA A VALVE CORPORATION.</string>
+    <string name="error_feed_news">Error al intentar recuperar la información del blog Dota 2. Inténtalo nuevamente más tarde: (</string>
+    <string name="error_item_connection">Error al intentar recuperar información del artículo. Inténtalo nuevamentemás tarde: (</string>
+    <string name="error_hero_connection">Error al intentar recuperar información del héroe. Inténtalo nuevamente más tarde: (</string>
+    <string name="error_conection">Tal vez no estes conectado a Internet. ¿Quieres conectarte?</string>
+    <string name="error_json_item">Error al intentar recuperar información acerca de los elementos. Inténtalo más tarde: (</string>
+    <string name="error_json_hero">Error al intentar recuperar información acerca de héroes. Inténtalo más tarde: (</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item>Inicio</item>
+        <item>Héroes</item>
+        <item>Artículos</item>
+    </string-array>
+
+    <string name="action_settings">Configuración</string>
+    <string name="feed_name">Noticias</string>
+    <string name="language_choose">Elige el idioma</string>
+    <string name="idioma_language">Idioma</string>
+    <string name="hero_bio">Biografía</string>
+    <string name="language_change">Cambiar el idioma</string>
+    <string name="save_settings">Guardar</string>
+    <string name="selected_fail">selecciona una opción válida</string>
+    <string name="language_description">Es necesario reiniciar la aplicación. ¿Quieres hacerlo?</string>
+    <string name="loading">Cargando...</string>
+    <string name="payment_remove_ad">Eliminar anuncio</string>
+    <string name="payment_redeem_code">Canjear código</string>
+    <string name="channel">Canales</string>
+    <string name="offline">OFFLINE</string>
+    <string name="online">ONLINE</string>
+    <string name="error_player">Hubo un error al inicializar el YouTubePlayer (%1$s)</string>
+    <string name="video_search">Ver vídeo</string>
+    <string name="video_not_found">Video no encontrado</string>
+    <string name="download_video">Descargar Finalizado...</string>
+    <string name="download_video_progress">download in progress...</string>
+
+</resources>

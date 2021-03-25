@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="DefaultLocale" severity="ignore">
+        <ignore path="src/br/com/dotazone/model/entity/Item.java" />
+    </issue>
+    <issue id="MissingTranslation" severity="ignore" />
+    <issue id="UnknownId" severity="ignore" />
+</lint>
