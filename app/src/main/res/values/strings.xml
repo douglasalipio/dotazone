@@ -91,5 +91,6 @@
     <string name="channel_nomadtv">NoMadTV</string>
     <string name="download_video_progress">download in progress...</string>
   <string name="feed_no_data_message">Unfortunately, there is no data available at the moment</string>
+  <string name="hero_image_grid_accessibility_message">TODO</string>
 
 </resources>

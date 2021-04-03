@@ -45,14 +45,14 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
 	override fun onStart() {
 		super.onStart()
-		GoogleAnalytics.getInstance(this).reportActivityStart(this)
+		//GoogleAnalytics.getInstance(this).reportActivityStart(this)
 	}
 
 	override fun onStop() {
 		super.onStop()
 
 		// Stop the analytics tracking
-		GoogleAnalytics.getInstance(this).reportActivityStop(this)
+		//GoogleAnalytics.getInstance(this).reportActivityStop(this)
 	}
 
 	override fun initComponents() {

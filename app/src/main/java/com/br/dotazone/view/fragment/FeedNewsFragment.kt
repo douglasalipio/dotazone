@@ -32,7 +32,7 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		initialize()
+		//initialize()
 	}
 
 	override fun onPause() {
@@ -53,21 +53,21 @@ class FeedNewsFragment : ListFragment(), AdapterAction {
 
 	private fun initialize() {
 
-		//AdMobBanner().createBanner(requireActivity(), myAdView, DotaZoneBrain.isPremium)
-		//val font = Typeface.createFromAsset(requireActivity().assets, "Roboto-Thin.ttf")
-		//titleTextNews.typeface = font
-//		val parser: Parser = Parser.Builder()
-//				.charset(Charset.forName("UTF-8"))
-//				.build()
-//		parser.execute("Http://blog.dota2.com/feed")
-//		parser.onFinish(object : OnTaskCompleted {
-//			override fun onTaskCompleted(channel: Channel) {
-//				DotaZoneBrain.rssItems = channel.articles
-//				requireActivity().runOnUiThread { listAdapter = FeedNewsListAdapter(requireActivity()) }
-//			}
-//
-//			override fun onError(e: Exception) {}
-//		})
+		AdMobBanner().createBanner(requireActivity(), myAdView, DotaZoneBrain.isPremium)
+		val font = Typeface.createFromAsset(requireActivity().assets, "Roboto-Thin.ttf")
+		titleTextNews.typeface = font
+		val parser: Parser = Parser.Builder()
+				.charset(Charset.forName("UTF-8"))
+				.build()
+		parser.execute("Http://blog.dota2.com/feed")
+		parser.onFinish(object : OnTaskCompleted {
+			override fun onTaskCompleted(channel: Channel) {
+				DotaZoneBrain.rssItems = channel.articles
+				requireActivity().runOnUiThread { listAdapter = FeedNewsListAdapter(requireActivity()) }
+			}
+
+			override fun onError(e: Exception) {}
+		})
 	}
 
 	override fun initList(view: View?) {}

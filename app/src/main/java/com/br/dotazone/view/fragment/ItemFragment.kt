@@ -34,7 +34,7 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 			mContent = savedInstanceState.getString(KEY_CONTENT)
 		}
 		val view = inflater.inflate(R.layout.tab_grid_item_view, container, false)
-		if (DotaZoneBrain.items.isEmpty()) ItemAsync(this).execute() else initList(view)
+		//if (DotaZoneBrain.items.isEmpty()) ItemAsync(this).execute() else initList(view)
 		return view
 	}
 
