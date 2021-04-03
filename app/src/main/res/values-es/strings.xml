@@ -68,4 +68,6 @@
     <string name="download_video">Descargar Finalizado...</string>
     <string name="download_video_progress">download in progress...</string>
 
+    <string name="feed_no_data_message">Desafortunadamente, no hay datos disponibles en este momento....</string>
+
 </resources>

@@ -13,10 +13,8 @@ android {
 		versionCode 16
 		multiDexEnabled true
 		versionName "v1.0.5"
-		buildConfigField "String", "DOTA_ZONE_YOUTUBE_KEY", "\"${DOTA_ZONE_YOUTUBE_KEY}\""
-		buildConfigField "String", "DOTA_ZONE_STEAM_PUBLIC_KEY", "\"${DOTA_ZONE_STEAM_PUBLIC_KEY}\""
-
 	}
+
 	lintOptions {
 		checkReleaseBuilds false
 		// Or, if you prefer, you can continue to check for errors in release builds,
@@ -41,7 +39,7 @@ android {
 
 	dependencies {
 		implementation fileTree(dir: 'libs', include: ['*.jar'])
-		implementation files('libs/YouTubeAndroidPlayerApi.jar')
+		//implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
 		debugImplementation project(Modules.data)
 		debugImplementation project(Modules.domain)

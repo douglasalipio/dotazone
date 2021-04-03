@@ -90,5 +90,6 @@
     <string name="APP_ID">7A1DA992</string>
     <string name="channel_nomadtv">NoMadTV</string>
     <string name="download_video_progress">download in progress...</string>
+  <string name="feed_no_data_message">Unfortunately, there is no data available at the moment</string>
 
 </resources>
