@@ -28,7 +28,7 @@
     ads:layout_constraintTop_toBottomOf="@+id/include" />
 
   <com.google.android.gms.ads.AdView
-    android:id="@+id/myAdView"
+    android:id="@+id/feedNewsAdView"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"

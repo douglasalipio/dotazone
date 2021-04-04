@@ -53,6 +53,7 @@
 		</RelativeLayout>
 
 		<include
+			android:id="@+id/heroAttributeView"
 			layout="@layout/hero_attributes_build"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />

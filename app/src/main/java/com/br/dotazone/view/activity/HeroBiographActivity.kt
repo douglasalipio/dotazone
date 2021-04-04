@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.br.dotazone.DotaZoneBrain.hero
 import com.br.dotazone.DotaZoneBrain.isPremium
 import com.br.dotazone.R
+import com.br.dotazone.databinding.HeroBioViewBinding
+import com.br.dotazone.databinding.HeroProfileViewBinding
 import com.br.dotazone.model.entity.AdMobBanner
 import com.com.dotazone.DotazoneMenu
 import com.google.android.gms.ads.AdView
@@ -17,27 +19,26 @@ import java.io.IOException
 
 
 class HeroBiographActivity : BaseActivity() {
-	private var mHeroName: TextView? = null
-	private var mHeroBio: TextView? = null
-	private var media: MediaPlayer? = null
-	private var adView: AdView? = null
-	private var mDrawerLayout: DrawerLayout? = null
-	private var mDrawerList: RelativeLayout? = null
+
+	private val media: MediaPlayer = MediaPlayer()
 	private var mMenu: DotazoneMenu? = null
-	override fun onCreate(arg0: Bundle?) {
-		super.onCreate(arg0)
-		setContentView(R.layout.hero_bio_view)
+	private lateinit var binding: HeroBioViewBinding
+
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		binding = HeroBioViewBinding.inflate(layoutInflater)
+		setContentView(binding.root)
 		initComponents()
 	}
 
 	public override fun onPause() {
-		adView!!.pause()
-		media!!.pause()
+		binding.heroBioAdmob.pause()
+		media.pause()
 		super.onPause()
 	}
 
 	public override fun onDestroy() {
-		adView!!.destroy()
+		binding.heroBioAdmob.destroy()
 		super.onDestroy()
 	}
 
@@ -55,14 +56,13 @@ class HeroBiographActivity : BaseActivity() {
 
 	override fun onResume() {
 		super.onResume()
-		adView!!.resume()
+		binding.heroBioAdmob.resume()
 		try {
 			val afd = assets.openFd("bio_theme.mp3")
-			media = MediaPlayer()
-			media!!.setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
-			media!!.prepare()
-			media!!.isLooping = true
-			media!!.setOnPreparedListener { media!!.start() }
+			media.setDataSource(afd.fileDescriptor, afd.startOffset, afd.length)
+			media.prepare()
+			media.isLooping = true
+			media.setOnPreparedListener { media.start() }
 		} catch (e: IOException) {
 			// TODO Auto-generated catch block
 			e.printStackTrace()
@@ -70,16 +70,11 @@ class HeroBiographActivity : BaseActivity() {
 	}
 
 	override fun initComponents() {
-		mHeroName = findViewById<View>(R.id.hero_text_name_bio) as TextView
-		mHeroBio = findViewById<View>(R.id.hero_text_bio) as TextView
 		val nameHero = hero!!.name?.replace("_", " ")
-		mHeroName!!.text = nameHero
-		mHeroBio!!.text = hero!!.bio
-		adView = findViewById<View>(R.id.hero_bio_admob) as AdView
-		AdMobBanner().createBanner(this, adView!!, isPremium)
-		mDrawerLayout = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-		mDrawerList = findViewById<View>(R.id.listSliderMenu) as RelativeLayout
-		mMenu = DotazoneMenu(this, mDrawerLayout, mDrawerList)
+		binding.heroTextNameBio.text = nameHero
+		binding.heroTextBio.text = hero!!.bio
+		AdMobBanner().createBanner(this, binding.heroBioAdmob, isPremium)
+		mMenu = DotazoneMenu(this, binding.drawerLayout, binding.listSliderMenu.root)
 		mMenu!!.checkHeroMenu()
 	}
 

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="colorPrimary">#313234</color>
+    <color name="colorPrimaryDark">#313234</color>
+    <color name="colorAccent">#a234b5</color>
+
     <color name="background_dialog_bio">#424346</color>
     <color name="background_dialog_rating">#28292b</color>
     <color name="background_dialog_rating_hover">#1c1d1f</color>

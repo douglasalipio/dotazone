@@ -9,6 +9,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
 import com.br.dotazone.DotaZoneBrain.isPremium
 import com.br.dotazone.R
+import com.br.dotazone.databinding.TabViewBinding
 import com.br.dotazone.model.entity.AdMobBanner
 import com.br.dotazone.view.adapter.HeroAdapter
 import com.br.dotazone.view.adapter.ItemAdapter
@@ -19,109 +20,100 @@ import com.google.android.material.tabs.TabLayout
 
 
 class TabActivity : BaseActivity(), OnPageChangeListener, View.OnClickListener {
-	var mMenu: DotazoneMenu? = null
-	private var adView: AdView? = null
-	private var mDrawerLayout: DrawerLayout? = null
-	private var mDrawerList: RelativeLayout? = null
-	private var mImageLogo: ImageView? = null
-	private var mImageMenu: ImageView? = null
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.tab_view)
-		initComponents()
-	}
+    var mMenu: DotazoneMenu? = null
+    private lateinit var binding: TabViewBinding
 
-	override fun onStart() {
-		super.onStart()
-		GoogleAnalytics.getInstance(this).reportActivityStart(this)
-	}
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = TabViewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initComponents()
+    }
 
-	override fun onStop() {
-		super.onStop()
+    override fun onStart() {
+        super.onStart()
+        GoogleAnalytics.getInstance(this).reportActivityStart(this)
+    }
 
-		// Stop the analytics tracking
-		GoogleAnalytics.getInstance(this).reportActivityStop(this)
-	}
+    override fun onStop() {
+        super.onStop()
 
-	override fun onPageScrollStateChanged(state: Int) {}
-	override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
-	override fun onPageSelected(position: Int) {}
-	public override fun onPause() {
-		adView!!.pause()
-		super.onPause()
-	}
+        // Stop the analytics tracking
+        GoogleAnalytics.getInstance(this).reportActivityStop(this)
+    }
 
-	public override fun onResume() {
-		super.onResume()
-		adView!!.resume()
-		val id = intent.extras!!.getInt(MainActivity::class.java.name)
-		if (intent != null && id == DotazoneMenu.MENU_HERO) {
-			mMenu!!.checkHeroMenu()
-		} else if (id == DotazoneMenu.MENU_ITEM) {
-			mMenu!!.checkItemMenu()
-		} else {
-			mMenu!!.checkBuildMenu()
-		}
-	}
+    override fun onPageScrollStateChanged(state: Int) {}
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+    override fun onPageSelected(position: Int) {}
+    public override fun onPause() {
+        binding.tabViewAdmob.pause()
+        super.onPause()
+    }
 
-	public override fun onDestroy() {
-		adView!!.destroy()
-		super.onDestroy()
-	}
+    public override fun onResume() {
+        super.onResume()
+        binding.tabViewAdmob.resume()
+        val id = intent.extras!!.getInt(MainActivity::class.java.name)
+        if (intent != null && id == DotazoneMenu.MENU_HERO) {
+            mMenu!!.checkHeroMenu()
+        } else if (id == DotazoneMenu.MENU_ITEM) {
+            mMenu!!.checkItemMenu()
+        } else {
+            mMenu!!.checkBuildMenu()
+        }
+    }
 
-	private fun setAdapterPage(pager: ViewPager) {
-		val itemAdapter = ItemAdapter(supportFragmentManager, applicationContext)
-		val heroAdapter = HeroAdapter(supportFragmentManager, this)
-		val id = intent.extras!!.getInt(MainActivity::class.java.name)
-		if (intent != null && id == DotazoneMenu.MENU_HERO) {
-			pager.adapter = heroAdapter
-			mMenu!!.checkHeroMenu()
-		} else if (id == DotazoneMenu.MENU_ITEM) {
-			pager.adapter = itemAdapter
-			mMenu!!.checkItemMenu()
-		} else {
-			pager.adapter = heroAdapter
-			mMenu!!.checkBuildMenu()
-		}
-	}
+    public override fun onDestroy() {
+        binding.tabViewAdmob.destroy()
+        super.onDestroy()
+    }
 
-	override fun initComponents() {
-		mDrawerLayout = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-		mDrawerList = findViewById<View>(R.id.listSliderMenu) as RelativeLayout
-		mImageLogo = findViewById<View>(R.id.header_imageLogo) as ImageView
-		mImageMenu = findViewById<View>(R.id.header_imageMenu) as ImageView
-		mImageLogo!!.setOnClickListener(this)
-		mImageMenu!!.setOnClickListener(this)
-		mMenu = DotazoneMenu(this, mDrawerLayout, mDrawerList)
-		val pager = findViewById<View>(R.id.tab_view_pager) as ViewPager
-		adView = findViewById<View>(R.id.tab_view_admob) as AdView
-		setAdapterPage(pager)
-		val indicator = findViewById<View>(R.id.indicator) as TabLayout
-		indicator.setupWithViewPager(pager)
-		//indicator.setOnPageChangeListener(this);
-		AdMobBanner().createBanner(this, adView!!, isPremium)
-	}
+    private fun setAdapterPage(pager: ViewPager) {
+        val itemAdapter = ItemAdapter(supportFragmentManager, applicationContext)
+        val heroAdapter = HeroAdapter(supportFragmentManager, this)
+        val id = intent.extras!!.getInt(MainActivity::class.java.name)
+        if (intent != null && id == DotazoneMenu.MENU_HERO) {
+            pager.adapter = heroAdapter
+            mMenu!!.checkHeroMenu()
+        } else if (id == DotazoneMenu.MENU_ITEM) {
+            pager.adapter = itemAdapter
+            mMenu!!.checkItemMenu()
+        } else {
+            pager.adapter = heroAdapter
+            mMenu!!.checkBuildMenu()
+        }
+    }
 
-	override fun setActionErrorOk() {
-		finish()
-	}
+    override fun initComponents() {
+        binding.headerView.headerImageLogo.setOnClickListener(this)
+        binding.headerView.headerImageMenu.setOnClickListener(this)
+        mMenu = DotazoneMenu(this, binding.drawerLayout, binding.listSliderMenu.root)
+        val pager = findViewById<View>(R.id.tab_view_pager) as ViewPager
+        setAdapterPage(pager)
+        val indicator = findViewById<View>(R.id.indicator) as TabLayout
+        indicator.setupWithViewPager(pager)
+        //indicator.setOnPageChangeListener(this);
+        AdMobBanner().createBanner(this, binding.tabViewAdmob, isPremium)
+    }
 
-	override fun setActionErrorCancel() {
-		finish()
-	}
+    override fun setActionErrorOk() {
+        finish()
+    }
 
-	override fun onClick(v: View) {
-		mDrawerLayout!!.openDrawer(mDrawerList!!)
-	}
+    override fun setActionErrorCancel() {
+        finish()
+    }
 
-	override fun finish() {
-		super.finish()
-		mMenu!!.defaultMenu()
-	}
+    override fun onClick(v: View) {
+        binding.drawerLayout.openDrawer(binding.listSliderMenu.root)
+    }
 
-	companion object {
-		const val TAB_ITEM = 1
-		const val TAB_HERO = 0
-		var isBuild = false
-	}
+    override fun finish() {
+        super.finish()
+        mMenu!!.defaultMenu()
+    }
+
+    companion object {
+        var isBuild = false
+    }
 }

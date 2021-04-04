@@ -73,7 +73,9 @@
                         android:textColor="@color/color_text_list" />
                 </RelativeLayout>
 
-                <include layout="@layout/hero_attributes_view" />
+                <include
+                  android:id="@+id/heroAttributeView"
+                  layout="@layout/hero_attributes_view" />
 
                 <RelativeLayout
                     android:id="@+id/hero_description_skill_layout"

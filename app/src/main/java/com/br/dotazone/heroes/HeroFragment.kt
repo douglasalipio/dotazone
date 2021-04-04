@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
+import com.br.dotazone.databinding.TabGridHeroViewBinding
 import com.br.dotazone.domain.heroes.entity.Hero
 import com.br.dotazone.domain.heroes.prov.Ability.AbilityElementy
 import com.br.dotazone.domain.heroes.prov.Item
@@ -20,8 +21,6 @@ import com.br.dotazone.view.activity.BuildHeroActivity
 import com.br.dotazone.view.activity.HeroProfileActivity
 import com.br.dotazone.view.activity.TabActivity
 import com.br.dotazone.view.adapter.HeroGridAdapter
-import kotlinx.android.synthetic.main.tab_grid_hero_view.*
-import kotlinx.android.synthetic.main.tab_grid_hero_view.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
@@ -30,16 +29,22 @@ class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
     private var mContent: String? = "???"
     private val heroesViewModel: HeroesViewModel by viewModel()
     private val observer = Observer<HeroesState> { handleResponse(it) }
+    private var binding: TabGridHeroViewBinding? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (savedInstanceState != null && savedInstanceState.containsKey(KEY_CONTENT)) {
             mContent = savedInstanceState.getString(KEY_CONTENT)
         }
-        val view = inflater.inflate(R.layout.tab_grid_hero_view, container, false)
-        view.gridHeroView.onItemClickListener = this
+        return inflater.inflate(R.layout.tab_grid_hero_view, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val binding = TabGridHeroViewBinding.bind(view)
+        this.binding = binding
+        binding.gridHeroView.onItemClickListener = this
         heroesViewModel.heroesStream.observe(viewLifecycleOwner, observer)
         heroesViewModel.requestHeroesData()
-        return view
     }
 
     override fun initList(view: View?) {}
@@ -78,7 +83,12 @@ class HeroFragment : Fragment(), AdapterAction, OnItemClickListener {
                 itemsForTab.addAll(heroList.filter { it.heroAbility?.pa == AbilityElementy.INT.value })
             }
         }
-        gridHeroView?.adapter = HeroGridAdapter(requireActivity(), itemsForTab)
+        binding?.gridHeroView?.adapter = HeroGridAdapter(requireActivity(), itemsForTab)
+    }
+
+    override fun onDestroy() {
+        binding = null
+        super.onDestroy()
     }
 
     override fun initListItem(items: List<Item>) {}

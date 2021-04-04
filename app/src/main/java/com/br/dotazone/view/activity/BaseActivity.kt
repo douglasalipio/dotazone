@@ -10,8 +10,8 @@ import com.br.dotazone.model.listeners.Initializable
 
 
 abstract class BaseActivity : FragmentActivity(), Initializable, ErrorListener {
-	override fun onCreate(arg0: Bundle?) {
-		super.onCreate(arg0)
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
 		requestWindowFeature(Window.FEATURE_NO_TITLE)
 	}
 

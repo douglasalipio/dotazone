@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import com.br.dotazone.R
-import kotlinx.android.synthetic.main.hero_item_grindview.view.*
+import com.br.dotazone.databinding.AlertRatingViewBinding
+import com.br.dotazone.databinding.HeroItemGrindviewBinding
 
 
 class HeroGridAdapter(private val context: Context, private val mHeroes: MutableList<com.br.dotazone.domain.heroes.entity.Hero>) : BaseAdapter() {
@@ -34,7 +35,8 @@ class HeroGridAdapter(private val context: Context, private val mHeroes: Mutable
 
 		}
 		if (id != 0) {
-			view?.heroImageGridView?.setImageResource(id)
+		    val heroImageGridView  = view?.findViewById<ImageView>(R.id.heroImageGridView)
+			heroImageGridView?.setImageResource(id)
 		}
 		return view
 	}

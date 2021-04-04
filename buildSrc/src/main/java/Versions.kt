@@ -28,5 +28,6 @@ object Versions {
 	val interceptor = "4.7.2"
 	val timber = "4.7.1"
 	val leakCanary = "2.6"
+	val viewBinding = "4.0.1"
 }
 

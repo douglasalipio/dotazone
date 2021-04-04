@@ -1,4 +1,3 @@
-//
 object TestDependencies {
 	val junit = "junit:junit:${Versions.junit}"
 	val mockito = "org.mockito:mockito-core:${Versions.mockito}"
@@ -28,7 +27,7 @@ object ProjectDependencies {
 	val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.interceptor}"
 	val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 	val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
-
+	val viewBinding = "com.android.databinding:viewbinding:${Versions.viewBinding}"
 }
 
 object Retrofit {

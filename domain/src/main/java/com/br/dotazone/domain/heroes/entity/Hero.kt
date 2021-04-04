@@ -1,5 +1,6 @@
 package com.br.dotazone.domain.heroes.entity
 
+
 data class Hero(
 		val name: String,
 		val idString: String,

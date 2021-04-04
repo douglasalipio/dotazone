@@ -7,78 +7,75 @@ import android.widget.RelativeLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import com.br.dotazone.DotaZoneApplication
 import com.br.dotazone.R
+import com.br.dotazone.databinding.ActivityMainBinding
+import com.br.dotazone.databinding.SplashScreenViewBinding
 import com.br.dotazone.view.fragment.FeedNewsFragment.Companion.newInstance
 import com.com.dotazone.DotazoneMenu
 import com.google.android.gms.analytics.GoogleAnalytics
 
 
 class MainActivity : BaseActivity(), View.OnClickListener {
-	var mMenu: DotazoneMenu? = null
-	private var mDrawerLayout: DrawerLayout? = null
-	private var mDrawerList: RelativeLayout? = null
-	private var mImageLogo: ImageView? = null
-	private var mImageMenu: ImageView? = null
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_main)
+    var mMenu: DotazoneMenu? = null
+    private lateinit var binding: ActivityMainBinding
 
-		initComponents()
-		val fragment1 = newInstance()
-		if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == DotazoneMenu.MENU_NEWS) {
-			supportFragmentManager.beginTransaction().replace(R.id.main_activity_content, fragment1).commit()
-		} else {
-			supportFragmentManager.beginTransaction().replace(R.id.main_activity_content, fragment1).commit()
-			mMenu!!.checkNewsMenu()
-		}
-		// Get a Tracker (should auto-report)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-		if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == 100) {
-		}
-	}
+        initComponents()
+        val fragment1 = newInstance()
+        if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == DotazoneMenu.MENU_NEWS) {
+            supportFragmentManager.beginTransaction().replace(R.id.main_activity_content, fragment1).commit()
+        } else {
+            supportFragmentManager.beginTransaction().replace(R.id.main_activity_content, fragment1).commit()
+            mMenu!!.checkNewsMenu()
+        }
+        // Get a Tracker (should auto-report)
 
-	override fun onResume() {
-		super.onResume()
-		if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == DotazoneMenu.MENU_NEWS) {
-			mMenu!!.checkNewsMenu()
-		}
-	}
+        if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == 100) {
+        }
+    }
 
-	override fun onStart() {
-		super.onStart()
-		//GoogleAnalytics.getInstance(this).reportActivityStart(this)
-	}
+    override fun onResume() {
+        super.onResume()
+        if (intent != null && intent.extras != null && intent.extras!!.getInt(MainActivity::class.java.name) == DotazoneMenu.MENU_NEWS) {
+            mMenu!!.checkNewsMenu()
+        }
+    }
 
-	override fun onStop() {
-		super.onStop()
+    override fun onStart() {
+        super.onStart()
+        //GoogleAnalytics.getInstance(this).reportActivityStart(this)
+    }
 
-		// Stop the analytics tracking
-		//GoogleAnalytics.getInstance(this).reportActivityStop(this)
-	}
+    override fun onStop() {
+        super.onStop()
 
-	override fun initComponents() {
-		mDrawerLayout = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-		mDrawerList = findViewById<View>(R.id.listSliderMenu) as RelativeLayout
-		mMenu = DotazoneMenu(this, mDrawerLayout, mDrawerList)
-		mImageLogo = findViewById<View>(R.id.header_imageLogo) as ImageView
-		mImageMenu = findViewById<View>(R.id.header_imageMenu) as ImageView
-		mImageLogo!!.setOnClickListener(this)
-		mImageMenu!!.setOnClickListener(this)
-	}
+        // Stop the analytics tracking
+        //GoogleAnalytics.getInstance(this).reportActivityStop(this)
+    }
 
-	override fun setActionErrorOk() {
-		//finish();
-	}
+    override fun initComponents() {
+        mMenu = DotazoneMenu(this, binding.drawerLayout, binding.listSliderMenu.root)
+        binding.headerView.headerImageLogo.setOnClickListener(this)
+        binding.headerView.headerImageMenu.setOnClickListener(this)
+    }
 
-	override fun setActionErrorCancel() {
-		// TODO Auto-generated method stub
-	}
+    override fun setActionErrorOk() {
+        //finish();
+    }
 
-	override fun onClick(v: View) {
-		mDrawerLayout!!.openDrawer(mDrawerList!!)
-	}
+    override fun setActionErrorCancel() {
+        // TODO Auto-generated method stub
+    }
 
-	override fun finish() {
-		super.finish()
-		mMenu!!.defaultMenu()
-	}
+    override fun onClick(v: View) {
+        binding.drawerLayout.openDrawer(binding.listSliderMenu.root)
+    }
+
+    override fun finish() {
+        super.finish()
+        mMenu!!.defaultMenu()
+    }
 }

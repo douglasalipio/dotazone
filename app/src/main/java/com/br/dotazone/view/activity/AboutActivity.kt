@@ -7,55 +7,56 @@ import android.widget.RelativeLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import com.br.dotazone.DotaZoneApplication
 import com.br.dotazone.R
+import com.br.dotazone.databinding.AboutViewBinding
+import com.br.dotazone.databinding.BuildHeroViewBinding
 import com.com.dotazone.DotazoneMenu
 import com.google.android.gms.analytics.GoogleAnalytics
 
 
 class AboutActivity : BaseActivity() {
-	private var mDrawerLayout: DrawerLayout? = null
-	private var mDrawerList: RelativeLayout? = null
-	private var mMenu: DotazoneMenu? = null
-	private var mButtonMenu: LinearLayout? = null
-	override fun onCreate(arg0: Bundle?) {
-		super.onCreate(arg0)
-		setContentView(R.layout.about_view)
-		mMenu = DotazoneMenu(this, mDrawerLayout, mDrawerList)
-		mMenu!!.checkAboutMenu()
-		initComponents()
+    private var mMenu: DotazoneMenu? = null
+    private var mButtonMenu: LinearLayout? = null
 
-	}
+    private lateinit var binding: AboutViewBinding
 
-	override fun onStart() {
-		super.onStart()
-		GoogleAnalytics.getInstance(this).reportActivityStart(this)
-	}
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.about_view)
+        mMenu = DotazoneMenu(this, binding.drawerLayout, binding.listSliderMenu.root)
+        mMenu!!.checkAboutMenu()
+        initComponents()
 
-	override fun onStop() {
-		super.onStop()
+    }
 
-		// Stop the analytics tracking
-		GoogleAnalytics.getInstance(this).reportActivityStop(this)
-	}
+    override fun onStart() {
+        super.onStart()
+        GoogleAnalytics.getInstance(this).reportActivityStart(this)
+    }
 
-	override fun onResume() {
-		super.onResume()
-		mMenu!!.checkAboutMenu()
-	}
+    override fun onStop() {
+        super.onStop()
 
-	override fun initComponents() {
-		mDrawerLayout = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-		mDrawerList = findViewById<View>(R.id.listSliderMenu) as RelativeLayout
-		mButtonMenu = findViewById<View>(R.id.about_menu) as LinearLayout
-		mButtonMenu!!.setOnClickListener { mDrawerLayout!!.openDrawer(mDrawerList!!) }
-	}
+        // Stop the analytics tracking
+        GoogleAnalytics.getInstance(this).reportActivityStop(this)
+    }
 
-	override fun setActionErrorOk() {
-		TODO("Not yet implemented")
-	}
+    override fun onResume() {
+        super.onResume()
+        mMenu!!.checkAboutMenu()
+    }
 
-	override fun setActionErrorCancel() {
-		TODO("Not yet implemented")
-	}
+    override fun initComponents() {
+        mButtonMenu = findViewById<View>(R.id.about_menu) as LinearLayout
+        mButtonMenu?.setOnClickListener { binding.drawerLayout.openDrawer(binding.drawerLayout) }
+    }
+
+    override fun setActionErrorOk() {
+        TODO("Not yet implemented")
+    }
+
+    override fun setActionErrorCancel() {
+        TODO("Not yet implemented")
+    }
 
 
 }

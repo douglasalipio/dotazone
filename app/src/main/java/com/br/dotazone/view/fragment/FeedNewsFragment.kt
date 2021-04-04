@@ -1,73 +1,67 @@
 package com.br.dotazone.view.fragment
 
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.ListFragment
-import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
-import com.br.dotazone.model.entity.AdMobBanner
+import com.br.dotazone.databinding.FeedNewsBinding
 import com.br.dotazone.domain.heroes.prov.Hero
 import com.br.dotazone.domain.heroes.prov.Item
 import com.br.dotazone.model.service.AdapterAction
 import com.br.dotazone.model.util.UtilActivity
-import com.br.dotazone.view.adapter.FeedNewsListAdapter
-import com.prof.rssparser.Channel
-import com.prof.rssparser.OnTaskCompleted
-import com.prof.rssparser.Parser
-import kotlinx.android.synthetic.main.feed_news.*
-import kotlinx.android.synthetic.main.header_view.*
-import java.nio.charset.Charset
 
 
 class FeedNewsFragment : ListFragment(), AdapterAction {
-	private var mView: View? = null
+
+	private var binding: FeedNewsBinding? = null
+
 
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-		mView = inflater.inflate(R.layout.feed_news, container, false)
-		return mView
+		return inflater.inflate(R.layout.feed_news, container, false)
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
+		val binding = FeedNewsBinding.bind(view)
+		this.binding = binding
 		//initialize()
 	}
 
 	override fun onPause() {
-		myAdView?.pause()
+		binding?.feedNewsAdView?.pause()
 		super.onPause()
 	}
 
 	override fun onResume() {
 		super.onResume()
-		myAdView?.resume()
+		binding?.feedNewsAdView?.resume()
 
 	}
 
 	override fun onDestroy() {
-		myAdView?.destroy()
+		binding?.feedNewsAdView?.destroy()
 		super.onDestroy()
 	}
 
 	private fun initialize() {
 
-		AdMobBanner().createBanner(requireActivity(), myAdView, DotaZoneBrain.isPremium)
-		val font = Typeface.createFromAsset(requireActivity().assets, "Roboto-Thin.ttf")
-		titleTextNews.typeface = font
-		val parser: Parser = Parser.Builder()
-				.charset(Charset.forName("UTF-8"))
-				.build()
-		parser.execute("Http://blog.dota2.com/feed")
-		parser.onFinish(object : OnTaskCompleted {
-			override fun onTaskCompleted(channel: Channel) {
-				DotaZoneBrain.rssItems = channel.articles
-				requireActivity().runOnUiThread { listAdapter = FeedNewsListAdapter(requireActivity()) }
-			}
-
-			override fun onError(e: Exception) {}
-		})
+//		AdMobBanner().createBanner(requireActivity(), binding?.feedNewsAdView?, DotaZoneBrain.isPremium)
+//		val font = Typeface.createFromAsset(requireActivity().assets, "Roboto-Thin.ttf")
+//		titleTextNews.typeface = font
+//		val parser: Parser = Parser.Builder()
+//				.charset(Charset.forName("UTF-8"))
+//				.build()
+//		parser.execute("Http://blog.dota2.com/feed")
+//		parser.onFinish(object : OnTaskCompleted {
+//			override fun onTaskCompleted(channel: Channel) {
+//				DotaZoneBrain.rssItems = channel.articles
+//				requireActivity().runOnUiThread { listAdapter = FeedNewsListAdapter(requireActivity()) }
+//			}
+//
+//			override fun onError(e: Exception) {}
+//		})
 	}
 
 	override fun initList(view: View?) {}

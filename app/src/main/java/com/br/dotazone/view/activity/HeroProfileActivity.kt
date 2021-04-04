@@ -10,41 +10,29 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.*
-import androidx.drawerlayout.widget.DrawerLayout
 import com.br.dotazone.DotaZoneBrain.hero
 import com.br.dotazone.DotaZoneBrain.isPremium
 import com.br.dotazone.R
+import com.br.dotazone.databinding.HeroProfileViewBinding
 import com.br.dotazone.model.entity.AdMobBanner
 import com.br.dotazone.model.util.UrlUtils.Companion.convertDpToPixel
 import com.br.dotazone.view.components.FrameLayoutSkillBoard
 import com.br.dotazone.view.fragment.HeroSkillFragment.Companion.newInstance
 import com.com.dotazone.DotazoneMenu
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.analytics.GoogleAnalytics
 
 
 class HeroProfileActivity : BaseActivity(), View.OnClickListener {
-	private var mTextInt: TextView? = null
-	private var mTextAgi: TextView? = null
-	private var mTextStr: TextView? = null
-	private var mTextAtk: TextView? = null
-	private var mTextMove: TextView? = null
-	private var mTextArmor: TextView? = null
-	private var mIconHero: ImageView? = null
-	private var mTextHeroName: TextView? = null
-	private var mTextRoles: TextView? = null
+
 	private val mHero = hero
-	private var mLinearSkill: LinearLayout? = null
-	private var mAnimator: ObjectAnimator? = null
-	private var mIconHeroBio: ImageView? = null
-	private var mLinearBg: RelativeLayout? = null
-	private var mDrawerLayout: DrawerLayout? = null
-	private var mDrawerList: RelativeLayout? = null
+	private lateinit var animator: ObjectAnimator
 	private var mMenu: DotazoneMenu? = null
-	private var adView: AdView? = null
+	private lateinit var binding: HeroProfileViewBinding
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setContentView(R.layout.hero_profile_view)
+		binding = HeroProfileViewBinding.inflate(layoutInflater)
+		setContentView(binding.root)
 		initComponents()
 	}
 
@@ -61,59 +49,43 @@ class HeroProfileActivity : BaseActivity(), View.OnClickListener {
 	}
 
 	override fun initComponents() {
-		mTextAgi = findViewById<View>(R.id.heroTextAttributeAgi) as TextView
-		mTextStr = findViewById<View>(R.id.heroTextAttributeStr) as TextView
-		mTextInt = findViewById<View>(R.id.heroTextAttributeInt) as TextView
-		mTextAtk = findViewById<View>(R.id.heroTextAttributeAtk) as TextView
-		mTextMove = findViewById<View>(R.id.heroTextAttributeMove) as TextView
-		mTextArmor = findViewById<View>(R.id.heroTextAttributeArmor) as TextView
-		mIconHero = findViewById<View>(R.id.hero_icon_avatar) as ImageView
-		mTextHeroName = findViewById<View>(R.id.heroTextName) as TextView
-		mTextRoles = findViewById<View>(R.id.hero_text_roles) as TextView
-		mIconHeroBio = findViewById<View>(R.id.hero_icon_bio) as ImageView
-		mIconHeroBio!!.setOnClickListener(this)
-		mLinearBg = findViewById<View>(R.id.hero_linear_bg) as RelativeLayout
+		binding.heroIconBio.setOnClickListener(this)
 		val idImageBackground = resources.getIdentifier(mHero!!.idString + "_bg", "drawable", packageName)
-		mLinearBg!!.setBackgroundResource(idImageBackground)
+		binding.heroLinearBg.setBackgroundResource(idImageBackground)
 		val nameHero = mHero.name?.replace("_", " ")
-		mTextHeroName!!.text = nameHero
-		mTextRoles!!.text = mHero.abilites?.droles
+		binding.heroTextName.text = nameHero
+		binding.heroTextRoles.text = mHero.abilites?.droles
 		val font = Typeface.createFromAsset(assets, "Roboto-Thin.ttf")
-		mTextHeroName!!.setTypeface(font)
-		mTextAgi!!.text = mHero.abilites?.agi?.get(0) ?: ""
-		mTextInt!!.text = mHero.abilites?.inte?.get(0) ?: ""
-		mTextStr!!.text = mHero.abilites?.str?.get(0) ?: ""
-		mTextStr!!.text = mHero.abilites?.str?.get(0) ?: ""
-		mTextAtk!!.text = mHero.abilites?.dmg?.get(0) ?: ""
-		mTextMove!!.text = mHero.abilites?.ms
-		mTextArmor!!.text = mHero.abilites?.armor
+		binding.heroTextName.typeface = font
+		binding.heroAttributeView.heroTextAttributeAgi.text = mHero.abilites?.agi?.get(0) ?: ""
+		binding.heroAttributeView.heroTextAttributeInt.text = mHero.abilites?.inte?.get(0) ?: ""
+		binding.heroAttributeView.heroTextAttributeStr.text = mHero.abilites?.str?.get(0) ?: ""
+		binding.heroAttributeView.heroTextAttributeAtk.text = mHero.abilites?.dmg?.get(0) ?: ""
+		binding.heroAttributeView.heroTextAttributeMove.text = mHero.abilites?.ms
+		binding.heroAttributeView.heroTextAttributeAddArmor.text = mHero.abilites?.armor
 		val idImage = resources.getIdentifier(mHero.idString + "_avatar", "drawable", packageName)
 		if (idImage != 0) {
-			mIconHero!!.setImageResource(idImage)
+			binding.heroIconAvatar.setImageResource(idImage)
 		}
-		mLinearSkill = findViewById<View>(R.id.hero_skill_layout) as LinearLayout
 		loandingSkillsHero()
-		mDrawerLayout = findViewById<View>(R.id.drawer_layout) as DrawerLayout
-		mDrawerList = findViewById<View>(R.id.listSliderMenu) as RelativeLayout
-		mMenu = DotazoneMenu(this, mDrawerLayout, mDrawerList)
+		mMenu = DotazoneMenu(this, binding.drawerLayout, binding.listSliderMenu.root)
 		mMenu!!.checkHeroMenu()
-		adView = findViewById<View>(R.id.hero_skill_admob) as AdView
-		AdMobBanner().createBanner(this, adView!!, isPremium)
+		AdMobBanner().createBanner(this, binding.heroSkillAdmob, isPremium)
 	}
 
 	public override fun onPause() {
-		adView!!.pause()
+		binding.heroSkillAdmob.pause()
 		super.onPause()
 	}
 
 	public override fun onResume() {
 		super.onResume()
-		adView!!.resume()
+		binding.heroSkillAdmob.resume()
 	}
 
 	public override fun onDestroy() {
 		super.onDestroy()
-		adView!!.destroy()
+		binding.heroSkillAdmob.destroy()
 	}
 
 	private fun createFrameLayoutBrightness(mainFrame: FrameLayout, idFrame: Int): FrameLayoutSkillBoard {
@@ -178,22 +150,22 @@ class HeroProfileActivity : BaseActivity(), View.OnClickListener {
 				val fragment1 = newInstance(skill)
 				supportFragmentManager.beginTransaction().replace(R.id.hero_description_skill_layout, fragment1).commit()
 			}
-			mLinearSkill!!.addView(mainFrame)
+			binding.heroAttributeView.heroSkillLayout.addView(mainFrame)
 		}
 	}
 
 	private fun animationFadeIn(frameBrightness: FrameLayoutSkillBoard, cancel: Boolean) {
 		frameBrightness.alpha = 0f
 		val propValueAlpha = PropertyValuesHolder.ofFloat("alpha", 0.5.toFloat(), 1f)
-		mAnimator = ObjectAnimator.ofPropertyValuesHolder(frameBrightness, propValueAlpha)
-		mAnimator!!.duration = 500
-		mAnimator!!.repeatCount = ValueAnimator.INFINITE
-		mAnimator!!.repeatMode = ValueAnimator.REVERSE
-		mAnimator!!.start()
-		mAnimator!!.addListener(object : Animator.AnimatorListener {
+		animator = ObjectAnimator.ofPropertyValuesHolder(frameBrightness, propValueAlpha)
+		animator.duration = 500
+		animator.repeatCount = ValueAnimator.INFINITE
+		animator.repeatMode = ValueAnimator.REVERSE
+		animator.start()
+		animator.addListener(object : Animator.AnimatorListener {
 			override fun onAnimationStart(animation: Animator) {}
 			override fun onAnimationRepeat(animation: Animator) {
-				if (cancel) mAnimator!!.cancel()
+				if (cancel) animator.cancel()
 			}
 
 			override fun onAnimationEnd(animation: Animator) {}

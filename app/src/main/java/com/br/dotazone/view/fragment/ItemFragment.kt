@@ -11,24 +11,25 @@ import android.widget.AdapterView.OnItemClickListener
 import androidx.fragment.app.Fragment
 import com.br.dotazone.DotaZoneBrain
 import com.br.dotazone.R
+import com.br.dotazone.databinding.ItemDialogViewBinding
+import com.br.dotazone.databinding.TabGridItemViewBinding
 import com.br.dotazone.domain.heroes.prov.Hero
 import com.br.dotazone.domain.heroes.prov.Item
 import com.br.dotazone.model.listeners.BuildHeroAction
 import com.br.dotazone.model.service.AdapterAction
-import com.br.dotazone.model.service.ItemAsync
 import com.br.dotazone.model.util.UrlUtils
 import com.br.dotazone.view.activity.BaseActivity
 import com.br.dotazone.view.activity.BuildHeroActivity
 import com.br.dotazone.view.adapter.ItemGridAdapter
 import com.br.dotazone.view.fragment.DialogError.TypeError
-import kotlinx.android.synthetic.main.item_dialog_view.*
-import kotlinx.android.synthetic.main.tab_grid_item_view.*
 import java.util.*
 
 
 class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 	private var mContent: String? = "???"
 	private var mActivity: BuildHeroActivity? = null
+	private var binding: TabGridItemViewBinding? = null
+
 	override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 		if (savedInstanceState != null && savedInstanceState.containsKey(KEY_CONTENT)) {
 			mContent = savedInstanceState.getString(KEY_CONTENT)
@@ -40,7 +41,9 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		gridViewItem.onItemClickListener = this
+		val binding = TabGridItemViewBinding.bind(view)
+		this.binding = binding
+		binding.gridViewItem.onItemClickListener = this
 	}
 
 	override fun initList(view: View?) {
@@ -71,15 +74,15 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 					}
 				}
 			}
-			gridViewItem.adapter = ItemGridAdapter(requireActivity(), itemsForTab)
+			binding?.gridViewItem?.adapter = ItemGridAdapter(requireActivity(), itemsForTab)
 			if (mActivity != null) {
 				val buildAction: BuildHeroAction = mActivity as BuildHeroActivity
 				buildAction.verifyPayment()
 			}
 		} else {
-			val fragmentError = DialogError.newFragmentDialog(activity!!.resources.getString(R.string.error_json_item),
+			val fragmentError = DialogError.newFragmentDialog(requireActivity().resources.getString(R.string.error_json_item),
 					activity as BaseActivity, TypeError.ONE_OPTIONS)
-			fragmentError.show(activity!!.supportFragmentManager, "Item")
+			fragmentError.show(requireActivity().supportFragmentManager, "Item")
 		}
 	}
 
@@ -93,31 +96,25 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 			val buildAction: BuildHeroAction = mActivity as BuildHeroActivity
 			buildAction.addingItemSlot(parent.adapter.getItem(position) as Item)
 		} else {
-			// custom dialog
-			val dialog = Dialog(activity!!, R.style.FullHeightDialog)
+			val inflater = LayoutInflater.from(context)
+			val binding = ItemDialogViewBinding.inflate(inflater)
+
+			val dialog = Dialog(requireActivity(), R.style.FullHeightDialog)
 			dialog.setContentView(R.layout.item_dialog_view)
-			val itemName = dialog.textItemName
-			val itemAttribute = dialog.textAttribute
-			val itemCd = dialog.textCdTimer
-			val itemCost = dialog.textCost
-			val itemDescription = dialog.textDescription
-			val itemMana = dialog.textMana
-			val itemIcon = dialog.imageItem
-			val itemLayoutComponents = dialog.itemLayoutComponents
 			val item = parent.adapter.getItem(position) as Item
-			itemName.text = item.name
-			itemAttribute.text = Html.fromHtml(item.attribute)
+			binding.textItemName.text = item.name
+			binding.textAttribute.text = Html.fromHtml(item.attribute)
 			val cd = if (item.cloudown == "false") requireActivity().resources.getString(R.string.item_no_cd) else item.cloudown
 			val mana = if (item.mc == "false") requireActivity().resources.getString(R.string.item_no_cd) else item.mc
-			itemCd.text = cd
-			itemCost.text = item.cost.toString()
-			itemDescription.text = Html.fromHtml(item.description)
-			itemMana.text = mana
+			binding.textCdTimer.text = cd
+			binding.textCost.text = item.cost.toString()
+			binding.textDescription.text = Html.fromHtml(item.description)
+			binding.textMana.text = mana
 			val pos = item.imageName.lastIndexOf('.')
-			val idImage = activity!!.resources.getIdentifier(item.imageName.substring(0, pos), "drawable",
-					activity!!.packageName)
-			itemIcon.setImageResource(idImage)
-			setImageComponents(item, itemLayoutComponents)
+			val idImage = requireActivity().resources.getIdentifier(item.imageName.substring(0, pos), "drawable",
+					requireActivity().packageName)
+			binding.imageItem.setImageResource(idImage)
+			setImageComponents(item, binding.itemLayoutComponents)
 			dialog.show()
 		}
 	}
@@ -125,7 +122,7 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 	private fun setImageComponents(item: Item, linearLayout: LinearLayout) {
 		if (item.components.isNotEmpty()) {
 			for (itemName in item.components) {
-				val idImage = activity!!.resources.getIdentifier(itemName + "_lg", "drawable", activity!!.packageName)
+				val idImage = requireActivity().resources.getIdentifier(itemName + "_lg", "drawable", requireActivity().packageName)
 				if (idImage != 0) {
 					val imageView = ImageView(activity)
 					imageView.setImageResource(idImage)
@@ -135,6 +132,11 @@ class ItemFragment : Fragment(), AdapterAction, OnItemClickListener {
 				}
 			}
 		}
+	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		binding = null
 	}
 
 	override fun initListItem(items: List<Item>) {}
